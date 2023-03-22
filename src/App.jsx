@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>Start</h1>
+      <h1>Start now</h1>
     </div>
   );
 }
