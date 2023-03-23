@@ -1,39 +1,43 @@
-import styles from "./home.module.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import Card from "./card/card";
+import styles from "../home/home.module.css";
 
 const Home = () => {
-  const love = 1;
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("http://localhost:3000/cards");
+      setCards(response.data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
-      <div>
-        <h1>Каталог</h1>
+      <div className={styles.catalog}>
+        <div className={styles.filter}>
+          <img
+            className={styles.desc}
+            src="/icons/actionIcons/arrowSortDesc.svg"
+            alt="arrowSortDesc"
+          />
+          <img
+            className={styles.asc}
+            src="/icons/actionIcons/arrowSortAsc.svg"
+            alt="arrowSortAsc"
+          />
+          <div>Фильтровать по цене</div>
+        </div>
         <h2>Каталог</h2>
-        <h3>Каталог</h3>
-        <p>Каталог</p>
+        <div>Категории</div>
       </div>
 
-      <div>
-        <div className={styles.item}>
-          <img
-            className={styles.heart}
-            src="/icons/actionIcons/heart.svg"
-            alt="heart"
-          />
-          <img
-            className={styles.basket}
-            src="/icons/actionIcons/basket.svg"
-            alt="basket"
-          />
-          <img
-            className={styles.image}
-            src="/images/keyboards/keyboardsPreview/keyboard1.jpg"
-            alt="keyboard"
-          />
-          <div>
-            <p className={styles.description}>{`${love}`}</p>
-            <p className={styles.description}>{`Артикул: ${love}`}</p>
-            <h3>{`Цена: ${love} ₽`}</h3>
-          </div>
-        </div>
+      <div className={styles.container}>
+        {cards.map((card) => (
+          <Card key={card.id} card={card} />
+        ))}
       </div>
     </>
   );

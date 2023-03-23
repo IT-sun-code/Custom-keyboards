@@ -29,7 +29,7 @@ label {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
+  /* vertical-align: baseline; */
 }
 
 /* Remove default list styles */
@@ -58,6 +58,8 @@ textarea {
 body {
   font-family: "Inter", sans-serif;
   font-size: 18px;
+  max-width: 1280px;
+  margin: auto;
 }
 
 h1 {
@@ -75,34 +77,3 @@ h3 {
   font-weight: 700;
   font-size: 24px;
 }
-
-/* Reset default styles */
-/* html,
-body,
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-} */
-
-/* Remove list styles */
-/* ul,
-ol {
-  list-style: none;
-} */
-
-/* Remove link underline */
-/* a {
-  text-decoration: none;
-} */
-
-/* font-weight: 400; regular */
-
-/* em {
-  font-weight: 700; bold 
-} */
-
-/* h1 {
-  font-style: italic;
-  font-weight: 900;  black italic 
-} */
