@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./filters.module.css";
 
-function Filters({ setSortOrder }) {
+function Filters({ setSortOrder, setSelectedCategory }) {
   const handleSortClick = (event) => {
     const element = event.target;
     const icons = document.querySelectorAll(`.${styles.filter} img`);
@@ -38,8 +38,20 @@ function Filters({ setSortOrder }) {
           />
           <div>Фильтровать по цене</div>
         </div>
+
         <h2>Каталог</h2>
-        <div>Категории</div>
+
+        <div>
+          <select
+            className={styles.select}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
+            <option value="">Категории</option>
+            <option value="keyboard">Клавиатуры</option>
+            <option value="keycap">Клавиша</option>
+            <option value="keycaps">Клавиши</option>
+          </select>
+        </div>
       </div>
     </>
   );

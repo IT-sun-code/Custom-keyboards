@@ -7,6 +7,7 @@ import Filters from "./filters/filters";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,12 +29,23 @@ const Home = () => {
     }
   }, [cards, sortOrder]);
 
+  const filteredCards = useMemo(() => {
+    if (selectedCategory === "") {
+      return sortedCards;
+    } else {
+      return sortedCards.filter((card) => card.category === selectedCategory);
+    }
+  }, [selectedCategory, sortedCards]);
+
   return (
     <>
-      <Filters setSortOrder={setSortOrder} />
+      <Filters
+        setSortOrder={setSortOrder}
+        setSelectedCategory={setSelectedCategory}
+      />
 
       <div className={styles.container}>
-        {sortedCards.map((card) => (
+        {filteredCards.map((card) => (
           <Card key={card.id} card={card} />
         ))}
       </div>
