@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./card.module.css";
 
 const Card = ({ card }) => {
@@ -20,11 +21,13 @@ const Card = ({ card }) => {
           />
           <img className={styles.image} src={card.image} alt="keyboard" />
           <div>
-            <p className={styles.description}>
-              {str.length > maxLength
-                ? str.substring(0, maxLength - 3) + "..."
-                : str}
-            </p>
+            <div title={str} className={styles.tooltip}>
+              <p className={styles.description}>
+                {str.length > maxLength
+                  ? str.substring(0, maxLength - 3) + "..."
+                  : str}
+              </p>
+            </div>
             <p className={styles.description}>{`Артикул ${card.id}`}</p>
             <h3>{`Цена: ${card.price} ₽`}</h3>
           </div>

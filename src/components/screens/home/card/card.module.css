@@ -14,7 +14,8 @@
   border-radius: 50px;
   margin-bottom: 24px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s, box-shadow 0.2s, cursor 0.2s;
+  transition: transform 0.5s, box-shadow 0.2s, cursor 0.2s;
+  animation: ease-in-out;
 }
 
 .image:hover {
@@ -27,6 +28,10 @@
   padding-bottom: 8px;
 }
 
+.tooltip:hover {
+  cursor: pointer;
+}
+
 .heart {
   position: absolute;
   top: 24px;
@@ -34,6 +39,7 @@
   height: 48px;
   z-index: 1;
   transition-duration: 0.2s;
+  animation: ease-in-out;
 }
 .heart:hover {
   cursor: pointer;
@@ -46,6 +52,7 @@
   right: 24px;
   height: 53px;
   transition-duration: 0.2s;
+  animation: ease-in-out;
 }
 
 .basket:hover {

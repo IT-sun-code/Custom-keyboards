@@ -1,0 +1,37 @@
+.footer {
+  text-align: center;
+}
+
+.messengers {
+  font-size: 32px;
+  margin-bottom: 80px;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.icons img {
+  width: 100px;
+  transition-duration: 0.4s;
+  animation: ease-in;
+}
+
+.icons img:hover {
+  opacity: 80%;
+}
+
+.icons a {
+  margin: 0 32px 16px 32px;
+}
+
+.contact {
+  margin-top: 40px;
+}
+
+.copyright {
+  margin-bottom: 40px;
+}

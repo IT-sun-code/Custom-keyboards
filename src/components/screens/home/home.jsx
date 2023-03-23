@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import Card from "./card/card";
 import styles from "../home/home.module.css";
+import Footer from "../../ui/footer/footer";
+import Filters from "./filters/filters";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -14,31 +16,29 @@ const Home = () => {
     fetchData();
   }, []);
 
+  const [sortOrder, setSortOrder] = useState(null);
+
+  const sortedCards = useMemo(() => {
+    if (sortOrder === "asc") {
+      return [...cards].sort((a, b) => a.price - b.price);
+    } else if (sortOrder === "desc") {
+      return [...cards].sort((a, b) => b.price - a.price);
+    } else {
+      return cards;
+    }
+  }, [cards, sortOrder]);
+
   return (
     <>
-      <div className={styles.catalog}>
-        <div className={styles.filter}>
-          <img
-            className={styles.desc}
-            src="/icons/actionIcons/arrowSortDesc.svg"
-            alt="arrowSortDesc"
-          />
-          <img
-            className={styles.asc}
-            src="/icons/actionIcons/arrowSortAsc.svg"
-            alt="arrowSortAsc"
-          />
-          <div>Фильтровать по цене</div>
-        </div>
-        <h2>Каталог</h2>
-        <div>Категории</div>
-      </div>
+      <Filters setSortOrder={setSortOrder} />
 
       <div className={styles.container}>
-        {cards.map((card) => (
+        {sortedCards.map((card) => (
           <Card key={card.id} card={card} />
         ))}
       </div>
+
+      <Footer />
     </>
   );
 };

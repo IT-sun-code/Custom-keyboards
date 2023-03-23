@@ -3,28 +3,28 @@
     {
       "id": 1,
       "title": "Ducky One 3 SF White",
-      "price": 5000,
+      "price": 4700,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard1.jpg"
     },
     {
       "id": 2,
       "title": "Varmilo Minilo Eucalyptus VXH67 Hot-Swap",
-      "price": 5000,
+      "price": 4999,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard2.jpg"
     },
     {
       "id": 3,
       "title": "Ducky One 3 Fuji",
-      "price": 5000,
+      "price": 4999,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard3.jpg"
     },
     {
       "id": 4,
       "title": "Mistel Barocco MD770RGB Black",
-      "price": 5000,
+      "price": 5200,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard4.jpg"
     },
@@ -38,70 +38,70 @@
     {
       "id": 6,
       "title": "Mistel Barocco MD770RGB BT Black",
-      "price": 5000,
+      "price": 5500,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard6.jpg"
     },
     {
       "id": 7,
       "title": "Varmilo Numpad Panda VA21M",
-      "price": 5000,
+      "price": 2995,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard7.jpg"
     },
     {
       "id": 8,
       "title": "Varmilo VA21M Sea Melody",
-      "price": 5000,
+      "price": 2700,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard8.jpg"
     },
     {
       "id": 9,
       "title": "Leopold FC210TP PD",
-      "price": 5000,
+      "price": 2300,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard9.jpg"
     },
     {
       "id": 10,
       "title": "Клавиша ZOMO «Лапка Панды»",
-      "price": 5000,
+      "price": 1400,
       "category": "keycap",
       "image": "/images/keycaps/keycapsPreview/keycap1.jpg"
     },
     {
       "id": 11,
       "title": "Клавиша ZOMO «Butterfly»",
-      "price": 5000,
+      "price": 1600,
       "category": "keycap",
       "image": "/images/keycaps/keycapsPreview/keycap2.jpg"
     },
     {
       "id": 12,
       "title": "Клавиша ZOMO «Hand of Midas»",
-      "price": 5000,
+      "price": 1600,
       "category": "keycap",
       "image": "/images/keycaps/keycapsPreview/keycap3.jpg"
     },
     {
       "id": 13,
       "title": "Клавиши Tai-Hao «Rubber Red»",
-      "price": 5000,
+      "price": 2999,
       "category": "keycaps",
       "image": "/images/keycaps/keycapsPreview/keycap4.jpg"
     },
     {
       "id": 14,
       "title": "Клавиши Tai-Hao «Rubber Sky Blue»",
-      "price": 5000,
+      "price": 2999,
       "category": "keycaps",
       "image": "/images/keycaps/keycapsPreview/keycap5.jpg"
     },
     {
       "id": 15,
       "title": "Клавиши Tai-Hao «Rubber Neon Orange»",
-      "price": 5000,
+      "price": 2999,
       "category": "keycaps",
       "image": "/images/keycaps/keycapsPreview/keycap6.jpg"
     }

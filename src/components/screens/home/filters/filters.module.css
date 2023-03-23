@@ -1,0 +1,54 @@
+.catalog {
+  display: flex;
+  margin: 0 15px 80px 15px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.filter {
+  display: inherit;
+  align-items: inherit;
+}
+
+.reset {
+  opacity: 50%;
+  margin-right: 8px;
+  width: 24px;
+  transition-duration: 0.2s;
+  animation: ease-in-out;
+}
+
+.reset:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.desc {
+  opacity: 50%;
+  margin-right: 8px;
+  width: 24px;
+  transition-duration: 0.2s;
+  animation: ease-in-out;
+}
+
+.desc:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.asc {
+  opacity: 50%;
+  margin-right: 18px;
+  width: 24px;
+  transition-duration: 0.2s;
+  animation: ease-in-out;
+}
+
+.asc:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.active {
+  opacity: 100%;
+}
