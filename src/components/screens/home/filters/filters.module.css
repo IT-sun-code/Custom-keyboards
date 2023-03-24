@@ -10,40 +10,18 @@
   align-items: inherit;
 }
 
-.reset {
-  opacity: 50%;
-  margin-right: 8px;
-  width: 24px;
-  transition-duration: 0.2s;
-  animation: ease-in-out;
-}
-
-.reset:hover {
-  opacity: 100%;
-  cursor: pointer;
-}
-
-.desc {
-  opacity: 50%;
-  margin-right: 8px;
-  width: 24px;
-  transition-duration: 0.2s;
-  animation: ease-in-out;
-}
-
-.desc:hover {
-  opacity: 100%;
-  cursor: pointer;
-}
-
+.reset,
+.desc,
 .asc {
   opacity: 50%;
-  margin-right: 18px;
+  margin-right: 8px;
   width: 24px;
   transition-duration: 0.2s;
   animation: ease-in-out;
 }
 
+.reset:hover,
+.desc:hover,
 .asc:hover {
   opacity: 100%;
   cursor: pointer;

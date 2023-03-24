@@ -33,28 +33,26 @@
 }
 
 .heart {
-  position: absolute;
   top: 24px;
   right: 24px;
   height: 48px;
   z-index: 1;
-  transition-duration: 0.2s;
-  animation: ease-in-out;
-}
-.heart:hover {
-  cursor: pointer;
-  opacity: 50%;
 }
 
 .basket {
-  position: absolute;
   bottom: 0;
   right: 24px;
   height: 53px;
+}
+
+.heart,
+.basket {
+  position: absolute;
   transition-duration: 0.2s;
   animation: ease-in-out;
 }
 
+.heart:hover,
 .basket:hover {
   cursor: pointer;
   opacity: 50%;
