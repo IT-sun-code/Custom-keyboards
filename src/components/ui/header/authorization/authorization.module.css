@@ -1,0 +1,10 @@
+.signUp,
+.signIn {
+  transition: font-weight 0.2s ease-in-out;
+}
+
+.signUp:hover,
+.signIn:hover {
+  cursor: pointer;
+  font-weight: 700;
+}

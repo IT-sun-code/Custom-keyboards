@@ -5,4 +5,5 @@
 
 .logo:hover {
   cursor: pointer;
+  opacity: 70%;
 }
