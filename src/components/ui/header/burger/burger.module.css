@@ -1,0 +1,56 @@
+.burgerMenu {
+  position: relative;
+  z-index: 1;
+}
+
+.icon {
+  width: 30px;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.bar {
+  display: block;
+  width: 100%;
+  height: 5px;
+  margin: 5px 0;
+  background-color: #000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.icon.active .bar:first-child {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.icon.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.icon.active .bar:last-child {
+  transform: translateY(-10px) rotate(-45deg);
+}

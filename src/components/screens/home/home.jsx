@@ -5,6 +5,8 @@ import styles from "../home/home.module.css";
 import Footer from "../../ui/footer/footer";
 import Filters from "./filters/filters";
 import Loading from "../../loader/loading";
+import Burger from "../../ui/header/burger/burger";
+import Logo from "../../ui/header/logo/logo";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -42,6 +44,8 @@ const Home = () => {
 
   return (
     <>
+      <Burger />
+      <Logo />
       <Filters
         setSortOrder={setSortOrder}
         setSelectedCategory={setSelectedCategory}
