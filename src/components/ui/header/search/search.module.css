@@ -1,0 +1,11 @@
+.search {
+  width: 370px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding-left: 10px;
+}
+
+.search:focus {
+  outline: 2px solid rgb(171, 213, 255);
+}

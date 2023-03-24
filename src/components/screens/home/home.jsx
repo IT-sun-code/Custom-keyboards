@@ -8,6 +8,7 @@ import Loading from "../../loader/loading";
 import Burger from "../../ui/header/burger/burger";
 import Logo from "../../ui/header/logo/logo";
 import Authorization from "../../ui/header/authorization/authorization";
+import Search from "../../ui/header/search/search";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -48,6 +49,7 @@ const Home = () => {
       <Burger />
       <Logo />
       <Authorization />
+      <Search />
 
       <Filters
         setSortOrder={setSortOrder}
