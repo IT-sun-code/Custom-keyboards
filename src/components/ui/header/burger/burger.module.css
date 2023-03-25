@@ -5,46 +5,61 @@
 
 .icon {
   width: 30px;
-  height: 5px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
 .icon:hover {
+  cursor: pointer;
   opacity: 50%;
 }
 
 .bar {
   display: block;
   width: 100%;
-  height: 5px;
-  margin: 5px 0;
+  height: 4px;
+  margin: 3px 0;
   background-color: #000;
-  transition: transform 0.3s ease-in-out;
+  transition-duration: 0.5s;
+  animation: ease-in-out;
 }
 
 .menu {
+  margin-top: 16px;
   position: absolute;
-  top: 32px;
-  left: 0;
-  width: 100%;
   background-color: #000;
+  border-radius: 30px;
   padding: 32px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  z-index: 2;
+  animation: slide-down 0.4s ease-in-out;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .item {
   font-size: 32px;
   color: #fff;
   margin-bottom: 32px;
+  transition-duration: 0.3s;
+  animation: ease-in-out;
+}
+
+.item:hover {
+  opacity: 70%;
+  cursor: pointer;
 }
 
 .icon.active .bar:first-child {

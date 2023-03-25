@@ -9,6 +9,8 @@ import Burger from "../../ui/header/burger/burger";
 import Logo from "../../ui/header/logo/logo";
 import Authorization from "../../ui/header/authorization/authorization";
 import Search from "../../ui/header/search/search";
+import UserPanel from "../../ui/header/userPanel/userPanel";
+import Header from "../../ui/header/header";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -46,10 +48,7 @@ const Home = () => {
 
   return (
     <>
-      <Burger />
-      <Logo />
-      <Authorization />
-      <Search />
+      <Header />
 
       <Filters
         setSortOrder={setSortOrder}

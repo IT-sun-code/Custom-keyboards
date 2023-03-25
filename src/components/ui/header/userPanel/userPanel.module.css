@@ -1,0 +1,14 @@
+.heart,
+.basket,
+.user {
+  margin: 0 12px;
+  transition-duration: 0.2s;
+  animation: ease-in-out;
+}
+
+.heart:hover,
+.basket:hover,
+.user:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
