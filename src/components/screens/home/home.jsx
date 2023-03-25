@@ -6,6 +6,9 @@ import styles from "../home/home.module.css";
 import Footer from "../../ui/footer";
 import Loading from "../../loading";
 import Header from "../../ui/header";
+import FirstHeading from "../../ui/heading/firstHeading";
+import SecondHeading from "../../ui/heading/secondHeading";
+import Heading from "../../ui/heading";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -44,6 +47,11 @@ const Home = () => {
   return (
     <>
       <Header />
+
+      <Heading>
+        <FirstHeading>КАСТОМНАЯ КЛАВИАТУРА</FirstHeading>
+        <SecondHeading>Делаем вашу работу комфортнее!</SecondHeading>
+      </Heading>
 
       <Filters
         setSortOrder={setSortOrder}
