@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "../header/header.module.css";
-import Burger from "./burger/burger";
-import Logo from "./logo/logo";
-import Search from "./search/search";
-import UserPanel from "./userPanel/userPanel";
-import Authorization from "./authorization/authorization";
+import styles from "./header.module.css";
+import Burger from "./burger";
+import Logo from "./logo";
+import Search from "./search";
+import UserPanel from "./userPanel";
+import Authorization from "./authorization";
 
 const Header = () => {
   return (

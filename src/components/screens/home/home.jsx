@@ -1,16 +1,11 @@
 import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
-import Card from "./card/card";
+import Card from "./card";
+import Filters from "./filters";
 import styles from "../home/home.module.css";
-import Footer from "../../ui/footer/footer";
-import Filters from "./filters/filters";
-import Loading from "../../loader/loading";
-import Burger from "../../ui/header/burger/burger";
-import Logo from "../../ui/header/logo/logo";
-import Authorization from "../../ui/header/authorization/authorization";
-import Search from "../../ui/header/search/search";
-import UserPanel from "../../ui/header/userPanel/userPanel";
-import Header from "../../ui/header/header";
+import Footer from "../../ui/footer";
+import Loading from "../../loading";
+import Header from "../../ui/header";
 
 const Home = () => {
   const [cards, setCards] = useState([]);

@@ -1,5 +1,5 @@
 import React from "react";
-import Line from "../line/line";
+import Line from "../line";
 import styles from "./footer.module.css";
 
 const Footer = () => {
