@@ -9,6 +9,7 @@ import Header from "../../ui/header";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
 import Heading from "../../ui/heading";
+import KeyboardMainSlide from "../../ui/keyboardMainSlide";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -47,6 +48,8 @@ const Home = () => {
   return (
     <>
       <Header />
+
+      <KeyboardMainSlide />
 
       <Heading>
         <FirstHeading>КАСТОМНАЯ КЛАВИАТУРА</FirstHeading>
