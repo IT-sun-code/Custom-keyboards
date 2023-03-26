@@ -11,7 +11,7 @@ import SecondHeading from "../../ui/heading/secondHeading";
 import Heading from "../../ui/heading";
 import KeyboardMainSlide from "../../ui/keyboardMainSlide";
 import KeyboardSlider from "../../ui/keyboardSlider";
-import Button from "../../ui/button/button";
+import Button from "../../ui/button";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
