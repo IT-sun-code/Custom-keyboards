@@ -1,0 +1,22 @@
+.button {
+  font-size: 32px;
+  padding: 12px 68px;
+  border-radius: 30px;
+}
+
+.buttonCtvBlack {
+  border: 4px solid black;
+}
+.buttonCtvBlack:hover {
+  background-color: black;
+  color: white;
+}
+
+.buttonCtvBlue {
+  border: 4px solid #20afff;
+}
+
+.buttonCtvBlue:hover {
+  background-color: #20afff;
+  color: white;
+}

@@ -10,6 +10,8 @@ import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
 import Heading from "../../ui/heading";
 import KeyboardMainSlide from "../../ui/keyboardMainSlide";
+import KeyboardSlider from "../../ui/keyboardSlider";
+import Button from "../../ui/button/button";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -54,6 +56,7 @@ const Home = () => {
       <Heading>
         <FirstHeading>КАСТОМНАЯ КЛАВИАТУРА</FirstHeading>
         <SecondHeading>Делаем вашу работу комфортнее!</SecondHeading>
+        <Button appearance="ctvBlue">Заказать</Button>
       </Heading>
 
       <Filters
@@ -70,6 +73,8 @@ const Home = () => {
           ))}
         </div>
       )}
+
+      <KeyboardSlider />
 
       <Footer />
     </>
