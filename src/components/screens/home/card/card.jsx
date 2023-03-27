@@ -3,7 +3,7 @@ import styles from "./card.module.css";
 
 const Card = ({ card }) => {
   const str = card.title;
-  const maxLength = 38;
+  const maxLength = 35;
 
   return (
     <>

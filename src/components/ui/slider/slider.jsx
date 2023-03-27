@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import styles from "./slider.module.css";
 
 const Slider = ({ slides }) => {
@@ -14,21 +14,26 @@ const Slider = ({ slides }) => {
 
   const selectImage = (index) => {
     setCurrentIndex(index);
-    console.log("tttttttttt");
   };
+
+  const image = useMemo(() => {
+    return (
+      <>
+        <img
+          src={slides[currentIndex].image}
+          alt="slide"
+          className={styles.image}
+        />
+      </>
+    );
+  }, [currentIndex]);
 
   return (
     <div className={styles.slider}>
       <div className={styles.imageContainer}>
-        {slides[currentIndex] && (
-          <img
-            src={slides[currentIndex].image}
-            alt="slide"
-            className={styles.image}
-          />
-        )}
+        {image}
 
-        <div className={styles.hi}>
+        <div>
           <img
             src="/icons/actionIcons/arrowSlideLeft.svg"
             alt="arrowSlideLeft"

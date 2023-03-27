@@ -35,6 +35,7 @@
   padding: 6px;
   border-radius: 15px;
   width: 300px;
+  outline: none;
 }
 
 .select:hover {
