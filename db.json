@@ -129,5 +129,35 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "employees": [
+    {
+      "id": 1,
+      "title": "Анастасия Курилко",
+      "subtitle": "Веб-разработчик",
+      "description": "Lorem ipsum dolor sit amet consectetur.Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod malesuada penatibus. Donec imperdiet bibendum dui ut scelerisque. Tincidunt amet pharetra ullamcorper sem quis enim. Odio neque integer in aliquam pharetra odio ac. ",
+      "image": "/images/avatars/avatar1.svg"
+    },
+    {
+      "id": 2,
+      "title": "Рюрик Князюк",
+      "subtitle": "Техподдержка",
+      "description": "Lorem ipsum dolor sit amet consectetur.Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod malesuada penatibus. Donec imperdiet bibendum dui ut scelerisque. Tincidunt amet pharetra ullamcorper sem quis enim. Odio neque integer in aliquam pharetra odio ac. ",
+      "image": "/images/avatars/avatar2.svg"
+    },
+    {
+      "id": 3,
+      "title": "Ария Еремина",
+      "subtitle": "Администратор",
+      "description": "Lorem ipsum dolor sit amet consectetur.Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod malesuada penatibus. Donec imperdiet bibendum dui ut scelerisque. Tincidunt amet pharetra ullamcorper sem quis enim. Odio neque integer in aliquam pharetra odio ac. ",
+      "image": "/images/avatars/avatar3.svg"
+    },
+    {
+      "id": 4,
+      "title": "Константин Марков",
+      "subtitle": "Основатель бренда",
+      "description": "Lorem ipsum dolor sit amet consectetur.Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod malesuada penatibus. Donec imperdiet bibendum dui ut scelerisque. Tincidunt amet pharetra ullamcorper sem quis enim. Odio neque integer in aliquam pharetra odio ac. ",
+      "image": "/images/avatars/avatar4.svg"
+    }
+  ]
 }

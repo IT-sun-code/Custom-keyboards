@@ -1,0 +1,15 @@
+.textBlock {
+  width: 770px;
+  padding: 40px 98px;
+  border: 3px solid black;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.title {
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  margin-bottom: 36px;
+}

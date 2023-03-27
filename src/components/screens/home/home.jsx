@@ -12,8 +12,9 @@ import Heading from "../../ui/heading";
 import KeyboardMainSlide from "../../ui/keyboardMainSlide";
 import KeyboardSlider from "../../ui/keyboardSlider";
 import Button from "../../ui/button";
-// import Constructor from "../constructor";
-// import Page404 from "../page404";
+import AboutUs from "../aboutUs";
+import Constructor from "../constructor";
+import Page404 from "../page404";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -51,8 +52,10 @@ const Home = () => {
 
   return (
     <>
+      {/* <AboutUs /> */}
       {/* <Constructor /> */}
       {/* <Page404 /> */}
+
       <Header />
 
       <KeyboardMainSlide />
