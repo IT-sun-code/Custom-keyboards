@@ -15,6 +15,7 @@ import Button from "../../ui/button";
 import AboutUs from "../aboutUs";
 import Constructor from "../constructor";
 import Page404 from "../page404";
+import Modal from "../../ui/modal";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -50,8 +51,30 @@ const Home = () => {
     }
   }, [selectedCategory, sortedCards]);
 
+  // Модальное окно______________________________________________________________
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setModalOpen(true);
+    console.log("open");
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
+
   return (
     <>
+      <div>
+        <button onClick={handleModalOpen}>Открыть модальное окно</button>
+        <Modal isOpen={modalOpen} onClose={handleModalClose}>
+          <p className={styles.modalText}>
+            Заказ успешно оформлен!
+            <br /> Информацию о заказе вы можете посмотреть в личном кабинете.
+          </p>
+        </Modal>
+      </div>
+
       {/* <AboutUs /> */}
       {/* <Constructor /> */}
       {/* <Page404 /> */}

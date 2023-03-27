@@ -1,0 +1,78 @@
+.overlayOpen {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-out;
+  z-index: 100;
+}
+
+.overlayClosed {
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-out;
+  z-index: -1;
+}
+
+.modalOpen {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 50px;
+  position: relative;
+  padding: 40px 88px;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modalClosed {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 50px;
+  position: relative;
+  padding: 40px 88px;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+  border: none;
+}
+
+.content {
+  width: 785px;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 48px;
+}
+
+.logo {
+  width: 100%;
+  border-radius: 30px;
+  margin: 32px 0;
+}
+
+.warning {
+  margin-bottom: 55px;
+}
