@@ -67,7 +67,7 @@ const Home = () => {
     <>
       <div>
         <button onClick={handleModalOpen}>Открыть модальное окно</button>
-        <Modal isOpen={modalOpen} onClose={handleModalClose}>
+        <Modal variety="" isOpen={modalOpen} onClose={handleModalClose}>
           <p className={styles.modalText}>
             Заказ успешно оформлен!
             <br /> Информацию о заказе вы можете посмотреть в личном кабинете.

@@ -3,7 +3,7 @@ import styles from "./modal.module.css";
 import Button from "../button";
 import Portal from "../../utils/portal";
 
-const Modal = ({ isOpen, onClose, children }) => {
+const Modal = ({ variety, isOpen, onClose, children }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -47,18 +47,56 @@ const Modal = ({ isOpen, onClose, children }) => {
           </button>
 
           <div className={styles.content}>
-            <h2 className={styles.heading}>Поздравляем!</h2>
-            {children}
-            <img
-              className={styles.logo}
-              src="/images/logoInForm/logoInForm.jpg"
-              alt="logo"
-            />
-            <p className={styles.warning}>
-              <b>ВНИМАНИЕ!</b> Доставка осуществляется в течение 30-и дней с
-              момента заказа
-            </p>
-            <Button appearance="ctvBlue">Смотреть</Button>
+            {variety === "success" ? (
+              <>
+                <h2 className={styles.heading}>Поздравляем!</h2>
+                {children}
+                <img
+                  className={styles.logo}
+                  src="/images/logoInForm/logoInForm.jpg"
+                  alt="logo"
+                />
+                <p className={styles.warning}>
+                  <b>ВНИМАНИЕ!</b> Доставка осуществляется в течение 30-и дней с
+                  момента заказа
+                </p>
+                <Button appearance="ctvBlue">Смотреть</Button>
+              </>
+            ) : variety === "order" ? (
+              <>
+                <h2 className={styles.heading}>Оформление заказа</h2>
+                <p className={styles.warning}>
+                  <b className={styles.warning}>
+                    ВНИМАНИЕ! Оплата при получении!
+                  </b>
+                </p>
+                <Button appearance="ctvBlue">Готово</Button>
+              </>
+            ) : variety === "signIn" ? (
+              <>
+                <h2 className={styles.heading}>Войдите в свой аккаунт</h2>
+                <p className={styles.warning}>
+                  <b>ВНИМАНИЕ!</b> Доставка осуществляется в течение 30-и дней с
+                  момента заказа
+                </p>
+                <div className={styles.btnContainer}>
+                  <Button appearance="ctvBlue">Войти</Button>
+                  <Button appearance="ctvBlack">Зарегистрироваться</Button>
+                </div>
+              </>
+            ) : (
+              <>
+                <h2 className={styles.heading}>Зарегистрируйтесь на сайте</h2>
+                <p className={styles.warning}>
+                  <b>ВНИМАНИЕ!</b> Доставка осуществляется в течение 30-и дней с
+                  момента заказа
+                </p>
+                <div className={styles.btnContainer}>
+                  <Button appearance="ctvBlack">Войти</Button>
+                  <Button appearance="ctvBlue">Зарегистрироваться</Button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -76,3 +76,8 @@
 .warning {
   margin-bottom: 55px;
 }
+
+.btnContainer {
+  display: flex;
+  justify-content: space-around;
+}
