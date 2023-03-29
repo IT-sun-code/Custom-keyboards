@@ -21,6 +21,7 @@ const Home = () => {
   const [cards, setCards] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,12 +45,33 @@ const Home = () => {
   }, [cards, sortOrder]);
 
   const filteredCards = useMemo(() => {
-    if (selectedCategory === "") {
-      return sortedCards;
-    } else {
+    if (selectedCategory !== "") {
       return sortedCards.filter((card) => card.category === selectedCategory);
     }
-  }, [selectedCategory, sortedCards]);
+    if (search !== "") {
+      return sortedCards.filter(
+        (card) =>
+          card.title.toLowerCase().indexOf(search.toLowerCase().trim()) !== -1
+      );
+    }
+    return sortedCards;
+  }, [sortedCards, selectedCategory, search]);
+
+  useEffect(() => {
+    if (selectedCategory !== "") {
+      setSearch("");
+    }
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    if (search !== "") {
+      setSelectedCategory("");
+    }
+  }, [search]);
+
+  const handleSearch = (value) => {
+    setSearch(value);
+  };
 
   // Модальное окно______________________________________________________________
   const [modalOpen, setModalOpen] = useState(false);
@@ -74,26 +96,26 @@ const Home = () => {
           </p>
         </Modal>
       </div>
-
+      {/* // Модальное окно______________________________________________________________ */}
       {/* <AboutUs /> */}
       {/* <Constructor /> */}
       {/* <Page404 /> */}
 
-      <Header />
+      {/* <Header /> */}
+
+      <Header onSearch={handleSearch} selectedCategory={selectedCategory} />
 
       <KeyboardMainSlide />
-
       <Heading>
         <FirstHeading>КАСТОМНАЯ КЛАВИАТУРА</FirstHeading>
         <SecondHeading>Делаем вашу работу комфортнее!</SecondHeading>
         <Button appearance="ctvBlue">Заказать</Button>
       </Heading>
-
       <Filters
         setSortOrder={setSortOrder}
         setSelectedCategory={setSelectedCategory}
+        selectedCategory={selectedCategory}
       />
-
       {isLoading ? (
         <Loading />
       ) : (
@@ -103,9 +125,7 @@ const Home = () => {
           ))}
         </div>
       )}
-
       <KeyboardSlider />
-
       <Footer />
     </>
   );

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./filters.module.css";
 
-function Filters({ setSortOrder, setSelectedCategory }) {
+function Filters({ setSortOrder, setSelectedCategory, selectedCategory }) {
   const handleSortClick = (event) => {
     const element = event.target;
     const icons = document.querySelectorAll(`.${styles.filter} img`);
@@ -16,6 +16,12 @@ function Filters({ setSortOrder, setSelectedCategory }) {
       setSortOrder(null);
     }
   };
+
+  const selectRef = useRef(null);
+
+  useEffect(() => {
+    selectRef.current.value = selectedCategory;
+  }, [selectedCategory]);
 
   return (
     <>
@@ -43,6 +49,7 @@ function Filters({ setSortOrder, setSelectedCategory }) {
 
         <div>
           <select
+            ref={selectRef}
             className={styles.select}
             onChange={(e) => setSelectedCategory(e.target.value)}
           >

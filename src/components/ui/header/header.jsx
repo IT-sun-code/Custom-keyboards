@@ -6,17 +6,15 @@ import Search from "./search";
 import UserPanel from "./userPanel";
 import Authorization from "./authorization";
 
-const Header = () => {
+const Header = ({ onSearch, selectedCategory }) => {
   return (
-    <>
-      <header className={styles.header}>
-        <Burger />
-        <Logo />
-        <Search />
-        <UserPanel />
-        <Authorization />
-      </header>
-    </>
+    <header className={styles.header}>
+      <Burger />
+      <Logo />
+      <Search onSearch={onSearch} selectedCategory={selectedCategory} />
+      <UserPanel />
+      <Authorization />
+    </header>
   );
 };
 

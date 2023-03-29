@@ -2,63 +2,63 @@
   "cards": [
     {
       "id": 1,
-      "title": "Ducky One 3 SF White",
+      "title": "Клавиатура Ducky One 3 SF White",
       "price": 4700,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard1.jpg"
     },
     {
       "id": 2,
-      "title": "Varmilo Minilo Eucalyptus VXH67 Hot-Swap",
+      "title": "Клавиатура Varmilo Minilo Eucalyptus VXH67 Hot-Swap",
       "price": 4999,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard2.jpg"
     },
     {
       "id": 3,
-      "title": "Ducky One 3 Fuji",
+      "title": "Клавиатура Ducky One 3 Fuji",
       "price": 4999,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard3.jpg"
     },
     {
       "id": 4,
-      "title": "Mistel Barocco MD770RGB Black",
+      "title": "Клавиатура Mistel Barocco MD770RGB Black",
       "price": 5200,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard4.jpg"
     },
     {
       "id": 5,
-      "title": "Varmilo Vintage Days CMYK V2 87",
+      "title": "Клавиатура Varmilo Vintage Days CMYK V2 87",
       "price": 5000,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard5.jpg"
     },
     {
       "id": 6,
-      "title": "Mistel Barocco MD770RGB BT Black",
+      "title": "Клавиатура Mistel Barocco MD770RGB BT Black",
       "price": 5500,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard6.jpg"
     },
     {
       "id": 7,
-      "title": "Varmilo Numpad Panda VA21M",
+      "title": "Клавиатура Varmilo Numpad Panda VA21M",
       "price": 2995,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard7.jpg"
     },
     {
       "id": 8,
-      "title": "Varmilo VA21M Sea Melody",
+      "title": "Клавиатура Varmilo VA21M Sea Melody",
       "price": 2700,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard8.jpg"
     },
     {
       "id": 9,
-      "title": "Leopold FC210TP PD",
+      "title": "Клавиатура Leopold FC210TP PD",
       "price": 2300,
       "category": "keyboard",
       "image": "/images/keyboards/keyboardsPreview/keyboard9.jpg"
