@@ -45,17 +45,20 @@ const Home = () => {
   }, [cards, sortOrder]);
 
   const filteredCards = useMemo(() => {
+    let filtered = sortedCards;
     if (selectedCategory !== "") {
-      return sortedCards.filter((card) => card.category === selectedCategory);
+      filtered = filtered.filter((card) => card.category === selectedCategory);
     }
     if (search !== "") {
-      return sortedCards.filter(
+      filtered = filtered.filter(
         (card) =>
           card.title.toLowerCase().indexOf(search.toLowerCase().trim()) !== -1
       );
     }
-    return sortedCards;
+    return filtered;
   }, [sortedCards, selectedCategory, search]);
+
+  const noResults = search !== "" && filteredCards.length === 0;
 
   useEffect(() => {
     if (selectedCategory !== "") {
@@ -119,11 +122,17 @@ const Home = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className={styles.container}>
-          {filteredCards.map((card) => (
-            <Card key={card.id} card={card} />
-          ))}
-        </div>
+        <>
+          {noResults ? (
+            <SecondHeading>Ничего не найдено...</SecondHeading>
+          ) : (
+            <div className={styles.container}>
+              {filteredCards.map((card) => (
+                <Card key={card.id} card={card} />
+              ))}
+            </div>
+          )}
+        </>
       )}
       <KeyboardSlider />
       <Footer />

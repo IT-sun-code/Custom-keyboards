@@ -5,6 +5,7 @@ const Search = ({ onSearch, search }) => {
   const handleSearch = (event) => {
     const value = event.target.value;
     onSearch(value);
+    // console.log(value);
   };
 
   return (
