@@ -103,7 +103,7 @@ const Home = () => {
 
       {/* <Header /> */}
 
-      <Header onSearch={handleSearch} selectedCategory={selectedCategory} />
+      <Header onSearch={handleSearch} search={search} />
 
       <KeyboardMainSlide />
       <Heading>

@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./search.module.css";
 
-const Search = ({ onSearch, selectedCategory }) => {
-  const [searchQuery, setSearchQuery] = useState("");
-
+const Search = ({ onSearch, search }) => {
   const handleSearch = (event) => {
     const value = event.target.value;
-    setSearchQuery(value);
     onSearch(value);
   };
-
-  useEffect(() => {
-    if (selectedCategory !== "") {
-      setSearchQuery("");
-    }
-  }, [selectedCategory]);
 
   return (
     <input
@@ -23,7 +14,7 @@ const Search = ({ onSearch, selectedCategory }) => {
       placeholder="Поиск..."
       name="search"
       autoFocus
-      value={searchQuery}
+      value={search}
       onChange={handleSearch}
     />
   );
