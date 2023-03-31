@@ -4,7 +4,7 @@ import Card from "./card";
 import Filters from "./filters";
 import styles from "../home/home.module.css";
 import Footer from "../../ui/footer";
-import Loading from "../../loading";
+import Loading from "../../ui/loading";
 import Header from "../../ui/header";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
@@ -16,6 +16,7 @@ import AboutUs from "../aboutUs";
 import Constructor from "../constructor";
 import Page404 from "../page404";
 import Modal from "../../ui/modal";
+import { CardsService } from "../../services/cardsService";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -25,8 +26,8 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/cards");
-      setCards(response.data);
+      const data = await CardsService.getAll();
+      setCards(data);
       setIsLoading(false);
     };
     fetchData();

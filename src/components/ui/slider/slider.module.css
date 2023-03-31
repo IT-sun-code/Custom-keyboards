@@ -1,28 +1,35 @@
 .slider {
   position: relative;
-  margin-bottom: 120px;
 }
 
 .imageContainer {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .image {
+  position: relative;
   max-width: 100%;
   max-height: 100%;
-  border-radius: 50px;
+  border-radius: 49px;
 }
 
 .arrow {
   position: absolute;
   opacity: 0;
   transition-duration: 0.4s;
-  padding-top: 25.5%;
-  padding-bottom: 25.5%;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.percentagesHigher {
+  padding-top: 25.5%;
+  padding-bottom: 25.5%;
+}
+
+.percentagesLower {
+  padding-top: 22.7%;
+  padding-bottom: 22.7%;
 }
 
 .left {
@@ -48,8 +55,8 @@
 }
 
 .dot {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   margin: 0 5px;
   border: 2px solid black;

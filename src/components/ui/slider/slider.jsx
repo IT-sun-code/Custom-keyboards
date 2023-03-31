@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from "react";
 import styles from "./slider.module.css";
+import cn from "classnames";
 
-const Slider = ({ slides }) => {
+const Slider = ({ slides, appearance }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
@@ -29,41 +30,66 @@ const Slider = ({ slides }) => {
   }, [currentIndex]);
 
   return (
-    <div className={styles.slider}>
-      <div className={styles.imageContainer}>
-        {image}
+    <>
+      <div className={styles.slider}>
+        <div className={styles.imageContainer}>
+          {image}
 
-        <div>
-          <img
-            src="/icons/actionIcons/arrowSlideLeft.svg"
-            alt="arrowSlideLeft"
-            onClick={previousImage}
-            className={`${styles.arrow} ${styles.left}`}
-          />
-        </div>
+          {slides.length > 1 && (
+            <>
+              <div>
+                <img
+                  src="/icons/actionIcons/arrowSlideLeft.svg"
+                  alt="arrowSlideLeft"
+                  onClick={previousImage}
+                  className={cn(
+                    styles.arrow,
+                    styles.left,
+                    {
+                      [styles.percentagesHigher]:
+                        appearance === "percentagesHigher",
+                      [styles.percentagesLower]:
+                        appearance === "percentagesLower",
+                    },
+                    []
+                  )}
+                />
+              </div>
 
-        <div>
-          <img
-            src="/icons/actionIcons/arrowSlideRight.svg"
-            alt="arrowSlideRight"
-            onClick={nextImage}
-            className={`${styles.arrow} ${styles.right}`}
-          />
+              <div>
+                <img
+                  src="/icons/actionIcons/arrowSlideRight.svg"
+                  alt="arrowSlideRight"
+                  onClick={nextImage}
+                  className={cn(
+                    styles.arrow,
+                    styles.right,
+                    {
+                      [styles.percentagesHigher]:
+                        appearance === "percentagesHigher",
+                      [styles.percentagesLower]:
+                        appearance === "percentagesLower",
+                    },
+                    []
+                  )}
+                />
+              </div>
+              <div className={styles.controls}>
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => selectImage(index)}
+                    className={`${styles.dot} ${
+                      currentIndex === index ? styles.active : ""
+                    }`}
+                  ></button>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </div>
-
-      <div className={styles.controls}>
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => selectImage(index)}
-            className={`${styles.dot} ${
-              currentIndex === index ? styles.active : ""
-            }`}
-          ></button>
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 

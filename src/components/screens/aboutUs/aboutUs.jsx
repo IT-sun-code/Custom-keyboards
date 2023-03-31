@@ -6,7 +6,7 @@ import SecondHeading from "../../ui/heading/secondHeading";
 import Header from "../../ui/header";
 import Footer from "../../ui/footer";
 import styles from "./aboutUs.module.css";
-import Loading from "../../loading";
+import Loading from "../../ui/loading";
 import TextBlock from "../../ui/textBlock/textBlock";
 
 const AboutUs = () => {

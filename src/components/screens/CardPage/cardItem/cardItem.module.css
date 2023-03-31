@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.item {
+  width: 960px;
+  background-color: #fff;
+  border: 3px solid black;
+  border-radius: 50px;
+  height: fit-content;
+}
+
+.characteristics {
+  text-align: left;
+  width: 100%;
+  padding: 0 100px;
+  height: fit-content;
+  margin-top: 534px;
+  margin-bottom: 50px;
+}
+
+.title {
+  margin-bottom: 8px;
+}
+
+.sku {
+  margin-bottom: 16px;
+}
+
+.actionBlock {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 34px;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.heart,
+.basket {
+  height: 48px;
+}
+
+.heart:hover,
+.basket:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.slide {
+  border: 3px solid #20afff;
+  border-radius: 50px;
+  box-shadow: 0px 4px 20px rgba(32, 175, 255, 0.4);
+  position: absolute;
+  top: 0;
+  width: 960px;
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+}

@@ -4,7 +4,7 @@ import Line from "../line";
 import Button from "../button";
 import Slider from "../slider";
 import axios from "axios";
-import Loading from "../../loading";
+import Loading from "../loading";
 
 const KeyboardSlider = () => {
   const [slides, setSlides] = useState([]);
@@ -32,7 +32,11 @@ const KeyboardSlider = () => {
         </div>
       </div>
 
-      {isLoading ? <Loading /> : <Slider slides={slides} />}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Slider slides={slides} appearance={"percentagesHigher"} />
+      )}
     </>
   );
 };

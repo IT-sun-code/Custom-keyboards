@@ -5,105 +5,357 @@
       "title": "Клавиатура Ducky One 3 SF White",
       "price": 4700,
       "category": "keyboard",
-      "image": "/images/keyboards/keyboardsPreview/keyboard1.jpg"
+      "image": "/images/keyboards/keyboardsPreview/keyboard1.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 2,
       "title": "Клавиатура Varmilo Minilo Eucalyptus VXH67 Hot-Swap",
       "price": 4999,
       "category": "keyboard",
-      "image": "/images/keyboards/keyboardsPreview/keyboard2.jpg"
+      "image": "/images/keyboards/keyboardsPreview/keyboard2.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 3,
       "title": "Клавиатура Ducky One 3 Fuji",
       "price": 4999,
       "category": "keyboard",
-      "image": "/images/keyboards/keyboardsPreview/keyboard3.jpg"
+      "image": "/images/keyboards/keyboardsPreview/keyboard3.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 4,
       "title": "Клавиатура Mistel Barocco MD770RGB Black",
       "price": 5200,
       "category": "keyboard",
-      "image": "/images/keyboards/keyboardsPreview/keyboard4.jpg"
+      "image": "/images/keyboards/keyboardsPreview/keyboard4.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 5,
       "title": "Клавиатура Varmilo Vintage Days CMYK V2 87",
       "price": 5000,
       "category": "keyboard",
-      "image": "/images/keyboards/keyboardsPreview/keyboard5.jpg"
+      "image": "/images/keyboards/keyboardsPreview/keyboard5.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 6,
       "title": "Клавиатура Mistel Barocco MD770RGB BT Black",
       "price": 5500,
       "category": "keyboard",
-      "image": "/images/keyboards/keyboardsPreview/keyboard6.jpg"
+      "image": "/images/keyboards/keyboardsPreview/keyboard6.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 7,
       "title": "Клавиатура Varmilo Numpad Panda VA21M",
       "price": 2995,
       "category": "keyboard",
-      "image": "/images/keyboards/keyboardsPreview/keyboard7.jpg"
+      "image": "/images/keyboards/keyboardsPreview/keyboard7.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 8,
       "title": "Клавиатура Varmilo VA21M Sea Melody",
       "price": 2700,
       "category": "keyboard",
-      "image": "/images/keyboards/keyboardsPreview/keyboard8.jpg"
+      "image": "/images/keyboards/keyboardsPreview/keyboard8.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 9,
       "title": "Клавиатура Leopold FC210TP PD",
       "price": 2300,
       "category": "keyboard",
-      "image": "/images/keyboards/keyboardsPreview/keyboard9.jpg"
+      "image": "/images/keyboards/keyboardsPreview/keyboard9.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 10,
       "title": "Клавиша ZOMO «Лапка Панды»",
       "price": 1400,
       "category": "keycap",
-      "image": "/images/keycaps/keycapsPreview/keycap1.jpg"
+      "image": "/images/keycaps/keycapsPreview/keycap1.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 11,
       "title": "Клавиша ZOMO «Butterfly»",
       "price": 1600,
       "category": "keycap",
-      "image": "/images/keycaps/keycapsPreview/keycap2.jpg"
+      "image": "/images/keycaps/keycapsPreview/keycap2.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 12,
       "title": "Клавиша ZOMO «Hand of Midas»",
       "price": 1600,
       "category": "keycap",
-      "image": "/images/keycaps/keycapsPreview/keycap3.jpg"
+      "image": "/images/keycaps/keycapsPreview/keycap3.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 13,
       "title": "Клавиши Tai-Hao «Rubber Red»",
       "price": 2999,
       "category": "keycaps",
-      "image": "/images/keycaps/keycapsPreview/keycap4.jpg"
+      "image": "/images/keycaps/keycapsPreview/keycap4.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 14,
       "title": "Клавиши Tai-Hao «Rubber Sky Blue»",
       "price": 2999,
       "category": "keycaps",
-      "image": "/images/keycaps/keycapsPreview/keycap5.jpg"
+      "image": "/images/keycaps/keycapsPreview/keycap5.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
     },
     {
       "id": 15,
       "title": "Клавиши Tai-Hao «Rubber Neon Orange»",
       "price": 2999,
       "category": "keycaps",
-      "image": "/images/keycaps/keycapsPreview/keycap6.jpg"
+      "image": "/images/keycaps/keycapsPreview/keycap6.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac. Описание: Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod males ac."
+    }
+  ],
+  "cardSlides": [
+    {
+      "id": 1,
+      "image": "/images/keyboards/keyboardsSlides/keyboard1Slides/keyboard1Slide1.jpg",
+      "cardId": 1
+    },
+    {
+      "id": 2,
+      "image": "/images/keyboards/keyboardsSlides/keyboard1Slides/keyboard1Slide2.jpg",
+      "cardId": 1
+    },
+    {
+      "id": 3,
+      "image": "/images/keyboards/keyboardsSlides/keyboard1Slides/keyboard1Slide3.jpg",
+      "cardId": 1
+    },
+    {
+      "id": 4,
+      "image": "/images/keyboards/keyboardsSlides/keyboard1Slides/keyboard1Slide4.jpg",
+      "cardId": 1
+    },
+    {
+      "id": 5,
+      "image": "/images/keyboards/keyboardsSlides/keyboard2Slides/keyboard2Slide1.jpg",
+      "cardId": 2
+    },
+    {
+      "id": 6,
+      "image": "/images/keyboards/keyboardsSlides/keyboard2Slides/keyboard2Slide2.jpg",
+      "cardId": 2
+    },
+    {
+      "id": 7,
+      "image": "/images/keyboards/keyboardsSlides/keyboard2Slides/keyboard2Slide3.jpg",
+      "cardId": 2
+    },
+    {
+      "id": 8,
+      "image": "/images/keyboards/keyboardsSlides/keyboard2Slides/keyboard2Slide4.jpg",
+      "cardId": 2
+    },
+    {
+      "id": 9,
+      "image": "/images/keyboards/keyboardsSlides/keyboard3Slides/keyboard3Slide1.jpg",
+      "cardId": 3
+    },
+    {
+      "id": 10,
+      "image": "/images/keyboards/keyboardsSlides/keyboard3Slides/keyboard3Slide2.jpg",
+      "cardId": 3
+    },
+    {
+      "id": 11,
+      "image": "/images/keyboards/keyboardsSlides/keyboard3Slides/keyboard3Slide3.jpg",
+      "cardId": 3
+    },
+    {
+      "id": 12,
+      "image": "/images/keyboards/keyboardsSlides/keyboard3Slides/keyboard3Slide4.jpg",
+      "cardId": 3
+    },
+    {
+      "id": 13,
+      "image": "/images/keyboards/keyboardsSlides/keyboard4Slides/keyboard4Slide1.jpg",
+      "cardId": 4
+    },
+    {
+      "id": 14,
+      "image": "/images/keyboards/keyboardsSlides/keyboard4Slides/keyboard4Slide2.jpg",
+      "cardId": 4
+    },
+    {
+      "id": 15,
+      "image": "/images/keyboards/keyboardsSlides/keyboard4Slides/keyboard4Slide3.jpg",
+      "cardId": 4
+    },
+    {
+      "id": 16,
+      "image": "/images/keyboards/keyboardsSlides/keyboard4Slides/keyboard4Slide4.jpg",
+      "cardId": 4
+    },
+    {
+      "id": 17,
+      "image": "/images/keyboards/keyboardsSlides/keyboard5Slides/keyboard5Slide1.jpg",
+      "cardId": 5
+    },
+    {
+      "id": 18,
+      "image": "/images/keyboards/keyboardsSlides/keyboard5Slides/keyboard5Slide2.jpg",
+      "cardId": 5
+    },
+    {
+      "id": 19,
+      "image": "/images/keyboards/keyboardsSlides/keyboard5Slides/keyboard5Slide3.jpg",
+      "cardId": 5
+    },
+    {
+      "id": 20,
+      "image": "/images/keyboards/keyboardsSlides/keyboard5Slides/keyboard5Slide4.jpg",
+      "cardId": 5
+    },
+    {
+      "id": 21,
+      "image": "/images/keyboards/keyboardsSlides/keyboard6Slides/keyboard6Slide1.jpg",
+      "cardId": 6
+    },
+    {
+      "id": 22,
+      "image": "/images/keyboards/keyboardsSlides/keyboard6Slides/keyboard6Slide2.jpg",
+      "cardId": 6
+    },
+    {
+      "id": 23,
+      "image": "/images/keyboards/keyboardsSlides/keyboard6Slides/keyboard6Slide3.jpg",
+      "cardId": 6
+    },
+    {
+      "id": 24,
+      "image": "/images/keyboards/keyboardsSlides/keyboard6Slides/keyboard6Slide4.jpg",
+      "cardId": 6
+    },
+    {
+      "id": 25,
+      "image": "/images/keyboards/keyboardsSlides/keyboard7Slides/keyboard7Slide1.jpg",
+      "cardId": 7
+    },
+    {
+      "id": 26,
+      "image": "/images/keyboards/keyboardsSlides/keyboard7Slides/keyboard7Slide2.jpg",
+      "cardId": 7
+    },
+    {
+      "id": 27,
+      "image": "/images/keyboards/keyboardsSlides/keyboard7Slides/keyboard7Slide3.jpg",
+      "cardId": 7
+    },
+    {
+      "id": 28,
+      "image": "/images/keyboards/keyboardsSlides/keyboard8Slides/keyboard8Slide1.jpg",
+      "cardId": 8
+    },
+    {
+      "id": 29,
+      "image": "/images/keyboards/keyboardsSlides/keyboard8Slides/keyboard8Slide2.jpg",
+      "cardId": 8
+    },
+    {
+      "id": 30,
+      "image": "/images/keyboards/keyboardsSlides/keyboard8Slides/keyboard8Slide3.jpg",
+      "cardId": 8
+    },
+    {
+      "id": 31,
+      "image": "/images/keyboards/keyboardsSlides/keyboard9Slides/keyboard9Slide1.jpg",
+      "cardId": 9
+    },
+    {
+      "id": 32,
+      "image": "/images/keyboards/keyboardsSlides/keyboard9Slides/keyboard9Slide2.jpg",
+      "cardId": 9
+    },
+    {
+      "id": 33,
+      "image": "/images/keyboards/keyboardsSlides/keyboard9Slides/keyboard9Slide3.jpg",
+      "cardId": 9
+    },
+    {
+      "id": 34,
+      "image": "/images/keycaps/keycapsSlides/keycap1Slides/keycap1Slide1.jpg",
+      "cardId": 10
+    },
+    {
+      "id": 35,
+      "image": "/images/keycaps/keycapsSlides/keycap1Slides/keycap1Slide2.jpg",
+      "cardId": 10
+    },
+    {
+      "id": 36,
+      "image": "/images/keycaps/keycapsSlides/keycap1Slides/keycap1Slide3.jpg",
+      "cardId": 10
+    },
+    {
+      "id": 37,
+      "image": "/images/keycaps/keycapsSlides/keycap2Slides/keycap2Slide1.jpg",
+      "cardId": 11
+    },
+    {
+      "id": 38,
+      "image": "/images/keycaps/keycapsSlides/keycap3Slides/keycap3Slide1.jpg",
+      "cardId": 12
+    },
+    {
+      "id": 39,
+      "image": "/images/keycaps/keycapsSlides/keycap4Slides/keycap4Slide1.jpg",
+      "cardId": 13
+    },
+    {
+      "id": 40,
+      "image": "/images/keycaps/keycapsSlides/keycap4Slides/keycap4Slide2.jpg",
+      "cardId": 13
+    },
+    {
+      "id": 41,
+      "image": "/images/keycaps/keycapsSlides/keycap4Slides/keycap4Slide3.jpg",
+      "cardId": 13
+    },
+    {
+      "id": 42,
+      "image": "/images/keycaps/keycapsSlides/keycap5Slides/keycap5Slide1.jpg",
+      "cardId": 14
+    },
+    {
+      "id": 43,
+      "image": "/images/keycaps/keycapsSlides/keycap5Slides/keycap5Slide2.jpg",
+      "cardId": 14
+    },
+    {
+      "id": 44,
+      "image": "/images/keycaps/keycapsSlides/keycap5Slides/keycap5Slide3.jpg",
+      "cardId": 14
+    },
+    {
+      "id": 45,
+      "image": "/images/keycaps/keycapsSlides/keycap6Slides/keycap6Slide1.jpg",
+      "cardId": 15
+    },
+    {
+      "id": 46,
+      "image": "/images/keycaps/keycapsSlides/keycap6Slides/keycap6Slide2.jpg",
+      "cardId": 15
+    },
+    {
+      "id": 47,
+      "image": "/images/keycaps/keycapsSlides/keycap6Slides/keycap6Slide3.jpg",
+      "cardId": 15
     }
   ],
   "mainSlides": [
