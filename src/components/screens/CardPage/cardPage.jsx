@@ -6,6 +6,7 @@ import Header from "../../ui/header";
 import Footer from "../../ui/footer";
 import CardItem from "./cardItem";
 import axios from "axios";
+import styles from "./cardPage.module.css";
 
 const CardPage = () => {
   const { id } = useParams();
@@ -34,13 +35,36 @@ const CardPage = () => {
   const filteredSlides = slides.filter((slide) => slide.cardId === card.id);
   console.log(filteredSlides);
 
+  // const history = useHistory();
+  // const handlePrevClick = () => {
+  //   history.push(`/cards/${card.id - 1}`);
+  // };
+
+  // const handleNextClick = () => {
+  //   history.push(`/cards/${card.id + 1}`);
+  // };
+
   return (
     <>
       <Header />
       {isLoading ? (
         <Loading />
       ) : (
-        <CardItem slides={filteredSlides} card={card} />
+        <>
+          <div className={styles.arrows}>
+            <img
+              src="/icons/actionIcons/arrowSlideLeft.svg"
+              alt="arrowSlideLeft"
+              // onClick={handlePrevClick}
+            />
+            <img
+              src="/icons/actionIcons/arrowSlideRight.svg"
+              alt="arrowSlideRight"
+              // onClick={handleNextClick}
+            />
+          </div>
+          <CardItem slides={filteredSlides} card={card} />
+        </>
       )}
       <Footer />
     </>

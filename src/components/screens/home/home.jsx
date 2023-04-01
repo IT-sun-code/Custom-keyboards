@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from "react";
-import axios from "axios";
 import Card from "./card";
 import Filters from "./filters";
 import styles from "../home/home.module.css";
@@ -12,9 +11,6 @@ import Heading from "../../ui/heading";
 import KeyboardMainSlide from "../../ui/keyboardMainSlide";
 import KeyboardSlider from "../../ui/keyboardSlider";
 import Button from "../../ui/button";
-import AboutUs from "../aboutUs";
-import Constructor from "../constructor";
-import Page404 from "../page404";
 import Modal from "../../ui/modal";
 import { CardsService } from "../../services/cardsService";
 
@@ -101,11 +97,6 @@ const Home = () => {
         </Modal>
       </div>
       {/* // Модальное окно______________________________________________________________ */}
-      {/* <AboutUs /> */}
-      {/* <Constructor /> */}
-      {/* <Page404 /> */}
-
-      {/* <Header /> */}
 
       <Header onSearch={handleSearch} search={search} />
 

@@ -17,7 +17,7 @@
   width: 100%;
   padding: 0 100px;
   height: fit-content;
-  margin-top: 534px;
+  margin-top: 550px;
   margin-bottom: 50px;
 }
 
@@ -56,9 +56,4 @@
   position: absolute;
   top: 0;
   width: 960px;
-}
-
-.arrows {
-  display: flex;
-  justify-content: space-between;
 }

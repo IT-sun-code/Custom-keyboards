@@ -5,14 +5,6 @@ import Slider from "../../../ui/slider";
 const CardItem = ({ slides, card }) => {
   return (
     <>
-      <div className={styles.arrows}>
-        <img src="/icons/actionIcons/arrowSlideLeft.svg" alt="arrowSlideLeft" />
-        <img
-          src="/icons/actionIcons/arrowSlideRight.svg"
-          alt="arrowSlideRight"
-        />
-      </div>
-
       <div className={styles.container}>
         {slides && (
           <div className={styles.slide}>

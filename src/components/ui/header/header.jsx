@@ -5,12 +5,15 @@ import Logo from "./logo";
 import Search from "./search";
 import UserPanel from "./userPanel";
 import Authorization from "./authorization";
+import { Link } from "react-router-dom";
 
 const Header = ({ onSearch, search }) => {
   return (
     <header className={styles.header}>
       <Burger />
-      <Logo />
+      <Link to={"/"}>
+        <Logo />
+      </Link>
       <Search onSearch={onSearch} search={search} />
       <UserPanel />
       <Authorization />

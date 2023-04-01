@@ -5,6 +5,7 @@ import Button from "../button";
 import Slider from "../slider";
 import axios from "axios";
 import Loading from "../loading";
+import { Link } from "react-router-dom";
 
 const KeyboardSlider = () => {
   const [slides, setSlides] = useState([]);
@@ -28,7 +29,9 @@ const KeyboardSlider = () => {
           <h2>Создайте свою уникальную клавиатуру в нашем конструкторе</h2>
         </div>
         <div>
-          <Button appearance="ctvBlue">Создать</Button>
+          <Link to={"/constructor"}>
+            <Button appearance="ctvBlue">Создать</Button>
+          </Link>
         </div>
       </div>
 
