@@ -7,7 +7,6 @@ const Search = ({ onSearch, search }) => {
     onSearch(value);
     // console.log(value);
   };
-
   return (
     <input
       className={styles.search}

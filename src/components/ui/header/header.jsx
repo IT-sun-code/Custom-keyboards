@@ -5,16 +5,26 @@ import Logo from "./logo";
 import Search from "./search";
 import UserPanel from "./userPanel";
 import Authorization from "./authorization";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = ({ onSearch, search }) => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  function handleClick(path) {
+    if (pathname === path) {
+      return;
+    }
+    navigate(path);
+  }
+
   return (
     <header className={styles.header}>
       <Burger />
-      <Link to={"/"}>
+      <div onClick={() => handleClick("/")}>
         <Logo />
-      </Link>
-      <Search onSearch={onSearch} search={search} />
+      </div>
+      {onSearch && <Search onSearch={onSearch} search={search} />}
       <UserPanel />
       <Authorization />
     </header>
