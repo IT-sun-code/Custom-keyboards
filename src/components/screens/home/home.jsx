@@ -87,8 +87,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <button onClick={scrollToFooter}>СКРОЛЛ</button> */}
-
       {/* <div>
         <button onClick={handleModalOpen}>Открыть модальное окно</button>
         <Modal variety="" isOpen={modalOpen} onClose={handleModalClose}>

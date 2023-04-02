@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./cardItem.module.css";
 import Slider from "../../../ui/slider";
+import Loading from "../../../ui/loading";
 
 const CardItem = ({ slides, card }) => {
+  const [filteredSlides, setfilteredSlides] = useState([]);
+
+  useEffect(() => {
+    const filteredSlides = slides.filter((slide) => slide.cardId === card.id);
+    setfilteredSlides(filteredSlides);
+  }, [slides, card.id]);
+
   return (
     <>
       <div className={styles.container}>
-        {slides && (
+        {filteredSlides.length > 0 ? (
           <div className={styles.slide}>
-            <Slider slides={slides} appearance={"percentagesLower"} />
+            <Slider slides={filteredSlides} appearance={"percentagesLower"} />
           </div>
+        ) : (
+          <Loading />
         )}
 
         <div className={styles.item}>
@@ -22,17 +32,21 @@ const CardItem = ({ slides, card }) => {
             </p>
           </div>
           <div className={styles.actionBlock}>
-            <img
-              className={styles.heart}
-              src="/icons/actionIcons/heart.svg"
-              alt="heart"
-            />
+            <button>
+              <img
+                className={styles.heart}
+                src="/icons/actionIcons/heart.svg"
+                alt="heart"
+              />
+            </button>
             <h2>Цена: {card.price}</h2>
-            <img
-              className={styles.basket}
-              src="/icons/actionIcons/basket.svg"
-              alt="basket"
-            />
+            <button>
+              <img
+                className={styles.basket}
+                src="/icons/actionIcons/basket.svg"
+                alt="basket"
+              />
+            </button>
           </div>
         </div>
       </div>

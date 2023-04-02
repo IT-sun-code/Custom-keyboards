@@ -43,12 +43,6 @@
   height: 48px;
 }
 
-.heart:hover,
-.basket:hover {
-  cursor: pointer;
-  opacity: 50%;
-}
-
 .slide {
   border: 3px solid #20afff;
   border-radius: 50px;
