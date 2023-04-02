@@ -87,7 +87,9 @@ const Home = () => {
 
   return (
     <>
-      <div>
+      {/* <button onClick={scrollToFooter}>СКРОЛЛ</button> */}
+
+      {/* <div>
         <button onClick={handleModalOpen}>Открыть модальное окно</button>
         <Modal variety="" isOpen={modalOpen} onClose={handleModalClose}>
           <p className={styles.modalText}>
@@ -95,7 +97,7 @@ const Home = () => {
             <br /> Информацию о заказе вы можете посмотреть в личном кабинете.
           </p>
         </Modal>
-      </div>
+      </div> */}
       {/* // Модальное окно______________________________________________________________ */}
 
       <Header onSearch={handleSearch} search={search} />

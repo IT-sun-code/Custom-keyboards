@@ -25,7 +25,7 @@ function Filters({ setSortOrder, setSelectedCategory, selectedCategory }) {
 
   return (
     <>
-      <div className={styles.catalog}>
+      <div className={styles.catalog} id="catalog">
         <div className={styles.filter} onClick={handleSortClick}>
           <img
             className={styles.reset}

@@ -4,7 +4,7 @@ import styles from "./footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id="footer">
       <Line />
 
       <div className={styles.messengers}>
