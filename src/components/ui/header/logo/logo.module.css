@@ -2,8 +2,3 @@
   border-bottom: 2px solid black;
   margin-bottom: 0;
 }
-
-.logo:hover {
-  cursor: pointer;
-  opacity: 70%;
-}

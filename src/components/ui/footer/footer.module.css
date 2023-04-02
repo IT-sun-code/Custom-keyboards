@@ -21,11 +21,7 @@
   animation: ease-in;
 }
 
-.icons img:hover {
-  opacity: 80%;
-}
-
-.icons a {
+.icons button {
   margin: 0 32px 16px 32px;
 }
 

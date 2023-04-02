@@ -2,7 +2,8 @@
 .signIn {
   opacity: 70%;
   font-weight: 700;
-  transition: font-weight 0.2s ease-in-out;
+  transition-duration: 0.4s;
+  animation: ease-in-out;
 }
 
 .signUp:hover,

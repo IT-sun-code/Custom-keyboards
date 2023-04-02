@@ -24,7 +24,8 @@ ol,
 ul,
 li,
 form,
-label {
+label,
+button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -55,10 +56,13 @@ textarea {
   color: inherit;
   background-color: transparent;
   transition-duration: 0.4s;
+  outline: none;
 }
 
-button:hover {
+button:hover,
+select:hover {
   cursor: pointer;
+  opacity: 50%;
 }
 
 /* Added a font to the entire document */

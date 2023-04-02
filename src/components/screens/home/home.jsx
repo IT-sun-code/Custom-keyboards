@@ -102,33 +102,36 @@ const Home = () => {
 
       <Header onSearch={handleSearch} search={search} />
 
-      <KeyboardMainSlide />
-      <Heading>
-        <FirstHeading>КАСТОМНАЯ КЛАВИАТУРА</FirstHeading>
-        <SecondHeading>Делаем вашу работу комфортнее!</SecondHeading>
-        <Button appearance="ctvBlue">Заказать</Button>
-      </Heading>
-      <Filters
-        setSortOrder={setSortOrder}
-        setSelectedCategory={setSelectedCategory}
-        selectedCategory={selectedCategory}
-      />
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <>
-          {noResults ? (
-            <SecondHeading>Ничего не найдено...</SecondHeading>
-          ) : (
-            <div className={styles.container}>
-              {filteredCards.map((card) => (
-                <Card key={card.id} card={card} />
-              ))}
-            </div>
-          )}
-        </>
-      )}
-      <KeyboardSlider />
+      <main>
+        <KeyboardMainSlide />
+        <Heading appearance="mainPage">
+          <FirstHeading>КАСТОМНАЯ КЛАВИАТУРА</FirstHeading>
+          <SecondHeading>Делаем вашу работу комфортнее!</SecondHeading>
+          <Button appearance="ctvBlue">Заказать</Button>
+        </Heading>
+        <Filters
+          setSortOrder={setSortOrder}
+          setSelectedCategory={setSelectedCategory}
+          selectedCategory={selectedCategory}
+        />
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            {noResults ? (
+              <SecondHeading>Ничего не найдено...</SecondHeading>
+            ) : (
+              <section className={styles.container}>
+                {filteredCards.map((card) => (
+                  <Card key={card.id} card={card} />
+                ))}
+              </section>
+            )}
+          </>
+        )}
+        <KeyboardSlider />
+      </main>
+
       <Footer />
     </>
   );

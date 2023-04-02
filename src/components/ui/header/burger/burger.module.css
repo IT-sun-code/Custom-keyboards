@@ -5,14 +5,8 @@
 
 .icon {
   width: 30px;
-  transition: background-color 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-}
-
-.icon:hover {
-  cursor: pointer;
-  opacity: 50%;
 }
 
 .bar {
@@ -21,7 +15,7 @@
   height: 4px;
   margin: 3px 0;
   background-color: #000;
-  transition-duration: 0.5s;
+  transition-duration: 0.4s;
   animation: ease-in-out;
 }
 
@@ -53,7 +47,7 @@
   font-size: 32px;
   color: #fff;
   margin-bottom: 32px;
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
   animation: ease-in-out;
 }
 

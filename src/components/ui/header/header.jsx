@@ -21,9 +21,9 @@ const Header = ({ onSearch, search }) => {
   return (
     <header className={styles.header}>
       <Burger />
-      <div onClick={() => handleClick("/")}>
+      <button onClick={() => handleClick("/")}>
         <Logo />
-      </div>
+      </button>
       {onSearch && <Search onSearch={onSearch} search={search} />}
       <UserPanel />
       <Authorization />

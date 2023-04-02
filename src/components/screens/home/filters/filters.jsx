@@ -25,7 +25,7 @@ function Filters({ setSortOrder, setSelectedCategory, selectedCategory }) {
 
   return (
     <>
-      <div className={styles.catalog} id="catalog">
+      <section className={styles.catalog} id="catalog">
         <div className={styles.filter} onClick={handleSortClick}>
           <img
             className={styles.reset}
@@ -59,7 +59,7 @@ function Filters({ setSortOrder, setSelectedCategory, selectedCategory }) {
             <option value="keycaps">Клавиши</option>
           </select>
         </div>
-      </div>
+      </section>
     </>
   );
 }

@@ -22,24 +22,26 @@ const KeyboardSlider = () => {
 
   return (
     <>
-      <Line />
-      <div className={styles.block}>
-        <div className={styles.text}>
-          <p className={styles.questions}>Не нашли, что искали?</p>
-          <h2>Создайте свою уникальную клавиатуру в нашем конструкторе</h2>
+      <section>
+        <Line />
+        <div className={styles.block}>
+          <div className={styles.text}>
+            <p className={styles.questions}>Не нашли, что искали?</p>
+            <h2>Создайте свою уникальную клавиатуру в нашем конструкторе</h2>
+          </div>
+          <div>
+            <Link to={"/constructor"}>
+              <Button appearance="ctvBlue">Создать</Button>
+            </Link>
+          </div>
         </div>
-        <div>
-          <Link to={"/constructor"}>
-            <Button appearance="ctvBlue">Создать</Button>
-          </Link>
-        </div>
-      </div>
 
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <Slider slides={slides} appearance={"percentagesHigher"} />
-      )}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <Slider slides={slides} appearance={"percentagesHigher"} />
+        )}
+      </section>
     </>
   );
 };

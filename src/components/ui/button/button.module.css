@@ -10,6 +10,7 @@
 .buttonCtvBlack:hover {
   background-color: black;
   color: white;
+  opacity: 1;
 }
 
 .buttonCtvBlue {
@@ -19,4 +20,5 @@
 .buttonCtvBlue:hover {
   background-color: #20afff;
   color: white;
+  opacity: 1;
 }

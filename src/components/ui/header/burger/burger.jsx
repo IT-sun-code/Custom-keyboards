@@ -23,16 +23,16 @@ const Burger = () => {
 
   return (
     <div className={styles.burgerMenu}>
-      <div
+      <button
         className={`${styles.icon} ${isOpen ? styles.active : ""}`}
         onClick={toggleMenu}
       >
         <span className={styles.bar}></span>
         <span className={styles.bar}></span>
         <span className={styles.bar}></span>
-      </div>
+      </button>
       {isOpen && (
-        <div className={`${styles.menu}`}>
+        <nav className={`${styles.menu}`}>
           <div className={styles.item} onClick={() => handleClick("/")}>
             Главная
           </div>
@@ -54,7 +54,7 @@ const Burger = () => {
           <div className={styles.item} onClick={scrollToFooter}>
             Контакты
           </div>
-        </div>
+        </nav>
       )}
     </div>
   );

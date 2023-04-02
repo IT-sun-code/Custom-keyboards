@@ -16,31 +16,23 @@
   opacity: 50%;
   margin-right: 8px;
   width: 24px;
-  transition-duration: 0.2s;
+  transition-duration: 0.4s;
   animation: ease-in-out;
 }
 
 .reset:hover,
 .desc:hover,
 .asc:hover {
-  opacity: 100%;
+  opacity: 1;
   cursor: pointer;
 }
 
 .active {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .select {
   padding: 6px;
   border-radius: 15px;
   width: 300px;
-  outline: none;
-}
-
-.select:hover {
-  cursor: pointer;
-  opacity: 70%;
-  transition-duration: 0.2s;
-  animation: ease-in-out;
 }

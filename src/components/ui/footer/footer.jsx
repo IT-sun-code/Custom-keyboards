@@ -13,21 +13,30 @@ const Footer = () => {
       </div>
 
       <div className={styles.icons}>
-        <a
-          href="https://discordapp.com/users/695697540732944475/"
-          target="_blank"
-        >
-          <img src="/icons/socialIcons/discord.svg" alt="discord" />
-        </a>
-        <a href="https://t.me/ITo_sun" target="_blank">
-          <img src="/icons/socialIcons/telegram.svg" alt="telegram" />
-        </a>
-        <a href="https://vk.com/id228598713" target="_blank">
-          <img src="/icons/socialIcons/vk.svg" alt="vk" />
-        </a>
-        <a href="https://wa.me/79650156925" target="_blank">
-          <img src="/icons/socialIcons/whatsApp.svg" alt="whatsApp" />
-        </a>
+        <button>
+          <a
+            href="https://discordapp.com/users/695697540732944475/"
+            target="_blank"
+          >
+            <img src="/icons/socialIcons/discord.svg" alt="discord" />
+          </a>
+        </button>
+
+        <button>
+          <a href="https://t.me/ITo_sun" target="_blank">
+            <img src="/icons/socialIcons/telegram.svg" alt="telegram" />
+          </a>
+        </button>
+        <button>
+          <a href="https://vk.com/id228598713" target="_blank">
+            <img src="/icons/socialIcons/vk.svg" alt="vk" />
+          </a>
+        </button>
+        <button>
+          <a href="https://wa.me/79650156925" target="_blank">
+            <img src="/icons/socialIcons/whatsApp.svg" alt="whatsApp" />
+          </a>
+        </button>
       </div>
 
       <Line />

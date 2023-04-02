@@ -48,7 +48,7 @@
 .heart,
 .basket {
   position: absolute;
-  transition-duration: 0.2s;
+  transition-duration: 0.4s;
   animation: ease-in-out;
 }
 
