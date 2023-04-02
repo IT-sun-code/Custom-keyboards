@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./burger.module.css";
-import { Link } from "react-router-dom";
-import { scrollToFooter, scrollToСatalog } from "../../../utils/scrollers";
+import { useNavigate, useLocation } from "react-router-dom";
+import { scrollToFooter, scrollToCatalog } from "../../../utils/scrollers";
 
 const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  function handleClick(path) {
+    if (pathname === path) {
+      return;
+    }
+    navigate(path);
+  }
+
+  console.log("Burger component rendered");
 
   return (
     <div className={styles.burgerMenu}>
@@ -21,20 +33,24 @@ const Burger = () => {
       </div>
       {isOpen && (
         <div className={`${styles.menu}`}>
-          <Link to={"/"}>
-            <div className={styles.item}>Главная</div>
-          </Link>
-          <Link to={"/"}>
-            <div className={styles.item} onClick={scrollToСatalog}>
-              Каталог
-            </div>
-          </Link>
-          <Link to={"/constructor"}>
-            <div className={styles.item}>Конструктор клавиатуры</div>
-          </Link>
-          <Link to={"/aboutUs"}>
-            <div className={styles.item}>О нас</div>
-          </Link>
+          <div className={styles.item} onClick={() => handleClick("/")}>
+            Главная
+          </div>
+          <div
+            className={styles.item}
+            onClick={() => scrollToCatalog(pathname, navigate)}
+          >
+            Каталог
+          </div>
+          <div
+            className={styles.item}
+            onClick={() => handleClick("/constructor")}
+          >
+            Конструктор клавиатуры
+          </div>
+          <div className={styles.item} onClick={() => handleClick("/aboutUs")}>
+            О нас
+          </div>
           <div className={styles.item} onClick={scrollToFooter}>
             Контакты
           </div>
@@ -44,4 +60,4 @@ const Burger = () => {
   );
 };
 
-export default Burger;
+export default React.memo(Burger);

@@ -1,2 +1,2 @@
-import { scrollToFooter, scrollToСatalog } from "./scrollers";
-export { scrollToFooter, scrollToСatalog };
+import { scrollToFooter, scrollToCatalog } from "./scrollers";
+export { scrollToFooter, scrollToCatalog };
