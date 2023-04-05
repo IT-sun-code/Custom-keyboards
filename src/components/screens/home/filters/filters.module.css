@@ -20,6 +20,10 @@
   animation: ease-in-out;
 }
 
+.desc {
+  transform: rotate(180deg);
+}
+
 .reset:hover,
 .desc:hover,
 .asc:hover {

@@ -39,7 +39,7 @@ const Slider = ({ slides, appearance }) => {
             <>
               <div>
                 <img
-                  src="/icons/actionIcons/arrowSlideLeft.svg"
+                  src="/icons/actionIcons/arrowSlide.svg"
                   alt="arrowSlideLeft"
                   onClick={previousImage}
                   className={cn(
@@ -58,7 +58,7 @@ const Slider = ({ slides, appearance }) => {
 
               <div>
                 <img
-                  src="/icons/actionIcons/arrowSlideRight.svg"
+                  src="/icons/actionIcons/arrowSlide.svg"
                   alt="arrowSlideRight"
                   onClick={nextImage}
                   className={cn(

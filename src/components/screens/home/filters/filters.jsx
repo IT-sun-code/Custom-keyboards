@@ -34,12 +34,12 @@ function Filters({ setSortOrder, setSelectedCategory, selectedCategory }) {
           />
           <img
             className={styles.desc}
-            src="/icons/actionIcons/arrowSortDesc.svg"
+            src="/icons/actionIcons/arrowSort.svg"
             alt="arrowSortDesc"
           />
           <img
             className={styles.asc}
-            src="/icons/actionIcons/arrowSortAsc.svg"
+            src="/icons/actionIcons/arrowSort.svg"
             alt="arrowSortAsc"
           />
           <div>Фильтровать по цене</div>

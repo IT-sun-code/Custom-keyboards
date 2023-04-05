@@ -38,6 +38,7 @@
 
 .right {
   right: 0px;
+  transform: rotate(180deg);
 }
 
 .arrow:hover {
