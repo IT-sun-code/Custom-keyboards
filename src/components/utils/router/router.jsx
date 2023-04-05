@@ -6,6 +6,7 @@ import AboutUs from "../../screens/aboutUs";
 import CardPage from "../../screens/CardPage";
 import Footer from "../../ui/footer";
 import UserPage from "../../screens/userPage";
+import Basket from "../../screens/basket";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
         <Route element={<CardPage />} path={"/cards/:id"} />
         <Route element={<Footer />} path={"/footer"} />
         <Route element={<UserPage />} path={"/user"} />
+        <Route element={<Basket />} path={"/basket"} />
       </Routes>
     </BrowserRouter>
   );

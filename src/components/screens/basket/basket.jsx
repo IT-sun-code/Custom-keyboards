@@ -4,12 +4,12 @@ import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
 import Header from "../../ui/header";
 import Footer from "../../ui/footer";
-import styles from "./userPage.module.css";
 import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
 import Button from "../../ui/button";
+import styles from "./basket.module.css";
 
-const UserPage = () => {
+const Basket = () => {
   const order = {
     title: "Клавиатура1234567890",
     subtitle: "Артикул: 2  ",
@@ -21,18 +21,11 @@ const UserPage = () => {
     <>
       <Header />
       <Heading>
-        <FirstHeading>ИМЯ</FirstHeading>
-        <SecondHeading>Добро пожаловать!</SecondHeading>
+        <FirstHeading>ВАША КОРЗИНА</FirstHeading>
+        <SecondHeading>Здесь пока пусто</SecondHeading>
       </Heading>
-      <section className={styles.userData}>
-        <img src="/images/avatars/avatar5.svg" alt="avatar" />
-        <TextBlock authData />
-      </section>
-      <Line />
       <section>
-        <h2 className={styles.orderHeading}>Заказы</h2>
         <div className={styles.order}>
-          <p className={styles.orderDate}>Дата заказа: 05.02.2023</p>
           <div className={styles.info}>
             <img
               className={styles.image}
@@ -44,17 +37,28 @@ const UserPage = () => {
               <div className={styles.data}>
                 <div>
                   <h3 className={styles.text}>Доставка: 30 дней</h3>
-                  <h3 className={styles.text}>5 шт.</h3>
+                  <div className={styles.price}>
+                    <h3 className={styles.count}>5 шт.</h3>
+                    <button>
+                      <img
+                        className={styles.plus}
+                        src="/icons/actionIcons/plus.svg"
+                        alt="plus"
+                      />
+                    </button>
+                    <button>
+                      <img src="/icons/actionIcons/minus.svg" alt="minus" />
+                    </button>
+                  </div>
                   <h3 className={styles.text}>Цена: 3000 руб.</h3>
                 </div>
-                <Button appearance="ctvBlack">В доставке</Button>
+                <Button appearance="ctvBlack">Удалить</Button>
               </div>
             </div>
           </div>
         </div>
 
         <div className={styles.order}>
-          <p className={styles.orderDate}>Дата заказа: 05.02.2023</p>
           <div className={styles.info}>
             <img
               className={styles.image}
@@ -66,18 +70,36 @@ const UserPage = () => {
               <div className={styles.data}>
                 <div>
                   <h3 className={styles.text}>Доставка: 30 дней</h3>
-                  <h3 className={styles.text}>5 шт.</h3>
+                  <div className={styles.price}>
+                    <h3 className={styles.count}>5 шт.</h3>
+                    <button>
+                      <img
+                        className={styles.plus}
+                        src="/icons/actionIcons/plus.svg"
+                        alt="plus"
+                      />
+                    </button>
+                    <button>
+                      <img src="/icons/actionIcons/minus.svg" alt="minus" />
+                    </button>
+                  </div>
                   <h3 className={styles.text}>Цена: 3000 руб.</h3>
                 </div>
-                <Button appearance="ctvBlack">В доставке</Button>
+                <Button appearance="ctvBlack">Удалить</Button>
               </div>
             </div>
           </div>
         </div>
+      </section>
+      <Line />
+      <section>
+        <h2>Товары: 2 шт.</h2>
+        <h2 className={styles.total}>ИТОГО: 7999 руб.</h2>
+        <Button appearance="ctvBlueOrder">Оформить заказ</Button>
       </section>
       <Footer />
     </>
   );
 };
 
-export default UserPage;
+export default Basket;

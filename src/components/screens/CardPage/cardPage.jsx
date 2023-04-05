@@ -75,14 +75,14 @@ const CardPage = () => {
             <button onClick={handlePrevClick}>
               <img
                 className={styles.left}
-                src="/icons/actionIcons/arrowSortAsc.svg"
+                src="/icons/actionIcons/arrowSort.svg"
                 alt="arrowSlideLeft"
               />
             </button>
             <button onClick={handleNextClick}>
               <img
                 className={styles.right}
-                src="/icons/actionIcons/arrowSortAsc.svg"
+                src="/icons/actionIcons/arrowSort.svg"
                 alt="arrowSlideRight"
               />
             </button>

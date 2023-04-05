@@ -1,0 +1,46 @@
+.order {
+  margin-bottom: 120px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  height: 530px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-right: 30px;
+}
+
+.data {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-left: 100px;
+}
+
+.text {
+  margin-top: 25px;
+  margin-right: 16px;
+}
+
+.price {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.plus,
+.count {
+  margin-right: 16px;
+}
+
+.total {
+  margin: 40px 0;
+}
