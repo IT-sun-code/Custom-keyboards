@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./card.module.css";
 
-const Card = ({ card }) => {
+const Card = ({ card, onClick }) => {
   const str = card.title;
   const maxLength = 35;
 
   return (
     <>
-      <div className={styles.item}>
+      <div className={styles.item} onClick={onClick}>
         <img
           className={styles.heart}
           src="/icons/actionIcons/heart.svg"

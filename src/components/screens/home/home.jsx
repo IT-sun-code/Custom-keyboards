@@ -13,6 +13,7 @@ import KeyboardSlider from "../../ui/keyboardSlider";
 import Button from "../../ui/button";
 import Modal from "../../ui/modal";
 import { CardsService } from "../../services/cardsService";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -85,6 +86,12 @@ const Home = () => {
     setModalOpen(false);
   };
 
+  // Обработка клика на карточку___________________________________________________
+  const navigate = useNavigate();
+  const handleCardClick = (cardId) => {
+    navigate(`/cards/${cardId}`);
+  };
+
   return (
     <>
       {/* <div>
@@ -121,7 +128,11 @@ const Home = () => {
             ) : (
               <section className={styles.container}>
                 {filteredCards.map((card) => (
-                  <Card key={card.id} card={card} />
+                  <Card
+                    key={card.id}
+                    card={card}
+                    onClick={() => handleCardClick(card.id)}
+                  />
                 ))}
               </section>
             )}
