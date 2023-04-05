@@ -5,6 +5,7 @@ import Constructor from "../../screens/constructor";
 import AboutUs from "../../screens/aboutUs";
 import CardPage from "../../screens/CardPage";
 import Footer from "../../ui/footer";
+import UserPage from "../../screens/userPage";
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
         <Route element={<Page404 />} path={"*"} />
         <Route element={<CardPage />} path={"/cards/:id"} />
         <Route element={<Footer />} path={"/footer"} />
+        <Route element={<UserPage />} path={"/user"} />
       </Routes>
     </BrowserRouter>
   );
