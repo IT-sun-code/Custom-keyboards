@@ -8,6 +8,7 @@ import Footer from "../../ui/footer";
 import styles from "./aboutUs.module.css";
 import Loading from "../../ui/loading";
 import TextBlock from "../../ui/textBlock/textBlock";
+import { EmployeesService } from "../../services/employeesService";
 
 const AboutUs = () => {
   const [employees, setEmployees] = useState([]);
@@ -15,8 +16,8 @@ const AboutUs = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/employees");
-      setEmployees(response.data);
+      const data = await EmployeesService.getAll();
+      setEmployees(data);
       setIsLoading(false);
     };
     fetchData();
