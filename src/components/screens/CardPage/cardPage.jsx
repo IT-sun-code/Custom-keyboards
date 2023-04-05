@@ -5,8 +5,8 @@ import { CardsService } from "../../services/cardsService";
 import Header from "../../ui/header";
 import Footer from "../../ui/footer";
 import CardItem from "./cardItem";
-import axios from "axios";
 import styles from "./cardPage.module.css";
+import { CardsSlidesService } from "../../services/cardsSlidesService";
 
 const CardPage = () => {
   const { id } = useParams();
@@ -36,11 +36,11 @@ const CardPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/cardSlides");
-      setSlides(response.data);
+      const data = await CardsSlidesService.getAll();
+      setSlides(data);
     };
     fetchData();
-  }, [id]);
+  }, [card]);
 
   useEffect(() => {
     const filteredSlides = slides.filter((slide) => slide.cardId === card.id);

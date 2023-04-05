@@ -14,12 +14,14 @@ const CardItem = ({ slides, card }) => {
   return (
     <>
       <div className={styles.container}>
-        {filteredSlides.length > 0 ? (
+        {filteredSlides.length <= 0 ? (
+          <div className={styles.slide}>
+            <Loading />
+          </div>
+        ) : (
           <div className={styles.slide}>
             <Slider slides={filteredSlides} appearance={"percentagesLower"} />
           </div>
-        ) : (
-          <Loading />
         )}
 
         <div className={styles.item}>

@@ -3,9 +3,9 @@ import styles from "./keyboardSlider.module.css";
 import Line from "../line";
 import Button from "../button";
 import Slider from "../slider";
-import axios from "axios";
 import Loading from "../loading";
 import { Link } from "react-router-dom";
+import { KeyboardSliderService } from "../../services/keyboardSliderService";
 
 const KeyboardSlider = () => {
   const [slides, setSlides] = useState([]);
@@ -13,8 +13,8 @@ const KeyboardSlider = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/mainSlides");
-      setSlides(response.data);
+      const data = await KeyboardSliderService.getAll();
+      setSlides(data);
       setIsLoading(false);
     };
     fetchData();
