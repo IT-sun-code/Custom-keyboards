@@ -8,6 +8,7 @@ import Footer from "../../ui/footer";
 import UserPage from "../../screens/userPage";
 import Basket from "../../screens/basket";
 import Favorites from "../../screens/favorites";
+import Admin from "../../screens/admin";
 
 const Router = () => {
   return (
@@ -22,6 +23,7 @@ const Router = () => {
         <Route element={<UserPage />} path={"/user"} />
         <Route element={<Basket />} path={"/basket"} />
         <Route element={<Favorites />} path={"/favorites"} />
+        <Route element={<Admin />} path={"/admin"} />
       </Routes>
     </BrowserRouter>
   );
