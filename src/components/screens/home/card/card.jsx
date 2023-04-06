@@ -1,24 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./card.module.css";
+import BasketIcon from "../../../ui/basketIcon";
+import HeartIcon from "../../../ui/heartIcon";
 
 const Card = ({ card, onClick }) => {
   const str = card.title;
   const maxLength = 35;
 
+  const [basketIconclicks, setBasketIconClicks] = useState(false);
+  const handleBasketIconClick = () => {
+    setBasketIconClicks(!basketIconclicks);
+  };
+
+  const [heartIconclicks, setHeartIconClicks] = useState(false);
+  const handleHeartIconClick = () => {
+    setHeartIconClicks(!heartIconclicks);
+  };
+
   return (
     <>
-      <div className={styles.item} onClick={onClick}>
-        <img
-          className={styles.heart}
-          src="/icons/actionIcons/heart.svg"
-          alt="heart"
+      <div className={styles.item}>
+        <HeartIcon onClick={handleHeartIconClick} isActive={heartIconclicks} />
+        <BasketIcon
+          onClick={handleBasketIconClick}
+          isActive={basketIconclicks}
         />
         <img
-          className={styles.basket}
-          src="/icons/actionIcons/basket.svg"
-          alt="basket"
+          className={styles.image}
+          src={card.image}
+          alt="keyboard"
+          onClick={onClick}
         />
-        <img className={styles.image} src={card.image} alt="keyboard" />
         <div>
           <div title={str} className={styles.tooltip}>
             <p className={styles.description}>

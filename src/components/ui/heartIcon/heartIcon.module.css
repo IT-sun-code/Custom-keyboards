@@ -1,0 +1,10 @@
+.heartBtn {
+  top: 24px;
+  right: 24px;
+  z-index: 1;
+  position: absolute;
+}
+
+.heart {
+  height: 48px;
+}

@@ -1,0 +1,10 @@
+.basket {
+  bottom: 0;
+  right: 24px;
+  height: 54px;
+  position: absolute;
+}
+
+.basketCardItem {
+  height: 54px;
+}
