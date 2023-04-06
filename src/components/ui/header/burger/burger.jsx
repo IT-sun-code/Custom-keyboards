@@ -13,11 +13,11 @@ const Burger = () => {
   const { pathname } = useLocation();
 
   function handleClick(path) {
+    toggleMenu();
     if (pathname === path) {
       return;
     }
     navigate(path);
-    toggleMenu();
   }
 
   console.log("Burger component rendered");
@@ -39,7 +39,10 @@ const Burger = () => {
           </div>
           <div
             className={styles.item}
-            onClick={() => scrollToCatalog(pathname, navigate)}
+            onClick={() => {
+              toggleMenu();
+              scrollToCatalog(pathname, navigate);
+            }}
           >
             Каталог
           </div>
@@ -52,7 +55,13 @@ const Burger = () => {
           <div className={styles.item} onClick={() => handleClick("/aboutUs")}>
             О нас
           </div>
-          <div className={styles.item} onClick={scrollToFooter}>
+          <div
+            className={styles.item}
+            onClick={() => {
+              toggleMenu();
+              scrollToFooter();
+            }}
+          >
             Контакты
           </div>
         </nav>
