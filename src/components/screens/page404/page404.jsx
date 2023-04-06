@@ -3,7 +3,6 @@ import Heading from "../../ui/heading";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
 import Header from "../../ui/header";
-import Footer from "../../ui/footer";
 
 const Page404 = () => {
   return (
@@ -15,7 +14,6 @@ const Page404 = () => {
           Такой страницы не существует, вернитесь на Главную
         </SecondHeading>
       </Heading>
-      <Footer />
     </>
   );
 };

@@ -1,7 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./filters.module.css";
+import Search from "../../../ui/header/search";
 
-function Filters({ setSortOrder, setSelectedCategory, selectedCategory }) {
+function Filters({
+  setSortOrder,
+  setSelectedCategory,
+  selectedCategory,
+  onSearch,
+  search,
+}) {
   const handleSortClick = (event) => {
     const element = event.target;
     const icons = document.querySelectorAll(`.${styles.filter} img`);
@@ -60,6 +67,7 @@ function Filters({ setSortOrder, setSelectedCategory, selectedCategory }) {
           </select>
         </div>
       </section>
+      {onSearch && <Search onSearch={onSearch} search={search} />}
     </>
   );
 }

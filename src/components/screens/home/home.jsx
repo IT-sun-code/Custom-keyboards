@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from "react";
 import Card from "./card";
 import Filters from "./filters";
 import styles from "../home/home.module.css";
-import Footer from "../../ui/footer";
 import Loading from "../../ui/loading";
 import Header from "../../ui/header";
 import FirstHeading from "../../ui/heading/firstHeading";
@@ -104,8 +103,7 @@ const Home = () => {
         </Modal>
       </div> */}
       {/* // Модальное окно______________________________________________________________ */}
-
-      <Header onSearch={handleSearch} search={search} />
+      <Header />
 
       <main>
         <KeyboardMainSlide />
@@ -118,6 +116,8 @@ const Home = () => {
           setSortOrder={setSortOrder}
           setSelectedCategory={setSelectedCategory}
           selectedCategory={selectedCategory}
+          onSearch={handleSearch}
+          search={search}
         />
         {isLoading ? (
           <Loading />
@@ -140,8 +140,6 @@ const Home = () => {
         )}
         <KeyboardSlider />
       </main>
-
-      <Footer />
     </>
   );
 };

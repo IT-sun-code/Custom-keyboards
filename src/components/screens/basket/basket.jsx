@@ -3,7 +3,6 @@ import Heading from "../../ui/heading";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
 import Header from "../../ui/header";
-import Footer from "../../ui/footer";
 import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
 import Button from "../../ui/button";
@@ -97,7 +96,6 @@ const Basket = () => {
         <h2 className={styles.total}>ИТОГО: 7999 руб.</h2>
         <Button appearance="ctvBlueOrder">Оформить заказ</Button>
       </section>
-      <Footer />
     </>
   );
 };

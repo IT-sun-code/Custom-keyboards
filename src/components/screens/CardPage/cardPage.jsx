@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../ui/loading";
 import { CardsService } from "../../services/cardsService";
 import Header from "../../ui/header";
-import Footer from "../../ui/footer";
 import CardItem from "./cardItem";
 import styles from "./cardPage.module.css";
 import { CardsSlidesService } from "../../services/cardsSlidesService";
@@ -90,7 +89,6 @@ const CardPage = () => {
           <CardItem slides={filteredSlides} card={card} />
         </>
       )}
-      <Footer />
     </>
   );
 };

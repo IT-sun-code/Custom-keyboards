@@ -3,7 +3,6 @@ import Heading from "../../ui/heading";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
 import Header from "../../ui/header";
-import Footer from "../../ui/footer";
 import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
 import Button from "../../ui/button";
@@ -29,7 +28,6 @@ const Favorites = () => {
       <section className={styles.container}>
         <Card card={card} />
       </section>
-      <Footer />
     </>
   );
 };

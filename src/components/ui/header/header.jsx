@@ -2,12 +2,11 @@ import React from "react";
 import styles from "./header.module.css";
 import Burger from "./burger";
 import Logo from "./logo";
-import Search from "./search";
 import UserPanel from "./userPanel";
 import Authorization from "./authorization";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const Header = ({ onSearch, search }) => {
+const Header = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -16,6 +15,7 @@ const Header = ({ onSearch, search }) => {
       return;
     }
     navigate(path);
+    console.log("heared");
   }
 
   return (
@@ -24,7 +24,6 @@ const Header = ({ onSearch, search }) => {
       <button onClick={() => handleClick("/")}>
         <Logo />
       </button>
-      {onSearch && <Search onSearch={onSearch} search={search} />}
       <UserPanel />
       <Authorization />
     </header>
