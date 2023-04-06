@@ -8,8 +8,10 @@ import Header from "./components/ui/header";
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
   <>
-    {/* <Header /> */}
-    <Router />
+    <Router>
+      <Header />
+      <Router />
+    </Router>
     <Footer />
   </>
   // </React.StrictMode>
