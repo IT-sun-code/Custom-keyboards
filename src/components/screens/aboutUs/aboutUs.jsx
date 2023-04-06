@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Heading from "../../ui/heading";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
-import Header from "../../ui/header";
 import styles from "./aboutUs.module.css";
 import Loading from "../../ui/loading";
 import TextBlock from "../../ui/textBlock/textBlock";
@@ -23,7 +22,6 @@ const AboutUs = () => {
 
   return (
     <>
-      <Header />
       <Heading>
         <FirstHeading>О НАС</FirstHeading>
         <SecondHeading>Рады знакомству!</SecondHeading>

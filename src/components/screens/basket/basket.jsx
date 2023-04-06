@@ -2,7 +2,6 @@ import React from "react";
 import Heading from "../../ui/heading";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
-import Header from "../../ui/header";
 import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
 import Button from "../../ui/button";
@@ -18,7 +17,6 @@ const Basket = () => {
 
   return (
     <>
-      <Header />
       <Heading>
         <FirstHeading>ВАША КОРЗИНА</FirstHeading>
         <SecondHeading>Здесь пока пусто</SecondHeading>

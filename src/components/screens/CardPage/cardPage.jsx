@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../ui/loading";
 import { CardsService } from "../../services/cardsService";
-import Header from "../../ui/header";
 import CardItem from "./cardItem";
 import styles from "./cardPage.module.css";
 import { CardsSlidesService } from "../../services/cardsSlidesService";
@@ -65,7 +64,6 @@ const CardPage = () => {
 
   return (
     <>
-      <Header />
       {isLoading ? (
         <Loading />
       ) : (

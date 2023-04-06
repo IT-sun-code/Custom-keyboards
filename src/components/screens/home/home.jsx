@@ -3,7 +3,6 @@ import Card from "./card";
 import Filters from "./filters";
 import styles from "../home/home.module.css";
 import Loading from "../../ui/loading";
-import Header from "../../ui/header";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
 import Heading from "../../ui/heading";
@@ -103,8 +102,6 @@ const Home = () => {
         </Modal>
       </div> */}
       {/* // Модальное окно______________________________________________________________ */}
-      <Header />
-
       <main>
         <KeyboardMainSlide />
         <Heading appearance="mainPage">

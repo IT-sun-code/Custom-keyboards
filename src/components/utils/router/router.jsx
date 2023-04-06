@@ -9,10 +9,12 @@ import UserPage from "../../screens/userPage";
 import Basket from "../../screens/basket";
 import Favorites from "../../screens/favorites";
 import Admin from "../../screens/admin";
+import Header from "../../ui/header";
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route element={<Home />} path={"/"} />
         <Route element={<Constructor />} path={"/constructor"} />
@@ -25,6 +27,7 @@ const Router = () => {
         <Route element={<Favorites />} path={"/favorites"} />
         <Route element={<Admin />} path={"/admin"} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

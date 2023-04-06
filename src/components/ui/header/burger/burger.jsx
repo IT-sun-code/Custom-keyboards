@@ -17,6 +17,7 @@ const Burger = () => {
       return;
     }
     navigate(path);
+    toggleMenu();
   }
 
   console.log("Burger component rendered");
