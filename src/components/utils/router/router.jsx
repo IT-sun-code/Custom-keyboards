@@ -21,7 +21,6 @@ const Router = () => {
         <Route element={<AboutUs />} path={"/aboutUs"} />
         <Route element={<Page404 />} path={"*"} />
         <Route element={<CardPage />} path={"/cards/:id"} />
-        <Route element={<Footer />} path={"/footer"} />
         <Route element={<UserPage />} path={"/user"} />
         <Route element={<Basket />} path={"/basket"} />
         <Route element={<Favorites />} path={"/favorites"} />

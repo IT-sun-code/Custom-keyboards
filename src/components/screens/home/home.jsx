@@ -9,7 +9,6 @@ import Heading from "../../ui/heading";
 import KeyboardMainSlide from "../../ui/keyboardMainSlide";
 import KeyboardSlider from "../../ui/keyboardSlider";
 import Button from "../../ui/button";
-import Modal from "../../ui/modal";
 import { CardsService } from "../../services/cardsService";
 import { useNavigate } from "react-router-dom";
 
@@ -72,18 +71,6 @@ const Home = () => {
     setSearch(value);
   };
 
-  // Модальное окно______________________________________________________________
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const handleModalOpen = () => {
-    setModalOpen(true);
-    console.log("open");
-  };
-
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
-
   // Обработка клика на карточку___________________________________________________
   const navigate = useNavigate();
   const handleCardClick = (cardId) => {
@@ -92,16 +79,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <div>
-        <button onClick={handleModalOpen}>Открыть модальное окно</button>
-        <Modal variety="" isOpen={modalOpen} onClose={handleModalClose}>
-          <p className={styles.modalText}>
-            Заказ успешно оформлен!
-            <br /> Информацию о заказе вы можете посмотреть в личном кабинете.
-          </p>
-        </Modal>
-      </div> */}
-      {/* // Модальное окно______________________________________________________________ */}
       <main>
         <KeyboardMainSlide />
         <Heading appearance="mainPage">

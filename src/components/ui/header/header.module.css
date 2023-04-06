@@ -4,3 +4,8 @@
   margin: 20px 0 120px 0;
   justify-content: space-between;
 }
+
+.modalText {
+  text-align: left;
+  font-size: 32px;
+}
