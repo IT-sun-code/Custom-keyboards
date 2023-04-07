@@ -6,11 +6,11 @@ import UserPanel from "./userPanel";
 import Authorization from "./authorization";
 import { useNavigate, useLocation } from "react-router-dom";
 // import Modal from "../modal";
+import PropTypes from "prop-types";
 
 const Header = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-
   function handleClick(path) {
     if (pathname === path) {
       return;
@@ -50,7 +50,6 @@ const Header = () => {
     </>
   );
 };
-
 export default Header;
 
 {
