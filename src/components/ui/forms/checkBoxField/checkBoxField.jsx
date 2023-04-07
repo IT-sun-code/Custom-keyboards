@@ -1,27 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./checkBoxField.module.css";
 
 const CheckBoxField = ({ name, value, onChange, children, error }) => {
   const handleChange = () => {
     onChange({ name: name, value: !value });
   };
-  const getInputClasses = () => {
-    return "form-check-input" + (error ? " is-invalid" : "");
-  };
+
   return (
-    <div className="form-check mb-4">
+    <div className={styles.checkbox}>
       <input
-        className={getInputClasses()}
+        className={styles.square}
         type="checkbox"
         value=""
         id={name}
         onChange={handleChange}
         checked={value}
       />
-      <label className="form-check-label" htmlFor={name}>
+      <label className={styles.label} htmlFor={name}>
         {children}
       </label>
-      {error && <div className="invalid-feedback">{error}</div>}
+      {error && <div className={styles.errorMessage}>{error}</div>}
     </div>
   );
 };

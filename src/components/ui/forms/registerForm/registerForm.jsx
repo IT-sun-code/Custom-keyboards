@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import { validator } from "../../../utils/validator";
 import CheckBoxField from "../checkBoxField";
 import TextField from "../textField";
+import Button from "../../button";
 
 const RegisterForm = () => {
   const [data, setData] = useState({
+    userName: "",
+    phone: "",
     email: "",
+    address: "",
     password: "",
     licence: false,
   });
@@ -20,6 +24,22 @@ const RegisterForm = () => {
   };
 
   const validatorConfig = {
+    userName: {
+      isRequired: {
+        message: "Имя обязательно для заполнения",
+      },
+      isName: {
+        message: "Имя должно содержать только буквы",
+      },
+    },
+    phone: {
+      isRequired: {
+        message: "Телефон обязателен для заполнения",
+      },
+      isPhone: {
+        message: "Телефон введен некорректно",
+      },
+    },
     email: {
       isRequired: {
         message: "Электронная почта обязательна для заполнения",
@@ -28,12 +48,21 @@ const RegisterForm = () => {
         message: "Email введен некорректно",
       },
     },
+    address: {
+      isRequired: {
+        message: "Адрес доставки обязателен для заполнения",
+      },
+      isAddress: {
+        message: "Пример адреса: г.Санкт-Петербург, ул.Победы, д.2, кв.35",
+      },
+    },
     password: {
       isRequired: {
         message: "Пароль обязателен для заполнения",
       },
       isCapitalSymbol: {
-        message: "Пароль должен содержать хотя бы одну заглавную букву",
+        message:
+          "Пароль должен содержать хотя бы одну латинскую заглавную букву",
       },
       isContainDigit: {
         message: "Пароль должен содержать хотя бы одно число",
@@ -67,16 +96,38 @@ const RegisterForm = () => {
     e.preventDefault();
     const isValid = validate();
     if (!isValid) return;
+    console.log(data);
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      <TextField
+        label="Имя"
+        name="userName"
+        value={data.userName}
+        onChange={handleChange}
+        error={errors.userName}
+      />
+      <TextField
+        label="Телефон"
+        name="phone"
+        value={data.phone}
+        onChange={handleChange}
+        error={errors.phone}
+      />
       <TextField
         label="Электронная почта"
         name="email"
         value={data.email}
         onChange={handleChange}
         error={errors.email}
+      />
+      <TextField
+        label="Адрес"
+        name="address"
+        value={data.address}
+        onChange={handleChange}
+        error={errors.address}
       />
       <TextField
         label="Пароль"
@@ -94,13 +145,11 @@ const RegisterForm = () => {
       >
         Подтвердить <a>лицензионное соглашение</a>
       </CheckBoxField>
-      <button
-        className="btn btn-primary w-100 mx-auto"
-        type="submit"
-        disabled={!isValid}
-      >
-        Submit
-      </button>
+      <div>
+        <Button appearance="ctvBlueSubmit" type="submit" disabled={!isValid}>
+          Подтвердить
+        </Button>
+      </div>
     </form>
   );
 };

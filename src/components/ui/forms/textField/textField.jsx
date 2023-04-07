@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import styles from "./textField.module.css";
 
 const TextField = ({ label, type, name, value, onChange, error }) => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword] = useState(false);
 
   const handleChange = ({ target }) => {
     onChange({ name: target.name, value: target.value });
   };
   const getInputClasses = () => {
-    return "form-control" + (error ? " is-invalid" : "");
-  };
-  const toggleShowPassword = () => {
-    setShowPassword((prevState) => !prevState);
+    return `${styles.input} ${error ? styles.invalid : styles.valid}`;
   };
 
   return (
-    <div className="mb-4">
-      <label htmlFor={name}>{label}</label>
-      <div className="input-group has-validation">
+    <div className={styles.textField}>
+      <label htmlFor={name} className={styles.label}>
+        {label}
+      </label>
+      <div>
         <input
           type={showPassword ? "text" : type}
           id={name}
@@ -26,16 +26,7 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
           onChange={handleChange}
           className={getInputClasses()}
         />
-        {type === "password" && (
-          <button
-            className="btn btn-outline-secondary"
-            type="button"
-            onClick={toggleShowPassword}
-          >
-            <i className={"bi bi-eye" + (showPassword ? "-slash" : "")}></i>
-          </button>
-        )}
-        {error && <div className="invalid-feedback">{error}</div>}
+        {error && <div className={styles.errorMessage}>{error}</div>}
       </div>
     </div>
   );

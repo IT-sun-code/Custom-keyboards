@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./modal.module.css";
 import Button from "../button";
 import Portal from "../../utils/portal";
+import LoginForm from "../forms/loginForm";
+import RegisterForm from "../forms/registerForm/registerForm";
 
 const Modal = ({ variety, isOpen, onClose, children }) => {
   const [isMounted, setIsMounted] = useState(false);
@@ -75,26 +77,26 @@ const Modal = ({ variety, isOpen, onClose, children }) => {
             ) : variety === "signIn" ? (
               <>
                 <h2 className={styles.heading}>Войдите в свой аккаунт</h2>
+                <LoginForm />
                 <p className={styles.warning}>
                   <b>ВНИМАНИЕ!</b> Доставка осуществляется в течение 30-и дней с
                   момента заказа
                 </p>
-                <div className={styles.btnContainer}>
-                  <Button appearance="ctvBlue">Войти</Button>
-                  <Button appearance="ctvBlack">Зарегистрироваться</Button>
-                </div>
+                <button className={styles.btnContainer}>
+                  Впервые на нашем сайте? Зарегистрируйтесь
+                </button>
               </>
             ) : (
               <>
                 <h2 className={styles.heading}>Зарегистрируйтесь на сайте</h2>
+                <RegisterForm />
                 <p className={styles.warning}>
                   <b>ВНИМАНИЕ!</b> Доставка осуществляется в течение 30-и дней с
                   момента заказа
                 </p>
-                <div className={styles.btnContainer}>
-                  <Button appearance="ctvBlack">Войти</Button>
-                  <Button appearance="ctvBlue">Зарегистрироваться</Button>
-                </div>
+                <button className={styles.btnContainer}>
+                  Уже есть аккаунт? Войдите
+                </button>
               </>
             )}
           </div>

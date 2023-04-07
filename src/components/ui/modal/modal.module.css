@@ -27,6 +27,8 @@
 }
 
 .modalOpen {
+  overflow-y: auto;
+  max-height: 80vh;
   background-color: white;
   border: 3px solid black;
   border-radius: 50px;
@@ -38,6 +40,7 @@
 }
 
 .modalClosed {
+  max-height: 80vh;
   background-color: white;
   border: 3px solid black;
   border-radius: 50px;
@@ -74,10 +77,10 @@
 }
 
 .warning {
-  margin-bottom: 55px;
+  margin-bottom: 48px;
 }
 
 .btnContainer {
-  display: flex;
-  justify-content: space-around;
+  font-size: 24px;
+  font-weight: 700;
 }

@@ -5,8 +5,7 @@ import Logo from "./logo";
 import UserPanel from "./userPanel";
 import Authorization from "./authorization";
 import { useNavigate, useLocation } from "react-router-dom";
-// import Modal from "../modal";
-import PropTypes from "prop-types";
+import Modal from "../modal";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -20,16 +19,16 @@ const Header = () => {
   }
 
   // Модальное окно______________________________________________________________
-  // const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
-  // const handleModalOpen = () => {
-  //   setModalOpen(true);
-  //   console.log("open");
-  // };
+  const handleModalOpen = () => {
+    setModalOpen(true);
+    console.log("open");
+  };
 
-  // const handleModalClose = () => {
-  //   setModalOpen(false);
-  // };
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
 
   return (
     <>
@@ -43,10 +42,10 @@ const Header = () => {
       </header>
 
       {/* Модальное окно______________________________________________________________ */}
-      {/* <div>
+      <div>
         <button onClick={handleModalOpen}>Открыть модальное окно</button>
-        <Modal variety="signIn" isOpen={modalOpen} onClose={handleModalClose} />
-      </div> */}
+        <Modal variety="" isOpen={modalOpen} onClose={handleModalClose} />
+      </div>
     </>
   );
 };

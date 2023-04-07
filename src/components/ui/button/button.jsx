@@ -10,6 +10,7 @@ const Button = ({ children, appearance }) => {
         {
           [styles.buttonCtvBlue]: appearance === "ctvBlue",
           [styles.buttonCtvBlueOrder]: appearance === "ctvBlueOrder",
+          [styles.ctvBlueSubmit]: appearance === "ctvBlueSubmit",
           [styles.buttonCtvBlack]: appearance === "ctvBlack",
         },
         []

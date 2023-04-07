@@ -15,17 +15,24 @@
 }
 
 .buttonCtvBlue,
-.buttonCtvBlueOrder {
+.buttonCtvBlueOrder,
+.ctvBlueSubmit {
   border: 4px solid #20afff;
 }
 
 .buttonCtvBlue:hover,
-.buttonCtvBlueOrder:hover {
+.buttonCtvBlueOrder:hover,
+.ctvBlueSubmit:hover {
   background-color: #20afff;
   color: white;
   opacity: 1;
 }
 
-.buttonCtvBlueOrder {
+.buttonCtvBlueOrder,
+.ctvBlueSubmit {
   width: 100%;
+}
+
+.ctvBlueSubmit {
+  margin-bottom: 10px;
 }

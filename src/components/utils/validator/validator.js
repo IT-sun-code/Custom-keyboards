@@ -30,6 +30,22 @@ export function validator(data, config) {
         statusValidate = data.length < config.value;
         break;
       }
+      case "isPhone": {
+        const phoneRegExp = /^(8|\+7)\d{10}$/;
+        statusValidate = !phoneRegExp.test(data);
+        break;
+      }
+      case "isName": {
+        const nameRegExp = /^[a-zA-Zа-яА-Я]+$/;
+        statusValidate = !nameRegExp.test(data);
+        break;
+      }
+      case "isAddress": {
+        const addressRegExp =
+          /^г\.[а-яА-ЯёЁ\s.-]+, ул\.[а-яА-ЯёЁ\s.-]+, д\.\d+, кв\.\d+$/;
+        statusValidate = !addressRegExp.test(data);
+        break;
+      }
       default:
         break;
     }

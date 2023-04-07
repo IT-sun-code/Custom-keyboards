@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { validator } from "../../../utils/validator";
 import CheckBoxField from "../checkBoxField";
 import TextField from "../textField";
+import Button from "../../button";
+import Modal from "../../modal";
 
 const LoginForm = () => {
   const [data, setData] = useState({
@@ -11,6 +13,7 @@ const LoginForm = () => {
   });
 
   const [errors, setErrors] = useState({});
+
   const handleChange = (target) => {
     setData((prevState) => ({
       ...prevState,
@@ -83,13 +86,11 @@ const LoginForm = () => {
       <CheckBoxField value={data.stayOn} onChange={handleChange} name="stayOn">
         Оставаться в системе
       </CheckBoxField>
-      <button
-        // className="btn btn-primary w-100 mx-auto"
-        type="submit"
-        disabled={!isValid}
-      >
-        Submit
-      </button>
+      <div>
+        <Button appearance="ctvBlueSubmit" type="submit" disabled={!isValid}>
+          Подтвердить
+        </Button>
+      </div>
     </form>
   );
 };
