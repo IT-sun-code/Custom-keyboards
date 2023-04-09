@@ -1,0 +1,13 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 10;
+}
+
+.scrollToTop button {
+  width: 80px;
+  height: 80px;
+  border: 2px solid grey;
+  border-radius: 50%;
+}

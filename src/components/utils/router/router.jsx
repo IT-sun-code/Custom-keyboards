@@ -10,12 +10,13 @@ import Basket from "../../screens/basket";
 import Favorites from "../../screens/favorites";
 import Admin from "../../screens/admin";
 import Header from "../../ui/header";
-import LoginToWebsite from "../../ui/forms/loginToWebsite/loginToWebsite";
+import ScrollToTop from "../scrollers/scrollToTop";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route element={<Home />} path={"/"} />
         <Route element={<Constructor />} path={"/constructor"} />
@@ -26,7 +27,6 @@ const Router = () => {
         <Route element={<Basket />} path={"/basket"} />
         <Route element={<Favorites />} path={"/favorites"} />
         <Route element={<Admin />} path={"/admin"} />
-        <Route element={<LoginToWebsite />} path={"/login/:type?"} />
       </Routes>
       <Footer />
     </BrowserRouter>
