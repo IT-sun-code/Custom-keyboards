@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./button.module.css";
 import cn from "classnames";
 
-const Button = ({ children, appearance }) => {
+const Button = ({ children, appearance, disabled }) => {
   return (
     <button
       className={cn(
@@ -10,7 +10,8 @@ const Button = ({ children, appearance }) => {
         {
           [styles.buttonCtvBlue]: appearance === "ctvBlue",
           [styles.buttonCtvBlueOrder]: appearance === "ctvBlueOrder",
-          [styles.ctvBlueSubmit]: appearance === "ctvBlueSubmit",
+          [disabled ? styles.ctvBlueSubmit : styles.disabled]:
+            appearance === "ctvBlueSubmit",
           [styles.buttonCtvBlack]: appearance === "ctvBlack",
         },
         []

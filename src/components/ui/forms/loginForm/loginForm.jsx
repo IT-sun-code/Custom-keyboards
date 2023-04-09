@@ -74,6 +74,7 @@ const LoginForm = () => {
         value={data.email}
         onChange={handleChange}
         error={errors.email}
+        autoComplete="current-email"
       />
       <TextField
         label="Пароль"
@@ -82,12 +83,13 @@ const LoginForm = () => {
         value={data.password}
         onChange={handleChange}
         error={errors.password}
+        autoComplete="current-password"
       />
       <CheckBoxField value={data.stayOn} onChange={handleChange} name="stayOn">
         Оставаться в системе
       </CheckBoxField>
       <div>
-        <Button appearance="ctvBlueSubmit" type="submit" disabled={!isValid}>
+        <Button appearance="ctvBlueSubmit" type="submit" disabled={isValid}>
           Подтвердить
         </Button>
       </div>

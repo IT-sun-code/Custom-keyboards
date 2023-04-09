@@ -107,6 +107,7 @@ const RegisterForm = () => {
         value={data.userName}
         onChange={handleChange}
         error={errors.userName}
+        autoComplete="current-name"
       />
       <TextField
         label="Телефон"
@@ -114,6 +115,7 @@ const RegisterForm = () => {
         value={data.phone}
         onChange={handleChange}
         error={errors.phone}
+        autoComplete="current-phone"
       />
       <TextField
         label="Электронная почта"
@@ -121,6 +123,7 @@ const RegisterForm = () => {
         value={data.email}
         onChange={handleChange}
         error={errors.email}
+        autoComplete="current-email"
       />
       <TextField
         label="Адрес"
@@ -128,6 +131,7 @@ const RegisterForm = () => {
         value={data.address}
         onChange={handleChange}
         error={errors.address}
+        autoComplete="current-address"
       />
       <TextField
         label="Пароль"
@@ -136,17 +140,19 @@ const RegisterForm = () => {
         value={data.password}
         onChange={handleChange}
         error={errors.password}
+        autoComplete="current-password"
       />
       <CheckBoxField
         value={data.licence}
         onChange={handleChange}
         name="licence"
         error={errors.licence}
+        autoComplete="current-licence"
       >
         Подтвердить <a>лицензионное соглашение</a>
       </CheckBoxField>
       <div>
-        <Button appearance="ctvBlueSubmit" type="submit" disabled={!isValid}>
+        <Button appearance="ctvBlueSubmit" type="submit" disabled={isValid}>
           Подтвердить
         </Button>
       </div>

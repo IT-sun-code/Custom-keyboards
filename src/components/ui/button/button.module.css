@@ -4,6 +4,12 @@
   border-radius: 30px;
 }
 
+.disabled {
+  opacity: 30%;
+  cursor: not-allowed !important;
+  border: 4px solid gray;
+}
+
 .buttonCtvBlack {
   border: 4px solid black;
 }

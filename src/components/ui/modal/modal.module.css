@@ -27,8 +27,6 @@
 }
 
 .modalOpen {
-  overflow-y: auto;
-  max-height: 80vh;
   background-color: white;
   border: 3px solid black;
   border-radius: 50px;
@@ -37,6 +35,12 @@
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   opacity: 1;
   transform: translateY(0);
+}
+
+.containerContent {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 0 30px;
 }
 
 .modalClosed {
