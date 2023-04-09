@@ -75,6 +75,7 @@ const LoginForm = () => {
         onChange={handleChange}
         error={errors.email}
         autoComplete="current-email"
+        autoFocus
       />
       <TextField
         label="Пароль"

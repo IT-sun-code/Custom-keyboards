@@ -10,6 +10,7 @@ const TextField = ({
   onChange,
   error,
   autoComplete,
+  ...rest
 }) => {
   const [showPassword] = useState(false);
 
@@ -34,6 +35,7 @@ const TextField = ({
           onChange={handleChange}
           className={getInputClasses()}
           autoComplete={autoComplete}
+          {...rest}
         />
         {error && <div className={styles.errorMessage}>{error}</div>}
       </div>

@@ -108,6 +108,7 @@ const RegisterForm = () => {
         onChange={handleChange}
         error={errors.userName}
         autoComplete="current-name"
+        autoFocus
       />
       <TextField
         label="Телефон"
