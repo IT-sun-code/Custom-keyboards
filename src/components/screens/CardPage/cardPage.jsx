@@ -4,12 +4,13 @@ import Loading from "../../ui/loading";
 import { CardsService } from "../../services/cardsService";
 import CardItem from "./cardItem";
 import styles from "./cardPage.module.css";
-import { CardsSlidesService } from "../../services/cardsSlidesService";
+import CardsSlidesService from "../../services/cardsSlidesService";
 
 const CardPage = () => {
   const { id } = useParams();
   const [card, setCard] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [slides, setSlides] = useState([]);
   const [filteredSlides, setfilteredSlides] = useState([]);
   const navigate = useNavigate();
@@ -34,11 +35,27 @@ const CardPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await CardsSlidesService.getAll();
-      setSlides(data);
+      try {
+        const { content } = await CardsSlidesService.getAll();
+        setSlides(content);
+      } catch (error) {
+        errorCatcher(error);
+      }
     };
     fetchData();
   }, [card]);
+
+  function errorCatcher(error) {
+    const { message } = error.response.data;
+    setError(message);
+  }
+
+  useEffect(() => {
+    if (error !== null) {
+      console.log(error);
+      setError(null);
+    }
+  }, [error]);
 
   useEffect(() => {
     const filteredSlides = slides.filter((slide) => slide.cardId === card.id);
@@ -47,16 +64,16 @@ const CardPage = () => {
   }, [slides, card.id]);
 
   const handlePrevClick = () => {
-    if (card.id - 1 === 0) {
-      navigate(`/cards/${cards.length}`);
+    if (card.id - 1 < 0) {
+      navigate(`/cards/${cards.length - 1}`);
     } else {
       navigate(`/cards/${card.id - 1}`);
     }
   };
 
   const handleNextClick = () => {
-    if (card.id + 1 === cards.length + 1) {
-      navigate(`/cards/1`);
+    if (card.id + 1 === cards.length) {
+      navigate(`/cards/0`);
     } else {
       navigate(`/cards/${card.id + 1}`);
     }

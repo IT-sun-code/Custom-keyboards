@@ -1,2 +1,2 @@
-import { EmployeesService } from "./employeesService";
-export { EmployeesService };
+import EmployeesService from "./employeesService";
+export default EmployeesService;

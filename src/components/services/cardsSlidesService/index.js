@@ -1,2 +1,2 @@
-import { CardsSlidesService } from "./cardsSlidesService";
-export { CardsSlidesService };
+import CardsSlidesService from "./cardsSlidesService";
+export default CardsSlidesService;

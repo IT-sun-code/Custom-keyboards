@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import httpService from "../../services/httpService/httpService";
+import httpService from "../../services/httpService";
 import cards from "./cards.json";
 import cardSlides from "./cardSlides.json";
 import mainSlides from "./mainSlides.json";

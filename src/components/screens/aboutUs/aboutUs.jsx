@@ -5,20 +5,37 @@ import SecondHeading from "../../ui/heading/secondHeading";
 import styles from "./aboutUs.module.css";
 import Loading from "../../ui/loading";
 import TextBlock from "../../ui/textBlock/textBlock";
-import { EmployeesService } from "../../services/employeesService";
+import EmployeesService from "../../services/employeesService";
 
 const AboutUs = () => {
   const [employees, setEmployees] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await EmployeesService.getAll();
-      setEmployees(data);
-      setIsLoading(false);
+      try {
+        const { content } = await EmployeesService.getAll();
+        setEmployees(content);
+        setIsLoading(false);
+      } catch (error) {
+        errorCatcher(error);
+      }
     };
     fetchData();
   }, []);
+
+  function errorCatcher(error) {
+    const { message } = error.response.data;
+    setError(message);
+  }
+
+  useEffect(() => {
+    if (error !== null) {
+      console.log(error);
+      setError(null);
+    }
+  }, [error]);
 
   return (
     <>

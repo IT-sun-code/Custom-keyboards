@@ -1,14 +1,14 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "image": "/images/keyboardMainSlides/keyboardSlide1.jpg"
   },
   {
-    "id": 2,
+    "id": 1,
     "image": "/images/keyboardMainSlides/keyboardSlide2.jpg"
   },
   {
-    "id": 3,
+    "id": 2,
     "image": "/images/keyboardMainSlides/keyboardSlide3.jpg"
   }
 ]

@@ -1,2 +1,2 @@
-import { KeyboardSliderService } from "./keyboardSliderService";
-export { KeyboardSliderService };
+import KeyboardSliderService from "./keyboardSliderService";
+export default KeyboardSliderService;
