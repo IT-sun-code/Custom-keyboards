@@ -9,7 +9,7 @@ import Heading from "../../ui/heading";
 import KeyboardMainSlide from "../../ui/keyboardMainSlide";
 import KeyboardSlider from "../../ui/keyboardSlider";
 import Button from "../../ui/button";
-import { CardsService } from "../../services/cardsService";
+import CardsService from "../../services/cardsService";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -20,8 +20,8 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await CardsService.getAll();
-      setCards(data);
+      const { content } = await CardsService.getAll();
+      setCards(content);
       setIsLoading(false);
     };
     fetchData();
@@ -71,7 +71,6 @@ const Home = () => {
     setSearch(value);
   };
 
-  // Обработка клика на карточку___________________________________________________
   const navigate = useNavigate();
   const handleCardClick = (cardId) => {
     navigate(`/cards/${cardId}`);

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../ui/loading";
-import { CardsService } from "../../services/cardsService";
+import CardsService from "../../services/cardsService";
 import CardItem from "./cardItem";
 import styles from "./cardPage.module.css";
 import CardsSlidesService from "../../services/cardsSlidesService";
 
 const CardPage = () => {
   const { id } = useParams();
+  const [cards, setCards] = useState([]);
   const [card, setCard] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,20 +16,16 @@ const CardPage = () => {
   const [filteredSlides, setfilteredSlides] = useState([]);
   const navigate = useNavigate();
 
-  const [cards, setCards] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await CardsService.getAll();
-      setCards(data);
-    };
-    fetchData();
-  }, []);
-
   useEffect(() => {
     if (!id) return;
     const fetchData = async () => {
-      const data = await CardsService.getById(id);
-      setCard(data);
+      try {
+        const { content } = await CardsService.getAll();
+        setCards(content);
+        setCard(content[id]);
+      } catch (error) {
+        errorCatcher(error);
+      }
     };
     fetchData();
   }, [id]);

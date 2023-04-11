@@ -1,2 +1,2 @@
-import { CardsService } from "./cardsService";
-export { CardsService };
+import CardsService from "./cardsService";
+export default CardsService;
