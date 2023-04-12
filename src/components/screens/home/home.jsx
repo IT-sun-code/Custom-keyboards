@@ -2,31 +2,19 @@ import React, { useState, useEffect, useMemo } from "react";
 import Card from "./card";
 import Filters from "./filters";
 import styles from "../home/home.module.css";
-import Loading from "../../ui/loading";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
 import Heading from "../../ui/heading";
 import KeyboardMainSlide from "../../ui/keyboardMainSlide";
 import KeyboardSlider from "../../ui/keyboardSlider";
 import Button from "../../ui/button";
-import CardsService from "../../services/cardsService";
 import { useNavigate } from "react-router-dom";
+import { useCards } from "../../utils/hooks/useCards";
 
 const Home = () => {
-  const [cards, setCards] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const { content } = await CardsService.getAll();
-      setCards(content);
-      setIsLoading(false);
-    };
-    fetchData();
-  }, []);
-
+  const { cards } = useCards();
   const [sortOrder, setSortOrder] = useState(null);
 
   const sortedCards = useMemo(() => {
@@ -92,24 +80,18 @@ const Home = () => {
           onSearch={handleSearch}
           search={search}
         />
-        {isLoading ? (
-          <Loading />
+        {noResults ? (
+          <SecondHeading>Ничего не найдено...</SecondHeading>
         ) : (
-          <>
-            {noResults ? (
-              <SecondHeading>Ничего не найдено...</SecondHeading>
-            ) : (
-              <section className={styles.container}>
-                {filteredCards.map((card) => (
-                  <Card
-                    key={card.id}
-                    card={card}
-                    onClick={() => handleCardClick(card.id)}
-                  />
-                ))}
-              </section>
-            )}
-          </>
+          <section className={styles.container}>
+            {filteredCards.map((card) => (
+              <Card
+                key={card.id}
+                card={card}
+                onClick={() => handleCardClick(card.id)}
+              />
+            ))}
+          </section>
         )}
         <KeyboardSlider />
       </main>
