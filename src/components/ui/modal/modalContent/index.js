@@ -2,14 +2,12 @@ import {
   SuccessModalContent,
   OrderModalContent,
   LogOutModalContent,
-  SignInModalContent,
-  RegisterModalContent,
+  AuthModalContent,
 } from "./modalContent";
 
 export {
   SuccessModalContent,
   OrderModalContent,
   LogOutModalContent,
-  SignInModalContent,
-  RegisterModalContent,
+  AuthModalContent,
 };

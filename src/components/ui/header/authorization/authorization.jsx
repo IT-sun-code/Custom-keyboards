@@ -21,7 +21,7 @@ const Authorization = () => {
         ) : (
           <>
             <button
-              onClick={() => handleModalOpen("")}
+              onClick={() => handleModalOpen("signUp")}
               className={styles.signUp}
             >
               Зарегистрироваться

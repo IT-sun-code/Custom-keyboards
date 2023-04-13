@@ -11,6 +11,7 @@ const useModal = () => {
 
   const handleModalClose = () => {
     setModalOpen(!modalOpen);
+    console.log("закрыто");
   };
 
   useEffect(() => {

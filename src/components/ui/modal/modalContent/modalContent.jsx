@@ -47,30 +47,16 @@ export const LogOutModalContent = () => {
   );
 };
 
-export const SignInModalContent = ({ handleClick }) => {
-  return (
+export const AuthModalContent = ({ variety, onClose }) => {
+  const [newVariety, setNewVariety] = useState(variety);
+  const handleClick = (variant) => {
+    setNewVariety(variant === "signIn" ? "signUp" : "signIn");
+  };
+
+  return newVariety === "signIn" ? (
     <>
       <h2 className={styles.heading}>Войдите в свой аккаунт</h2>
-      <LoginForm />
-      <p className={styles.warning}>
-        <b>ВНИМАНИЕ!</b> Доставка осуществляется в течение 30-и дней с момента
-        заказа
-      </p>
-      <button
-        className={styles.btnContainer}
-        onClick={() => handleClick("register")}
-      >
-        Впервые на нашем сайте? Зарегистрируйтесь
-      </button>
-    </>
-  );
-};
-
-export const RegisterModalContent = ({ handleClick }) => {
-  return (
-    <>
-      <h2 className={styles.heading}>Зарегистрируйтесь на сайте</h2>
-      <RegisterForm />
+      <LoginForm onClose={onClose} />
       <p className={styles.warning}>
         <b>ВНИМАНИЕ!</b> Доставка осуществляется в течение 30-и дней с момента
         заказа
@@ -78,6 +64,21 @@ export const RegisterModalContent = ({ handleClick }) => {
       <button
         className={styles.btnContainer}
         onClick={() => handleClick("signIn")}
+      >
+        Впервые на нашем сайте? Зарегистрируйтесь
+      </button>
+    </>
+  ) : (
+    <>
+      <h2 className={styles.heading}>Зарегистрируйтесь на сайте</h2>
+      <RegisterForm onClose={onClose} />
+      <p className={styles.warning}>
+        <b>ВНИМАНИЕ!</b> Доставка осуществляется в течение 30-и дней с момента
+        заказа
+      </p>
+      <button
+        className={styles.btnContainer}
+        onClick={() => handleClick("signUp")}
       >
         Уже есть аккаунт? Войдите
       </button>

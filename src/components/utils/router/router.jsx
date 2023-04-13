@@ -12,26 +12,29 @@ import Admin from "../../screens/admin";
 import Header from "../../ui/header";
 import ScrollToTop from "../scrollers/scrollToTop";
 import CardsProvider from "../hooks/useCards";
+import AuthProvider from "../hooks/useAuth";
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <ScrollToTop />
-      <CardsProvider>
-        <Routes>
-          <Route element={<Home />} path={"/"} />
-          <Route element={<Constructor />} path={"/constructor"} />
-          <Route element={<AboutUs />} path={"/aboutUs"} />
-          <Route element={<Page404 />} path={"*"} />
-          <Route element={<CardPage />} path={"/cards/:id"} />
-          <Route element={<UserPage />} path={"/user"} />
-          <Route element={<Basket />} path={"/basket"} />
-          <Route element={<Favorites />} path={"/favorites"} />
-          <Route element={<Admin />} path={"/admin"} />
-        </Routes>
-      </CardsProvider>
-      <Footer />
+      <AuthProvider>
+        <Header />
+        <ScrollToTop />
+        <CardsProvider>
+          <Routes>
+            <Route element={<Home />} path={"/"} />
+            <Route element={<Constructor />} path={"/constructor"} />
+            <Route element={<AboutUs />} path={"/aboutUs"} />
+            <Route element={<Page404 />} path={"*"} />
+            <Route element={<CardPage />} path={"/cards/:id"} />
+            <Route element={<UserPage />} path={"/user"} />
+            <Route element={<Basket />} path={"/basket"} />
+            <Route element={<Favorites />} path={"/favorites"} />
+            <Route element={<Admin />} path={"/admin"} />
+          </Routes>
+        </CardsProvider>
+        <Footer />
+      </AuthProvider>
     </BrowserRouter>
   );
 };

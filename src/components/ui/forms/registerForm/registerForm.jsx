@@ -3,8 +3,10 @@ import { validator } from "../../../utils/validator";
 import CheckBoxField from "../checkBoxField";
 import TextField from "../textField";
 import Button from "../../button";
+import { useAuth } from "../../../utils/hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
-const RegisterForm = () => {
+const RegisterForm = ({ onClose }) => {
   const [data, setData] = useState({
     userName: "",
     phone: "",
@@ -13,8 +15,9 @@ const RegisterForm = () => {
     password: "",
     licence: false,
   });
-
+  const { signUp } = useAuth();
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (target) => {
     setData((prevState) => ({
@@ -92,11 +95,18 @@ const RegisterForm = () => {
 
   const isValid = Object.keys(errors).length === 0;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const isValid = validate();
     if (!isValid) return;
     console.log(data);
+    try {
+      await signUp(data);
+      onClose();
+      navigate("/user");
+    } catch (error) {
+      setErrors(error);
+    }
   };
 
   return (
