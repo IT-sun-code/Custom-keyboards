@@ -37,12 +37,6 @@
   transform: translateY(0);
 }
 
-.containerContent {
-  max-height: 80vh;
-  overflow-y: auto;
-  padding: 0 30px;
-}
-
 .modalClosed {
   max-height: 80vh;
   background-color: white;
@@ -65,12 +59,18 @@
   border: none;
 }
 
+.containerContent {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 0 30px;
+}
+
 .content {
   width: 785px;
   text-align: center;
 }
 
-.heading {
+/* .heading {
   margin-bottom: 48px;
 }
 
@@ -87,4 +87,4 @@
 .btnContainer {
   font-size: 24px;
   font-weight: 700;
-}
+} */

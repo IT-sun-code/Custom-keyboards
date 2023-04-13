@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import styles from "./card.module.css";
 import BasketIcon from "../../../ui/basketIcon";
 import HeartIcon from "../../../ui/heartIcon";
+import { Link } from "react-router-dom";
 
-const Card = ({ card, onClick }) => {
+const Card = ({ card }) => {
   const str = card.title;
   const maxLength = 35;
 
@@ -25,12 +26,9 @@ const Card = ({ card, onClick }) => {
           onClick={handleBasketIconClick}
           isActive={basketIconclicks}
         />
-        <img
-          className={styles.image}
-          src={card.image}
-          alt="keyboard"
-          onClick={onClick}
-        />
+        <Link to={`/cards/${card.id}`}>
+          <img className={styles.image} src={card.image} alt="keyboard" />
+        </Link>
         <div>
           <div title={str} className={styles.tooltip}>
             <p className={styles.description}>

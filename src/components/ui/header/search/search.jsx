@@ -13,7 +13,7 @@ const Search = ({ onSearch, search }) => {
       type="text"
       placeholder="Поиск..."
       name="search"
-      autoFocus
+      // autoFocus
       value={search}
       onChange={handleSearch}
     />

@@ -1,34 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./authorization.module.css";
 import Modal from "../../modal";
+import useModal from "../../../utils/hooks/useModal";
 
 const Authorization = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalVariety, setModalVariety] = useState("");
-
-  const handleModalOpen = (variety) => {
-    setModalVariety(variety);
-    setModalOpen(true);
-    console.log("open");
-  };
-
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
+  const { modalOpen, modalVariety, handleModalOpen, handleModalClose } =
+    useModal();
+  const isAuthenticated = false;
 
   return (
     <>
       <div className={styles.authorization}>
-        <button onClick={() => handleModalOpen("")} className={styles.signUp}>
-          Зарегистрироваться
-        </button>
-        <span> / </span>
-        <button
-          onClick={() => handleModalOpen("signIn")}
-          className={styles.signIn}
-        >
-          Войти
-        </button>
+        {isAuthenticated ? (
+          <button
+            onClick={() => handleModalOpen("logOut")}
+            className={styles.logOut}
+          >
+            Выйти
+          </button>
+        ) : (
+          <>
+            <button
+              onClick={() => handleModalOpen("")}
+              className={styles.signUp}
+            >
+              Зарегистрироваться
+            </button>
+            <span> / </span>
+            <button
+              onClick={() => handleModalOpen("signIn")}
+              className={styles.signIn}
+            >
+              Войти
+            </button>
+          </>
+        )}
       </div>
       {modalOpen && (
         <Modal

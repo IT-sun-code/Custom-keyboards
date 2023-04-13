@@ -14,7 +14,6 @@ const Header = () => {
       return;
     }
     navigate(path);
-    console.log("heared");
   }
 
   return (

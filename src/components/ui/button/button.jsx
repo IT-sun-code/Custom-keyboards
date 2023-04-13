@@ -2,9 +2,10 @@ import React from "react";
 import styles from "./button.module.css";
 import cn from "classnames";
 
-const Button = ({ children, appearance, disabled }) => {
+const Button = ({ children, appearance, disabled, onClick }) => {
   return (
     <button
+      onClick={onClick}
       className={cn(
         styles.button,
         {

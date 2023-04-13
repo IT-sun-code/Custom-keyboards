@@ -1,5 +1,6 @@
 .signUp,
-.signIn {
+.signIn,
+.logOut {
   opacity: 70%;
   font-weight: 700;
   transition-duration: 0.4s;
@@ -7,7 +8,8 @@
 }
 
 .signUp:hover,
-.signIn:hover {
+.signIn:hover,
+.logOut:hover {
   cursor: pointer;
   opacity: 100%;
 }

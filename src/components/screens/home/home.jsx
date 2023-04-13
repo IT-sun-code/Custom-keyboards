@@ -8,14 +8,17 @@ import Heading from "../../ui/heading";
 import KeyboardMainSlide from "../../ui/keyboardMainSlide";
 import KeyboardSlider from "../../ui/keyboardSlider";
 import Button from "../../ui/button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useCards } from "../../utils/hooks/useCards";
+import { scrollToCatalog } from "../../utils/scrollers";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [search, setSearch] = useState("");
   const { cards } = useCards();
   const [sortOrder, setSortOrder] = useState(null);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const sortedCards = useMemo(() => {
     if (sortOrder === "asc") {
@@ -59,11 +62,6 @@ const Home = () => {
     setSearch(value);
   };
 
-  const navigate = useNavigate();
-  const handleCardClick = (cardId) => {
-    navigate(`/cards/${cardId}`);
-  };
-
   return (
     <>
       <main>
@@ -71,7 +69,14 @@ const Home = () => {
         <Heading appearance="mainPage">
           <FirstHeading>КАСТОМНАЯ КЛАВИАТУРА</FirstHeading>
           <SecondHeading>Делаем вашу работу комфортнее!</SecondHeading>
-          <Button appearance="ctvBlue">Заказать</Button>
+          <Button
+            appearance="ctvBlue"
+            onClick={() => {
+              scrollToCatalog(pathname, navigate);
+            }}
+          >
+            Заказать
+          </Button>
         </Heading>
         <Filters
           setSortOrder={setSortOrder}
@@ -85,11 +90,7 @@ const Home = () => {
         ) : (
           <section className={styles.container}>
             {filteredCards.map((card) => (
-              <Card
-                key={card.id}
-                card={card}
-                onClick={() => handleCardClick(card.id)}
-              />
+              <Card card={card} key={card.id} />
             ))}
           </section>
         )}
