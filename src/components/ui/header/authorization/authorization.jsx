@@ -2,16 +2,17 @@ import React from "react";
 import styles from "./authorization.module.css";
 import Modal from "../../modal";
 import useModal from "../../../utils/hooks/useModal";
+import { useAuth } from "../../../utils/hooks/useAuth";
 
 const Authorization = () => {
+  const { currentUser } = useAuth();
   const { modalOpen, modalVariety, handleModalOpen, handleModalClose } =
     useModal();
-  const isAuthenticated = true;
 
   return (
     <>
       <div className={styles.authorization}>
-        {isAuthenticated ? (
+        {currentUser ? (
           <button
             onClick={() => handleModalOpen("logOut")}
             className={styles.logOut}

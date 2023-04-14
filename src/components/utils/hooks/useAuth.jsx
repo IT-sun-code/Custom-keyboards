@@ -4,11 +4,12 @@ import axios from "axios";
 import {
   setTokens,
   removeAuthData,
+  getAccessToken,
 } from "../../services/localStorageService/localStorageService";
 import UserService from "../../services/userService";
 import { useNavigate } from "react-router-dom";
 
-const httpAuth = axios.create({
+export const httpAuth = axios.create({
   baseURL: "https://identitytoolkit.googleapis.com/v1/",
   params: {
     key: import.meta.env.VITE_REACT_APP_FIREBASE_KEY,
@@ -22,7 +23,7 @@ export const useAuth = () => {
 };
 
 const AuthProvider = ({ children }) => {
-  const [currentUser, setUser] = useState({});
+  const [currentUser, setUser] = useState();
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -65,6 +66,7 @@ const AuthProvider = ({ children }) => {
         returnSecureToken: true,
       });
       setTokens(data);
+      await getUserData();
     } catch (error) {
       errorCatcher(error);
       const { code, message } = error.response.data.error;
@@ -88,12 +90,28 @@ const AuthProvider = ({ children }) => {
 
   async function createUser(data) {
     try {
-      const { content } = UserService.create(data);
+      const { content } = await UserService.create(data);
+      setUser(content);
+      console.log(content);
+    } catch (error) {
+      errorCatcher(error);
+    }
+  }
+
+  async function getUserData() {
+    try {
+      const { content } = await UserService.getCurrentUser();
       setUser(content);
     } catch (error) {
       errorCatcher(error);
     }
   }
+  useEffect(() => {
+    if (getAccessToken()) {
+      getUserData();
+    }
+  }, []);
+
   function errorCatcher(error) {
     const { message } = error.response.data;
     setError(message);

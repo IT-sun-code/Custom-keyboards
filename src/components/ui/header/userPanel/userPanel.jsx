@@ -3,15 +3,16 @@ import styles from "./userPanel.module.css";
 import { useNavigate } from "react-router-dom";
 import Modal from "../../modal";
 import useModal from "../../../utils/hooks/useModal";
+import { useAuth } from "../../../utils/hooks/useAuth";
 
 function UserPanel() {
   const navigate = useNavigate();
-  const isAuthenticated = true;
+  const { currentUser } = useAuth();
   const { modalOpen, modalVariety, handleModalOpen, handleModalClose } =
     useModal();
 
   const handleClick = (variety, url) => {
-    if (isAuthenticated) {
+    if (currentUser) {
       navigate(url);
     } else {
       handleModalOpen(variety);
