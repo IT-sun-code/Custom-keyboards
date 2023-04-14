@@ -6,7 +6,7 @@ import useModal from "../../../utils/hooks/useModal";
 const Authorization = () => {
   const { modalOpen, modalVariety, handleModalOpen, handleModalClose } =
     useModal();
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return (
     <>

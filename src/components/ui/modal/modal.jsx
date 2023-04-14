@@ -42,7 +42,7 @@ const Modal = ({ variety, isOpen, onClose, children }) => {
               ) : variety === "order" ? (
                 <OrderModalContent />
               ) : variety === "logOut" ? (
-                <LogOutModalContent />
+                <LogOutModalContent onClose={onClose} />
               ) : variety === "signIn" || variety === "signUp" ? (
                 <AuthModalContent variety={variety} onClose={onClose} />
               ) : null}

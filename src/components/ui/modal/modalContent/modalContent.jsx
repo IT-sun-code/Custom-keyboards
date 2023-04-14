@@ -3,6 +3,7 @@ import LoginForm from "../../forms/loginForm";
 import RegisterForm from "../../forms/registerForm";
 import Button from "../../button";
 import styles from "./modalContent.module.css";
+import { useAuth } from "../../../utils/hooks/useAuth";
 
 export const SuccessModalContent = ({ children }) => {
   return (
@@ -35,14 +36,23 @@ export const OrderModalContent = () => {
   );
 };
 
-export const LogOutModalContent = () => {
+export const LogOutModalContent = ({ onClose }) => {
+  const { logOut } = useAuth();
   return (
     <>
       <h2 className={styles.heading}>Выход из аккаунта</h2>
       <p className={styles.warning}>
         <b className={styles.warning}>Вы точно хотите выйти из аккаунта?</b>
       </p>
-      <Button appearance="ctvBlue">Выйти</Button>
+      <Button
+        appearance="ctvBlue"
+        onClick={() => {
+          onClose();
+          logOut();
+        }}
+      >
+        Выйти
+      </Button>
     </>
   );
 };

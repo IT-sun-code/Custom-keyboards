@@ -1,8 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
-import { setTokens } from "../../services/localStorageService/localStorageService";
+import {
+  setTokens,
+  removeAuthData,
+} from "../../services/localStorageService/localStorageService";
 import UserService from "../../services/userService";
+import { useNavigate } from "react-router-dom";
 
 const httpAuth = axios.create({
   baseURL: "https://identitytoolkit.googleapis.com/v1/",
@@ -20,6 +24,7 @@ export const useAuth = () => {
 const AuthProvider = ({ children }) => {
   const [currentUser, setUser] = useState({});
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   async function signUp({ email, password, ...rest }) {
     try {
@@ -75,6 +80,12 @@ const AuthProvider = ({ children }) => {
     }
   }
 
+  function logOut() {
+    removeAuthData();
+    setUser(null);
+    navigate("/");
+  }
+
   async function createUser(data) {
     try {
       const { content } = UserService.create(data);
@@ -95,7 +106,7 @@ const AuthProvider = ({ children }) => {
   }, [error]);
 
   return (
-    <AuthContext.Provider value={{ signUp, logIn, currentUser }}>
+    <AuthContext.Provider value={{ signUp, logIn, logOut, currentUser }}>
       {children}
     </AuthContext.Provider>
   );
