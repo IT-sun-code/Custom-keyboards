@@ -9,7 +9,7 @@ import styles from "./favorites.module.css";
 const Favorites = () => {
   const card = {
     title: "Клавиатура1234567890",
-    id: 1,
+    id: 0,
     price: 3400,
     image: "/images/keycaps/keycapsPreview/keycap1.jpg",
   };
