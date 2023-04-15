@@ -2,26 +2,26 @@ import React from "react";
 import Heading from "../../ui/heading";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
-// import styles from "./basket.module.css";
 import Card from "../home/card";
 import styles from "./favorites.module.css";
+import { useFavorites } from "../../utils/hooks/useFavorites";
 
 const Favorites = () => {
-  const card = {
-    title: "Клавиатура1234567890",
-    id: 0,
-    price: 3400,
-    image: "/images/keycaps/keycapsPreview/keycap1.jpg",
-  };
+  const { favoriteCards } = useFavorites();
 
   return (
     <>
       <Heading>
         <FirstHeading>ИЗБРАННОЕ</FirstHeading>
-        <SecondHeading>Здесь пока пусто</SecondHeading>
+        {favoriteCards.length === 0 && (
+          <SecondHeading>Здесь пока пусто</SecondHeading>
+        )}
       </Heading>
       <section className={styles.container}>
-        <Card card={card} />
+        {favoriteCards &&
+          favoriteCards.map((favorite) => (
+            <Card card={favorite} key={favorite.id} />
+          ))}
       </section>
     </>
   );

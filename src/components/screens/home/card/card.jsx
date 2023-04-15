@@ -3,27 +3,36 @@ import styles from "./card.module.css";
 import BasketIcon from "../../../ui/basketIcon";
 import HeartIcon from "../../../ui/heartIcon";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../utils/hooks/useAuth";
+import { useFavorites } from "../../../utils/hooks/useFavorites";
 
 const Card = ({ card }) => {
   const str = card.title;
   const maxLength = 35;
+  const { currentUser } = useAuth();
+  const { favoriteCards, handleFavoriteClick } = useFavorites();
+  const isFavorite = favoriteCards.some((favCard) => favCard.id === card.id);
+  const [heartIconclicks, setHeartIconClicks] = useState(isFavorite);
+
+  const handleHeartIconClick = async () => {
+    setHeartIconClicks(!heartIconclicks);
+    handleFavoriteClick(card);
+  };
 
   const [basketIconclicks, setBasketIconClicks] = useState(false);
   const handleBasketIconClick = () => {
     setBasketIconClicks(!basketIconclicks);
   };
 
-  const [heartIconclicks, setHeartIconClicks] = useState(false);
-  const handleHeartIconClick = () => {
-    setHeartIconClicks(!heartIconclicks);
-  };
-
   return (
     <>
       <div className={styles.item}>
-        <HeartIcon onClick={handleHeartIconClick} isActive={heartIconclicks} />
+        <HeartIcon
+          onClick={currentUser && handleHeartIconClick}
+          isActive={isFavorite}
+        />
         <BasketIcon
-          onClick={handleBasketIconClick}
+          onClick={currentUser && handleBasketIconClick}
           isActive={basketIconclicks}
         />
         <Link to={`/cards/${card.id}`}>

@@ -70,6 +70,8 @@ const httpService = {
   get: http.get,
   post: http.post,
   put: http.put,
+  // Добавила именно patch, потому что с post изначальные данные стирались :(
+  patch: http.patch,
   delete: http.delete,
 };
 export default httpService;

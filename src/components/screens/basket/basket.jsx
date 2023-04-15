@@ -6,8 +6,10 @@ import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
 import Button from "../../ui/button";
 import styles from "./basket.module.css";
+import { useAuth } from "../../utils/hooks/useAuth";
 
 const Basket = () => {
+  const { currentUser } = useAuth();
   const order = {
     title: "Клавиатура1234567890",
     subtitle: "Артикул: 2  ",
@@ -19,7 +21,9 @@ const Basket = () => {
     <>
       <Heading>
         <FirstHeading>ВАША КОРЗИНА</FirstHeading>
-        <SecondHeading>Здесь пока пусто</SecondHeading>
+        {currentUser.favorites === 0 && (
+          <SecondHeading>Здесь пока пусто</SecondHeading>
+        )}
       </Heading>
       <section>
         <div className={styles.order}>

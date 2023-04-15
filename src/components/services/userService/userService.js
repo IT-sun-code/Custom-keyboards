@@ -18,6 +18,14 @@ const UserService = {
     );
     return data;
   },
+  // Добавила update для изменения данных о пользователе
+  updateCurrentUser: async (payload) => {
+    const { data } = await httpService.patch(
+      userEndpoint + localStorageService.getUserId(),
+      payload
+    );
+    return data;
+  },
 };
 
 export default UserService;

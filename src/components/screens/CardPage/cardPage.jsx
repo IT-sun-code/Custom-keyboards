@@ -4,6 +4,7 @@ import CardItem from "./cardItem";
 import styles from "./cardPage.module.css";
 import CardsSlidesService from "../../services/cardsSlidesService";
 import { useCards } from "../../utils/hooks/useCards";
+import CardsService from "../../services/cardsService";
 
 const CardPage = () => {
   const { id } = useParams();
@@ -15,15 +16,15 @@ const CardPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!id || !cards) return;
-    const fetchData = async () => {
+    const getCard = async () => {
       try {
-        setCard(cards[id]);
+        const cardData = await CardsService.getById(id);
+        setCard(cardData);
       } catch (error) {
         errorCatcher(error);
       }
     };
-    fetchData();
+    getCard();
   }, [id, cards]);
 
   useEffect(() => {

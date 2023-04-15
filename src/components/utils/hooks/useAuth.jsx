@@ -42,8 +42,6 @@ const AuthProvider = ({ children }) => {
       await createUser({
         id: data.localId,
         email,
-        favorites: 0,
-        basket: 0,
         ...rest,
       });
     } catch (error) {
@@ -119,6 +117,24 @@ const AuthProvider = ({ children }) => {
     }
   }, []);
 
+  // Добавила функцию изменения данных пользователя в настройках его профиля и передала в AuthContext.Provider
+  async function updateUserData(data) {
+    try {
+      const { content } = await UserService.updateCurrentUser(data);
+      setUser(content);
+    } catch (error) {
+      errorCatcher(error);
+    }
+  }
+  async function updateCurrentUserInfo(data) {
+    try {
+      const { content } = await UserService.updateCurrentUser(data);
+      setUser(content);
+    } catch (error) {
+      errorCatcher(error);
+    }
+  }
+
   function errorCatcher(error) {
     const { message } = error.response.data;
     setError(message);
@@ -131,7 +147,16 @@ const AuthProvider = ({ children }) => {
   }, [error]);
 
   return (
-    <AuthContext.Provider value={{ signUp, logIn, logOut, currentUser }}>
+    <AuthContext.Provider
+      value={{
+        signUp,
+        logIn,
+        logOut,
+        currentUser,
+        updateCurrentUserInfo,
+        updateUserData,
+      }}
+    >
       {!isLoading ? children : <Loading />}
     </AuthContext.Provider>
   );

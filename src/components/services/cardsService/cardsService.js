@@ -6,11 +6,14 @@ const CardsService = {
     const { data } = await httpService.get(cardsEndpoint);
     return data;
   },
+  getById: async (id) => {
+    const { data } = await httpService.get(cardsEndpoint);
+    console.log(data.content[id]);
+    const cardData = data.content[id];
+    return cardData;
+  },
   create: async (payload) => {
-    const { data } = await httpService.put(
-      cardsEndpoint + payload._id,
-      payload
-    );
+    const { data } = await httpService.put(cardsEndpoint + payload.id, payload);
     return data;
   },
 };
