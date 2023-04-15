@@ -52,7 +52,14 @@ const Router = () => {
                 </PrivateRoute>
               }
             />
-            <Route element={<Admin />} path={"/admin"} />
+            <Route
+              path="/admin"
+              element={
+                <PrivateRoute>
+                  <Admin />
+                </PrivateRoute>
+              }
+            />
           </Routes>
         </CardsProvider>
         <Footer />

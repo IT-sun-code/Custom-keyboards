@@ -26,39 +26,45 @@ function UserPanel() {
 
   return (
     <nav className={styles.panel}>
-      <button
-        className={styles.heart}
-        onClick={() => handleClick("signIn", "/favorites")}
-      >
-        <img
-          src={getIconPath(
-            "/favorites",
-            "/icons/actionIcons/heart.svg",
-            "/icons/actionIcons/heartActive.svg"
-          )}
-          alt="heart"
-        />
-      </button>
-      <button
-        className={styles.basket}
-        onClick={() => handleClick("signIn", "/basket")}
-      >
-        <img
-          src={getIconPath(
-            "/basket",
-            "/icons/actionIcons/basket.svg",
-            "/icons/actionIcons/basketActive.svg"
-          )}
-          alt="basket"
-        />
-      </button>
+      {!currentUser?.admin && (
+        <>
+          <button
+            className={styles.heart}
+            onClick={() => handleClick("signIn", "/favorites")}
+          >
+            <img
+              src={getIconPath(
+                "/favorites",
+                "/icons/actionIcons/heart.svg",
+                "/icons/actionIcons/heartActive.svg"
+              )}
+              alt="heart"
+            />
+          </button>
+          <button
+            className={styles.basket}
+            onClick={() => handleClick("signIn", "/basket")}
+          >
+            <img
+              src={getIconPath(
+                "/basket",
+                "/icons/actionIcons/basket.svg",
+                "/icons/actionIcons/basketActive.svg"
+              )}
+              alt="basket"
+            />
+          </button>
+        </>
+      )}
       <button
         className={styles.user}
-        onClick={() => handleClick("signIn", "/user")}
+        onClick={() =>
+          handleClick("signIn", currentUser?.admin ? "/admin" : "/user")
+        }
       >
         <img
           src={getIconPath(
-            "/user",
+            currentUser?.admin ? "/admin" : "/user",
             "/icons/actionIcons/user.svg",
             "/icons/actionIcons/userActive.svg"
           )}

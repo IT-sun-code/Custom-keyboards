@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
+import Loading from "../../ui/loading";
+
 import {
   setTokens,
   removeAuthData,
@@ -25,6 +27,7 @@ export const useAuth = () => {
 const AuthProvider = ({ children }) => {
   const [currentUser, setUser] = useState();
   const [error, setError] = useState(null);
+  const [isLoading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   async function signUp({ email, password, ...rest }) {
@@ -104,11 +107,15 @@ const AuthProvider = ({ children }) => {
       setUser(content);
     } catch (error) {
       errorCatcher(error);
+    } finally {
+      setLoading(false);
     }
   }
   useEffect(() => {
     if (getAccessToken()) {
       getUserData();
+    } else {
+      setLoading(false);
     }
   }, []);
 
@@ -125,7 +132,7 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ signUp, logIn, logOut, currentUser }}>
-      {children}
+      {!isLoading ? children : <Loading />}
     </AuthContext.Provider>
   );
 };
