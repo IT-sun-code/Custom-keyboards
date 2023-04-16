@@ -15,6 +15,7 @@ import CardsProvider from "../hooks/useCards";
 import AuthProvider from "../hooks/useAuth";
 import PrivateRoute from "./privateRoute";
 import FavoritesProvider from "../hooks/useFavorites";
+import BasketProvider from "../hooks/useBasket";
 
 const Router = () => {
   return (
@@ -22,49 +23,51 @@ const Router = () => {
       <AuthProvider>
         <Header />
         <ScrollToTop />
-        <FavoritesProvider>
-          <CardsProvider>
-            <Routes>
-              <Route element={<Home />} path={"/"} />
-              <Route element={<Constructor />} path={"/constructor"} />
-              <Route element={<AboutUs />} path={"/aboutUs"} />
-              <Route element={<Page404 />} path={"*"} />
-              <Route element={<CardPage />} path={"/cards/:id"} />
-              <Route
-                path="/user"
-                element={
-                  <PrivateRoute>
-                    <UserPage />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/basket"
-                element={
-                  <PrivateRoute>
-                    <Basket />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/favorites"
-                element={
-                  <PrivateRoute>
-                    <Favorites />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/admin"
-                element={
-                  <PrivateRoute>
-                    <Admin />
-                  </PrivateRoute>
-                }
-              />
-            </Routes>
-          </CardsProvider>
-        </FavoritesProvider>
+        <BasketProvider>
+          <FavoritesProvider>
+            <CardsProvider>
+              <Routes>
+                <Route element={<Home />} path={"/"} />
+                <Route element={<Constructor />} path={"/constructor"} />
+                <Route element={<AboutUs />} path={"/aboutUs"} />
+                <Route element={<Page404 />} path={"*"} />
+                <Route element={<CardPage />} path={"/cards/:id"} />
+                <Route
+                  path="/user"
+                  element={
+                    <PrivateRoute>
+                      <UserPage />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/basket"
+                  element={
+                    <PrivateRoute>
+                      <Basket />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/favorites"
+                  element={
+                    <PrivateRoute>
+                      <Favorites />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/admin"
+                  element={
+                    <PrivateRoute>
+                      <Admin />
+                    </PrivateRoute>
+                  }
+                />
+              </Routes>
+            </CardsProvider>
+          </FavoritesProvider>
+        </BasketProvider>
         <Footer />
       </AuthProvider>
     </BrowserRouter>

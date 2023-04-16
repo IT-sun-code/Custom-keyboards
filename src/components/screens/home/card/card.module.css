@@ -31,3 +31,60 @@
 .tooltip:hover {
   cursor: pointer;
 }
+
+/* ____________________________________________________________ */
+
+.order {
+  margin-bottom: 120px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.imageBasket {
+  margin-bottom: 0;
+}
+
+.itemBasket {
+  position: relative;
+  width: 350px;
+}
+
+.rightBlock {
+  margin-left: 30px;
+  height: 530px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.data {
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-left: 100px;
+}
+
+.text {
+  margin-top: 25px;
+  margin-right: 16px;
+}
+
+.price {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.plus,
+.count {
+  margin-right: 16px;
+}
+
+.total {
+  margin: 40px 0;
+}

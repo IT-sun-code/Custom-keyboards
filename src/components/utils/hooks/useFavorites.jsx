@@ -14,20 +14,20 @@ export const FavoritesProvider = ({ children }) => {
     const favorites = currentUser?.favorites || [];
     const cardIndex = favorites.findIndex((favCard) => favCard.id === card.id);
     if (cardIndex === -1) {
+      setFavoriteCards([card, ...favorites]);
       await updateUserData({
         ...currentUser,
         favorites: [card, ...favorites],
       });
-      setFavoriteCards([card, ...favorites]);
     } else {
+      const newFavoriteCards = [...favorites];
+      newFavoriteCards.splice(cardIndex, 1);
+      setFavoriteCards(newFavoriteCards);
       favorites.splice(cardIndex, 1);
       await updateUserData({
         ...currentUser,
         favorites: favorites,
       });
-      const newFavoriteCards = [...favorites];
-      newFavoriteCards.splice(cardIndex, 1);
-      setFavoriteCards(newFavoriteCards);
     }
   };
 
