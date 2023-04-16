@@ -8,7 +8,8 @@ import { useFavorites } from "../../../utils/hooks/useFavorites";
 import { useBasket } from "../../../utils/hooks/useBasket";
 import TextBlock from "../../../ui/textBlock";
 import Button from "../../../ui/button";
-import Line from "../../../ui/line";
+import Modal from "../../../ui/modal";
+import useModal from "../../../utils/hooks/useModal";
 
 const Card = ({ card }) => {
   const str = card.title;
@@ -18,35 +19,46 @@ const Card = ({ card }) => {
   const location = useLocation();
   const currentPath = location.pathname;
   console.log(currentPath);
+
+  const { modalVariety, handleModalOpen, handleModalClose, modalOpen } =
+    useModal();
   //__________________________________________________________________________________
   const { favoriteCards, handleFavoriteClick } = useFavorites();
   const isFavorite = favoriteCards.some((favCard) => favCard.id === card.id);
   const [heartIconclicks, setHeartIconClicks] = useState(isFavorite);
-
-  const { basketCards, handleBasketClick } = useBasket();
-  const isBasket = basketCards.some((basketCard) => basketCard.id === card.id);
-  const [basketIconclicks, setBasketIconClicks] = useState(isBasket);
-
   const handleHeartIconClick = async () => {
     setHeartIconClicks(!heartIconclicks);
     handleFavoriteClick(card);
   };
 
+  const { basketCards, handleBasketClick } = useBasket();
+  const isBasket = basketCards.some((basketCard) => basketCard.id === card.id);
+  const [basketIconclicks, setBasketIconClicks] = useState(isBasket);
   const handleBasketIconClick = async () => {
     setBasketIconClicks(!basketIconclicks);
     handleBasketClick(card);
   };
+
+  console.log(modalOpen);
 
   return (
     <>
       {currentPath !== "/basket" && (
         <div className={styles.item}>
           <HeartIcon
-            onClick={currentUser && handleHeartIconClick}
+            onClick={
+              currentUser
+                ? handleHeartIconClick
+                : () => handleModalOpen("signIn")
+            }
             isActive={isFavorite}
           />
           <BasketIcon
-            onClick={currentUser && handleBasketIconClick}
+            onClick={
+              currentUser
+                ? handleBasketIconClick
+                : () => handleModalOpen("signIn")
+            }
             isActive={isBasket}
           />
           <Link to={`/cards/${card.id}`}>
@@ -123,6 +135,13 @@ const Card = ({ card }) => {
             </div>
           </div>
         </section>
+      )}
+      {modalOpen && (
+        <Modal
+          variety={modalVariety}
+          isOpen={modalOpen}
+          onClose={handleModalClose}
+        />
       )}
     </>
   );

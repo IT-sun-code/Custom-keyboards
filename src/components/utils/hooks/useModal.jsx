@@ -6,21 +6,23 @@ const useModal = () => {
 
   const handleModalOpen = (variety) => {
     setModalVariety(variety);
-    setModalOpen(!modalOpen);
+    setModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setModalOpen(!modalOpen);
+    setModalOpen(false);
     console.log("закрыто");
   };
 
   useEffect(() => {
-    if (modalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
+    const handleBeforeUnload = () => {
       document.body.style.overflow = "auto";
-    }
-  }, [modalOpen]);
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
   return {
     modalOpen,
