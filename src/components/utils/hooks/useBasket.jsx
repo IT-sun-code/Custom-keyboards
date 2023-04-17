@@ -43,7 +43,12 @@ export const BasketProvider = ({ children }) => {
   };
 
   return (
-    <BasketContext.Provider value={{ basketCards, handleBasketClick }}>
+    <BasketContext.Provider
+      value={{
+        basketCards,
+        handleBasketClick,
+      }}
+    >
       {children}
     </BasketContext.Provider>
   );
