@@ -45,7 +45,27 @@ const Card = ({ card }) => {
     <>
       {currentPath !== "/basket" && (
         <div className={styles.item}>
-          <HeartIcon
+          {!currentUser?.admin && (
+            <>
+              <HeartIcon
+                onClick={
+                  currentUser
+                    ? handleHeartIconClick
+                    : () => handleModalOpen("signIn")
+                }
+                isActive={isFavorite}
+              />
+              <BasketIcon
+                onClick={
+                  currentUser
+                    ? handleBasketIconClick
+                    : () => handleModalOpen("signIn")
+                }
+                isActive={isBasket}
+              />
+            </>
+          )}
+          {/* <HeartIcon
             onClick={
               currentUser
                 ? handleHeartIconClick
@@ -60,7 +80,7 @@ const Card = ({ card }) => {
                 : () => handleModalOpen("signIn")
             }
             isActive={isBasket}
-          />
+          /> */}
           <Link to={`/cards/${card.id}`}>
             <img className={styles.image} src={card.image} alt="keyboard" />
           </Link>
