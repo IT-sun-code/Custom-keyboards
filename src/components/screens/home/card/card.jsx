@@ -39,8 +39,6 @@ const Card = ({ card }) => {
     handleBasketClick(card);
   };
 
-  console.log(modalOpen);
-
   return (
     <>
       {currentPath !== "/basket" && (
@@ -65,22 +63,6 @@ const Card = ({ card }) => {
               />
             </>
           )}
-          {/* <HeartIcon
-            onClick={
-              currentUser
-                ? handleHeartIconClick
-                : () => handleModalOpen("signIn")
-            }
-            isActive={isFavorite}
-          />
-          <BasketIcon
-            onClick={
-              currentUser
-                ? handleBasketIconClick
-                : () => handleModalOpen("signIn")
-            }
-            isActive={isBasket}
-          /> */}
           <Link to={`/cards/${card.id}`}>
             <img className={styles.image} src={card.image} alt="keyboard" />
           </Link>
