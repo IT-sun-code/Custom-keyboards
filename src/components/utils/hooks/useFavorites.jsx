@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useAuth } from "./useAuth";
 
 const FavoritesContext = React.createContext();
@@ -9,6 +9,15 @@ export const useFavorites = () => {
 export const FavoritesProvider = ({ children }) => {
   const [favoriteCards, setFavoriteCards] = useState([]);
   const { currentUser, updateUserData } = useAuth();
+
+  useEffect(() => {
+    if (!currentUser) {
+      setFavoriteCards([]);
+    }
+    if (currentUser?.favorites) {
+      setFavoriteCards(currentUser.favorites);
+    }
+  }, [currentUser]);
 
   const handleFavoriteClick = async (card) => {
     const favorites = currentUser?.favorites || [];

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useAuth } from "./useAuth";
 
 const BasketContext = React.createContext();
@@ -9,6 +9,15 @@ export const useBasket = () => {
 export const BasketProvider = ({ children }) => {
   const [basketCards, setBasketCards] = useState([]);
   const { currentUser, updateUserData } = useAuth();
+
+  useEffect(() => {
+    if (!currentUser) {
+      setBasketCards([]);
+    }
+    if (currentUser?.basket) {
+      setBasketCards(currentUser.basket);
+    }
+  }, [currentUser]);
 
   const handleBasketClick = async (card) => {
     const basket = currentUser?.basket || [];
