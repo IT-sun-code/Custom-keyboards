@@ -6,6 +6,7 @@ import styles from "./userPage.module.css";
 import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
 import Button from "../../ui/button";
+import { useAuth } from "../../utils/hooks/useAuth";
 
 const UserPage = () => {
   const order = {
@@ -14,16 +15,17 @@ const UserPage = () => {
     description:
       "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod malesuada penatibus. Donec imperdiet bibendum dui ut scelerisque. Tincidunt amet pharetra ullamcorper sem quis enim. Odio neque integer in aliquam pharetra odio ac.",
   };
+  const { currentUser } = useAuth();
 
   return (
     <>
       <Heading>
-        <FirstHeading>ИМЯ</FirstHeading>
+        <FirstHeading>{currentUser.userName.toUpperCase()}</FirstHeading>
         <SecondHeading>Добро пожаловать!</SecondHeading>
       </Heading>
       <section className={styles.userData}>
         <img src="/images/avatars/avatar5.svg" alt="avatar" />
-        <TextBlock authData />
+        <TextBlock authData={currentUser} />
       </section>
       <Line />
       <section>

@@ -10,18 +10,18 @@ const TextBlock = ({ title, subtitle, description, authData }) => {
     </div>
   ) : (
     <div className={styles.textBlock}>
-      <h3 className={styles.titleAuth}>Имя</h3>
+      <h3 className={styles.titleAuth}>{authData.userName}</h3>
       <p className={styles.subtitleAuth}>
-        <b>Логин:</b> логин при регистрации
+        <b>Статус:</b> {authData.orders ? "продвинутый" : "новичок"}
       </p>
       <p className={styles.subtitleAuth}>
-        <b>Телефон:</b> +7 000 000 00 00
+        <b>Телефон:</b> {authData.phone}
       </p>
       <p className={styles.subtitleAuth}>
-        <b>Почта:</b> keyboards2023@yandex.ru
+        <b>Почта:</b> {authData.email}
       </p>
       <p className={styles.subtitleAuth}>
-        <b>Адрес:</b> г. Санкт-Петербург, ул. Гороховая, д.21, кв.1
+        <b>Адрес:</b> {authData.address}
       </p>
     </div>
   );

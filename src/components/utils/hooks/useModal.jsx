@@ -15,14 +15,12 @@ const useModal = () => {
   };
 
   useEffect(() => {
-    const handleBeforeUnload = () => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
       document.body.style.overflow = "auto";
-    };
-    window.addEventListener("beforeunload", handleBeforeUnload);
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, []);
+    }
+  }, [modalOpen, handleModalClose]);
 
   return {
     modalOpen,
