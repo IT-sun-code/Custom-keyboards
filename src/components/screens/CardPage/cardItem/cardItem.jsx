@@ -7,10 +7,14 @@ import BasketIcon from "../../../ui/basketIcon";
 import { useFavorites } from "../../../utils/hooks/useFavorites";
 import { useBasket } from "../../../utils/hooks/useBasket";
 import { useAuth } from "../../../utils/hooks/useAuth";
+import Modal from "../../../ui/modal";
+import useModal from "../../../utils/hooks/useModal";
 
 const CardItem = ({ slides, card }) => {
   const [filteredSlides, setfilteredSlides] = useState([]);
   const { currentUser } = useAuth();
+  const { modalVariety, handleModalOpen, handleModalClose, modalOpen } =
+    useModal();
 
   useEffect(() => {
     const filteredSlides = slides.filter((slide) => slide.cardId === card.id);
@@ -59,15 +63,23 @@ const CardItem = ({ slides, card }) => {
             {!currentUser?.admin ? (
               <>
                 <HeartIcon
-                  cardItem
-                  onClick={handleHeartIconClick}
+                  onClick={
+                    currentUser
+                      ? handleHeartIconClick
+                      : () => handleModalOpen("signIn")
+                  }
                   isActive={isFavorite}
+                  cardItem
                 />
                 <h2>Цена: {card.price}</h2>
                 <BasketIcon
-                  cardItem
-                  onClick={handleBasketIconClick}
+                  onClick={
+                    currentUser
+                      ? handleBasketIconClick
+                      : () => handleModalOpen("signIn")
+                  }
                   isActive={isBasket}
+                  cardItem
                 />
               </>
             ) : (
@@ -76,6 +88,13 @@ const CardItem = ({ slides, card }) => {
           </div>
         </div>
       </div>
+      {modalOpen && (
+        <Modal
+          variety={modalVariety}
+          isOpen={modalOpen}
+          onClose={handleModalClose}
+        />
+      )}
     </>
   );
 };
