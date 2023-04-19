@@ -1,0 +1,19 @@
+.text {
+  margin-top: 25px;
+  margin-right: 16px;
+}
+
+.price {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.plus,
+.count {
+  margin-right: 16px;
+}
+
+.total {
+  margin: 40px 0;
+}

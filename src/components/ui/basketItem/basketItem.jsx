@@ -4,6 +4,7 @@ import HeartIcon from "../heartIcon";
 import TextBlock from "../textBlock";
 import Button from "../button";
 import styles from "./basketItem.module.css";
+import BasketItemData from "./basketItemData";
 
 const BasketItem = ({
   currentUser,
@@ -33,27 +34,10 @@ const BasketItem = ({
             </div>
             <div className={styles.rightBlock}>
               <TextBlock {...card} />
+
               <div className={styles.data}>
-                <div>
-                  <h3 className={styles.text}>Доставка: 30 дней</h3>
-                  <div className={styles.price}>
-                    <h3 className={styles.count}>{` ${1} шт.`}</h3>
-                    <button>
-                      <img
-                        className={styles.plus}
-                        src="/icons/actionIcons/plus.svg"
-                        alt="plus"
-                      />
-                    </button>
-                    <button>
-                      <img src="/icons/actionIcons/minus.svg" alt="minus" />
-                    </button>
-                  </div>
-                  <h3
-                    className={styles.text}
-                  >{`Цена за 1 шт: ${card.price} руб.`}</h3>
-                  <h3 className={styles.text}>{`Всего: ${card.price} руб.`}</h3>
-                </div>
+                <BasketItemData card={card} />
+
                 <div>
                   <Button appearance="ctvBlack" onClick={handleBasketIconClick}>
                     Удалить

@@ -25,10 +25,11 @@ export const BasketProvider = ({ children }) => {
       (basketCard) => basketCard.id === card.id
     );
     if (cardIndex === -1) {
-      setBasketCards([card, ...basket]);
+      const newCard = { ...card, quantity: 1, totalPrice: card.price };
+      setBasketCards([newCard, ...basket]);
       await updateUserData({
         ...currentUser,
-        basket: [card, ...basket],
+        basket: [newCard, ...basket],
       });
     } else {
       const newBasketCards = [...basket];
@@ -42,11 +43,85 @@ export const BasketProvider = ({ children }) => {
     }
   };
 
+  const setTotalPrice = async (card, quantity) => {
+    const basket = currentUser.basket;
+    const updatedBasket = basket.map((item) => {
+      if (item.id === card.id) {
+        return {
+          ...item,
+          totalPrice: item.price * quantity,
+        };
+      }
+      return item;
+    });
+    await updateUserData({
+      ...currentUser,
+      basket: updatedBasket,
+    });
+    console.log(updatedBasket);
+  };
+
+  const getTotalPrice = (card) => {
+    const basket = currentUser.basket;
+    const index = basket.findIndex((item) => item.id === card.id);
+    return index >= 0 ? basket[index].totalPrice : 0;
+  };
+
+  const getQuantity = (card) => {
+    const basket = currentUser.basket;
+    const index = basket.findIndex((item) => item.id === card.id);
+    return index >= 0 ? basket[index].quantity : 0;
+  };
+
+  const handleIncreaseQuantity = async (card, quantity) => {
+    const basket = currentUser.basket;
+    const updatedBasket = basket.map((item) => {
+      if (item.id === card.id) {
+        return {
+          ...item,
+          quantity: ++item.quantity,
+        };
+      }
+      return item;
+    });
+    await updateUserData({
+      ...currentUser,
+      basket: updatedBasket,
+    });
+    setTotalPrice(card, quantity + 1);
+  };
+
+  const handleDecreaseQuantity = async (card, quantity) => {
+    const basket = currentUser.basket;
+    const updatedBasket = basket.map((item) => {
+      if (item.id === card.id) {
+        if (item.quantity > 1) {
+          return {
+            ...item,
+            quantity: --item.quantity,
+          };
+        }
+      }
+      return item;
+    });
+    await updateUserData({
+      ...currentUser,
+      basket: updatedBasket,
+    });
+    if (quantity > 1) {
+      setTotalPrice(card, quantity - 1);
+    }
+  };
+
   return (
     <BasketContext.Provider
       value={{
         basketCards,
         handleBasketClick,
+        getQuantity,
+        handleIncreaseQuantity,
+        handleDecreaseQuantity,
+        getTotalPrice,
       }}
     >
       {children}
