@@ -6,8 +6,10 @@ import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
 // import styles from "./basket.module.css";
 import styles from "./admin.module.css";
+import { useAuth } from "../../utils/hooks/useAuth";
 
 const Admin = () => {
+  const { currentUser } = useAuth();
   return (
     <>
       <Heading>
@@ -16,7 +18,7 @@ const Admin = () => {
       </Heading>
       <section className={styles.userData}>
         <img src="/images/avatars/avatar3.svg" alt="avatar" />
-        <TextBlock authData />
+        <TextBlock authData={currentUser} />
       </section>
       <Line />
       <section>
