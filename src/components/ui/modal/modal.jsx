@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./modal.module.css";
 import Portal from "../../utils/portal";
 import {
@@ -8,7 +8,7 @@ import {
   AuthModalContent,
 } from "./modalContent";
 
-const Modal = ({ variety, isOpen, onClose, children }) => {
+const Modal = ({ variety, isOpen, onClose, orderData }) => {
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
@@ -20,6 +20,19 @@ const Modal = ({ variety, isOpen, onClose, children }) => {
       document.removeEventListener("keydown", handleEsc);
     };
   }, [onClose]);
+
+  const [content, setContent] = useState(
+    variety === "order" ? (
+      <OrderModalContent
+        orderData={orderData}
+        onConfirm={() => setContent(<SuccessModalContent />)}
+      />
+    ) : variety === "logOut" ? (
+      <LogOutModalContent onClose={onClose} />
+    ) : variety === "signIn" || variety === "signUp" ? (
+      <AuthModalContent variety={variety} onClose={onClose} />
+    ) : null
+  );
 
   return (
     <Portal>
@@ -36,17 +49,7 @@ const Modal = ({ variety, isOpen, onClose, children }) => {
             &times;
           </button>
           <div className={styles.containerContent}>
-            <div className={styles.content}>
-              {variety === "success" ? (
-                <SuccessModalContent />
-              ) : variety === "order" ? (
-                <OrderModalContent />
-              ) : variety === "logOut" ? (
-                <LogOutModalContent onClose={onClose} />
-              ) : variety === "signIn" || variety === "signUp" ? (
-                <AuthModalContent variety={variety} onClose={onClose} />
-              ) : null}
-            </div>
+            <div className={styles.content}>{content}</div>
           </div>
         </div>
       </div>

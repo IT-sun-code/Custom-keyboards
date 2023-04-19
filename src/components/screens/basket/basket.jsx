@@ -9,11 +9,31 @@ import styles from "./basket.module.css";
 import { useAuth } from "../../utils/hooks/useAuth";
 import { useBasket } from "../../utils/hooks/useBasket";
 import Card from "../home/card";
+import useModal from "../../utils/hooks/useModal";
+import Modal from "../../ui/modal";
 
 const Basket = () => {
-  const { basketCards } = useBasket();
-  const { currentUser } = useAuth();
+  const { modalVariety, handleModalOpen, handleModalClose, modalOpen } =
+    useModal();
+
+  const { basketCards, getQuantity } = useBasket();
+  // const { currentUser } = useAuth();
   console.log(basketCards);
+
+  const totalQuantity = basketCards.reduce(
+    (total, card) => total + card.quantity,
+    0
+  );
+
+  const totalPrice = basketCards.reduce(
+    (total, card) => total + card.totalPrice,
+    0
+  );
+
+  const orderData = {
+    totalQuantity: totalQuantity,
+    totalPrice: totalPrice,
+  };
 
   return (
     <>
@@ -29,10 +49,23 @@ const Basket = () => {
       </section>
       <Line />
       <section>
-        <h2>{`Товары: ${basketCards.length} шт.`}</h2>
-        <h2 className={styles.total}>{`ИТОГО: 7999 руб.`}</h2>
-        <Button appearance="ctvBlueOrder">Оформить заказ</Button>
+        <h2>{`Товаров: ${totalQuantity} шт.`}</h2>
+        <h2 className={styles.total}>{`ИТОГО: ${totalPrice} руб.`}</h2>
+        <Button
+          appearance="ctvBlueOrder"
+          onClick={() => handleModalOpen("order")}
+        >
+          Оформить заказ
+        </Button>
       </section>
+      {modalOpen && (
+        <Modal
+          variety={modalVariety}
+          isOpen={modalOpen}
+          onClose={handleModalClose}
+          orderData={orderData}
+        />
+      )}
     </>
   );
 };
