@@ -37,12 +37,34 @@ export const OrderModalContent = ({ orderData, onConfirm }) => {
   return (
     <>
       <h2 className={styles.heading}>Оформление заказа</h2>
-      <h3
-        className={styles.heading}
-      >{`Количество товаров: ${orderData.totalQuantity} штук`}</h3>
-      <h3
-        className={styles.heading}
-      >{`Сумма к оплате: ${orderData.totalPrice} рублей`}</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Описание заказа</th>
+            <th>Данные о заказе</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Количество товаров:</td>
+            <td>{`${orderData.totalQuantity} шт.`}</td>
+          </tr>
+          <tr>
+            <td>Сумма к оплате:</td>
+            <td>{`${orderData.totalPrice} руб.`}</td>
+          </tr>
+          <tr>
+            <td>Адрес доставки:</td>
+            <td>{orderData.address}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Оплата:</td>
+            <td>Наличные или карта</td>
+          </tr>
+        </tfoot>
+      </table>
       <p className={styles.warning}>
         <b className={styles.warning}>ВНИМАНИЕ! Оплата при получении!</b>
       </p>
@@ -58,9 +80,7 @@ export const LogOutModalContent = ({ onClose }) => {
   return (
     <>
       <h2 className={styles.heading}>Выход из аккаунта</h2>
-      <p className={styles.warning}>
-        <b className={styles.warning}>Вы точно хотите выйти из аккаунта?</b>
-      </p>
+      <p className={styles.message}>Вы точно хотите выйти из аккаунта?</p>
       <Button
         appearance="ctvBlue"
         onClick={() => {

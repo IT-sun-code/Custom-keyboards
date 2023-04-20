@@ -17,7 +17,7 @@ const Basket = () => {
     useModal();
 
   const { basketCards, getQuantity } = useBasket();
-  // const { currentUser } = useAuth();
+  const { currentUser } = useAuth();
   console.log(basketCards);
 
   const totalQuantity = basketCards.reduce(
@@ -33,6 +33,7 @@ const Basket = () => {
   const orderData = {
     totalQuantity: totalQuantity,
     totalPrice: totalPrice,
+    address: currentUser.address,
   };
 
   return (

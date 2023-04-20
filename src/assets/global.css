@@ -93,3 +93,31 @@ h4 {
   font-weight: 700;
   font-size: 18px;
 }
+
+table {
+  text-align: center;
+  font-size: 24px;
+  margin: 0 auto 20px auto;
+  border-spacing: 0;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+td,
+th {
+  padding: 20px;
+  border: 1px solid black;
+}
+
+table thead th:last-child {
+  border-top-right-radius: 30px;
+}
+table thead th:first-child {
+  border-top-left-radius: 30px;
+}
+table tfoot td:last-child {
+  border-bottom-right-radius: 30px;
+}
+table tfoot td:first-child {
+  border-bottom-left-radius: 30px;
+}

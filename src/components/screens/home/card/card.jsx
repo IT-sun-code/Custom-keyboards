@@ -5,6 +5,7 @@ import { useFavorites } from "../../../utils/hooks/useFavorites";
 import { useBasket } from "../../../utils/hooks/useBasket";
 import ProductItem from "../../../ui/productItem";
 import BasketItem from "../../../ui/basketItem";
+import OrderItem from "../../../ui/orderItem";
 
 const Card = ({ card }) => {
   const { currentUser } = useAuth();
@@ -45,6 +46,11 @@ const Card = ({ card }) => {
         handleHeartIconClick={handleHeartIconClick}
         handleBasketIconClick={handleBasketIconClick}
         isFavorite={isFavorite}
+      />
+      <OrderItem
+        currentUser={currentUser}
+        currentPath={currentPath}
+        card={card}
       />
     </>
   );

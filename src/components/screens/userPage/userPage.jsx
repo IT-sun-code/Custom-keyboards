@@ -7,15 +7,19 @@ import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
 import Button from "../../ui/button";
 import { useAuth } from "../../utils/hooks/useAuth";
+import { useOrders } from "../../utils/hooks/useOrders";
+import Card from "../home/card";
 
 const UserPage = () => {
   const order = {
     title: "Клавиатура1234567890",
     subtitle: "Артикул: 2  ",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Non mauris adipiscing nulla mattis lacus vitae eu nisl at. Neque tempus euismod malesuada penatibus. Donec imperdiet bibendum dui ut scelerisque. Tincidunt amet pharetra ullamcorper sem quis enim. Odio neque integer in aliquam pharetra odio ac.",
+      "Lolla mattis.  Tincidunt amet pharetra ullamcorper sem quis enim. Odio neque integer in aliquam pharetra odio ac.",
   };
   const { currentUser } = useAuth();
+  const { ordersCards } = useOrders();
+  console.log(currentUser);
 
   return (
     <>
@@ -30,7 +34,12 @@ const UserPage = () => {
       <Line />
       <section>
         <h2 className={styles.orderHeading}>Заказы</h2>
-        <div className={styles.order}>
+        {ordersCards.length === 0 && (
+          <SecondHeading>Здесь пока пусто</SecondHeading>
+        )}
+        {ordersCards &&
+          ordersCards.map((order) => <Card card={order} key={order.id} />)}
+        {/* <div className={styles.order}>
           <p className={styles.orderDate}>Дата заказа: 05.02.2023</p>
           <div className={styles.info}>
             <img
@@ -72,7 +81,7 @@ const UserPage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );
