@@ -1,2 +1,5 @@
-import { calculateDeliveryDate } from "./calculateDeliveryDate";
-export { calculateDeliveryDate };
+import {
+  calculateDeliveryDate,
+  calculateCurrentDate,
+} from "./calculateDeliveryDate";
+export { calculateDeliveryDate, calculateCurrentDate };

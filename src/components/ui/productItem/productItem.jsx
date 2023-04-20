@@ -23,7 +23,7 @@ const ProductItem = ({
 
   return (
     <>
-      {currentPath !== "/basket" && (
+      {currentPath !== "/basket" && currentPath !== "/user" && (
         <div className={styles.item}>
           {!currentUser?.admin && (
             <>

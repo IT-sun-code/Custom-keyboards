@@ -5,9 +5,11 @@ import Button from "../../button";
 import styles from "./modalContent.module.css";
 import { useAuth } from "../../../utils/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import { useBasket } from "../../../utils/hooks/useBasket";
 
 export const SuccessModalContent = () => {
   const navigate = useNavigate();
+  const { handleDeleteBasket } = useBasket();
   return (
     <>
       <h2 className={styles.heading}>Поздравляем!</h2>
@@ -24,7 +26,7 @@ export const SuccessModalContent = () => {
       <Button
         appearance="ctvBlue"
         onClick={() => {
-          navigate("/user");
+          navigate("/user"), handleDeleteBasket();
         }}
       >
         Смотреть

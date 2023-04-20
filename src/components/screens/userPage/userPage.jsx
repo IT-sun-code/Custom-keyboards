@@ -5,21 +5,15 @@ import SecondHeading from "../../ui/heading/secondHeading";
 import styles from "./userPage.module.css";
 import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
-import Button from "../../ui/button";
 import { useAuth } from "../../utils/hooks/useAuth";
 import { useOrders } from "../../utils/hooks/useOrders";
 import Card from "../home/card";
 
 const UserPage = () => {
-  const order = {
-    title: "Клавиатура1234567890",
-    subtitle: "Артикул: 2  ",
-    description:
-      "Lolla mattis.  Tincidunt amet pharetra ullamcorper sem quis enim. Odio neque integer in aliquam pharetra odio ac.",
-  };
   const { currentUser } = useAuth();
   const { ordersCards } = useOrders();
   console.log(currentUser);
+  console.log(ordersCards);
 
   return (
     <>
@@ -34,54 +28,11 @@ const UserPage = () => {
       <Line />
       <section>
         <h2 className={styles.orderHeading}>Заказы</h2>
-        {ordersCards.length === 0 && (
+        {ordersCards?.length === 0 && (
           <SecondHeading>Здесь пока пусто</SecondHeading>
         )}
         {ordersCards &&
           ordersCards.map((order) => <Card card={order} key={order.id} />)}
-        {/* <div className={styles.order}>
-          <p className={styles.orderDate}>Дата заказа: 05.02.2023</p>
-          <div className={styles.info}>
-            <img
-              className={styles.image}
-              src="/images/keycaps/keycapsPreview/keycap1.jpg"
-              alt="keyboard"
-            />
-            <div>
-              <TextBlock {...order} />
-              <div className={styles.data}>
-                <div>
-                  <h3 className={styles.text}>Доставка: 30 дней</h3>
-                  <h3 className={styles.text}>5 шт.</h3>
-                  <h3 className={styles.text}>Цена: 3000 руб.</h3>
-                </div>
-                <Button appearance="ctvBlack">В доставке</Button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.order}>
-          <p className={styles.orderDate}>Дата заказа: 05.02.2023</p>
-          <div className={styles.info}>
-            <img
-              className={styles.image}
-              src="/images/keycaps/keycapsPreview/keycap1.jpg"
-              alt="keyboard"
-            />
-            <div>
-              <TextBlock {...order} />
-              <div className={styles.data}>
-                <div>
-                  <h3 className={styles.text}>Доставка: 30 дней</h3>
-                  <h3 className={styles.text}>5 шт.</h3>
-                  <h3 className={styles.text}>Цена: 3000 руб.</h3>
-                </div>
-                <Button appearance="ctvBlack">В доставке</Button>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </section>
     </>
   );

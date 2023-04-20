@@ -113,6 +113,14 @@ export const BasketProvider = ({ children }) => {
     }
   };
 
+  const handleDeleteBasket = async () => {
+    setBasketCards([]);
+    await updateUserData({
+      ...currentUser,
+      basket: [],
+    });
+  };
+
   return (
     <BasketContext.Provider
       value={{
@@ -122,6 +130,7 @@ export const BasketProvider = ({ children }) => {
         handleIncreaseQuantity,
         handleDecreaseQuantity,
         getTotalPrice,
+        handleDeleteBasket,
       }}
     >
       {children}

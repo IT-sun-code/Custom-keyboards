@@ -25,7 +25,10 @@ const Modal = ({ variety, isOpen, onClose, orderData }) => {
     variety === "order" ? (
       <OrderModalContent
         orderData={orderData}
-        onConfirm={() => setContent(<SuccessModalContent />)}
+        onConfirm={() => {
+          setContent(<SuccessModalContent />),
+            orderData.handleOrdersClick(orderData.basketCards);
+        }}
       />
     ) : variety === "logOut" ? (
       <LogOutModalContent onClose={onClose} />

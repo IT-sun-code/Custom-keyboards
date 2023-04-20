@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./orderItemData.module.css";
-import { calculateDeliveryDate } from "../../../utils/calculateDeliveryDate";
 import { useOrders } from "../../../utils/hooks/useOrders";
 
 const OrderItemData = ({ card }) => {
-  const { getQuantity, getTotalPrice } = useOrders();
-
-  const deliveryDdate = calculateDeliveryDate();
+  const { getQuantity, getTotalPrice, getDeliveryDate } = useOrders();
+  const deliveryDdate = getDeliveryDate(card);
   const quantity = getQuantity(card);
   const total = getTotalPrice(card);
 
