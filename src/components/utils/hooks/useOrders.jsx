@@ -13,6 +13,9 @@ export const useOrders = () => {
 export const OrdersProvider = ({ children }) => {
   const [ordersCards, setOrdersCards] = useState([]);
   const { currentUser, updateUserData } = useAuth();
+  const currentDate = calculateCurrentDate();
+  const deliveryDate = calculateDeliveryDate();
+  const orderAddress = currentUser?.address;
 
   useEffect(() => {
     if (!currentUser) {
@@ -22,10 +25,6 @@ export const OrdersProvider = ({ children }) => {
       setOrdersCards(currentUser.orders);
     }
   }, [currentUser]);
-
-  const currentDate = calculateCurrentDate();
-  const deliveryDate = calculateDeliveryDate();
-  const orderAddress = currentUser?.address;
 
   const handleOrdersClick = async (basketCards) => {
     console.log(basketCards);
@@ -74,38 +73,13 @@ export const OrdersProvider = ({ children }) => {
     });
   };
 
-  const getTotalPrice = (card) => {
-    const orders = currentUser.orders;
-    const index = orders.findIndex((item) => item.id === card.id);
-    return index >= 0 ? orders[index].totalPrice : 0;
-  };
-
-  const getQuantity = (card) => {
-    const orders = currentUser.orders;
-    const index = orders.findIndex((item) => item.id === card.id);
-    return index >= 0 ? orders[index].quantity : 0;
-  };
-
-  const getOrderDate = (card) => {
+  const getOrder = (card) => {
     const orders = currentUser?.orders;
     if (orders) {
       const index = orders.findIndex((item) => item.id === card.id);
-      return index >= 0 ? orders[index].orderDate : 0;
+      return index >= 0 ? orders[index] : {};
     }
-  };
-
-  const getDeliveryDate = (card) => {
-    const orders = currentUser.orders;
-    const index = orders.findIndex((item) => item.id === card.id);
-    return index >= 0 ? orders[index].deliveryDate : 0;
-  };
-
-  const getAddress = (card) => {
-    const orders = currentUser?.orders;
-    if (orders) {
-      const index = orders.findIndex((item) => item.id === card.id);
-      return index >= 0 ? orders[index].orderAddress : 0;
-    }
+    return {};
   };
 
   return (
@@ -113,11 +87,7 @@ export const OrdersProvider = ({ children }) => {
       value={{
         ordersCards,
         handleOrdersClick,
-        getTotalPrice,
-        getQuantity,
-        getOrderDate,
-        getDeliveryDate,
-        getAddress,
+        getOrder,
       }}
     >
       {children}

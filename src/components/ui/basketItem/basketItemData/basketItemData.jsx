@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./basketItemData.module.css";
 import { calculateDeliveryDate } from "../../../utils/calculateDeliveryDate";
 import { useBasket } from "../../../utils/hooks/useBasket";
 
 const BasketItemData = ({ card }) => {
-  const {
-    getQuantity,
-    handleIncreaseQuantity,
-    handleDecreaseQuantity,
-    getTotalPrice,
-  } = useBasket();
-
+  const { handleIncreaseQuantity, handleDecreaseQuantity, getBasketItem } =
+    useBasket();
   const deliveryDdate = calculateDeliveryDate();
-  const quantity = getQuantity(card);
-  const total = getTotalPrice(card);
+  const basketItem = getBasketItem(card);
+  const { quantity, totalPrice } = basketItem;
 
   return (
     <div className={styles.data}>
@@ -33,7 +28,7 @@ const BasketItemData = ({ card }) => {
           </button>
         </div>
         <h3 className={styles.text}>{`Цена за 1 шт: ${card.price} руб.`}</h3>
-        <h3 className={styles.text}>{`Всего: ${total} руб.`}</h3>
+        <h3 className={styles.text}>{`Всего: ${totalPrice} руб.`}</h3>
       </div>
     </div>
   );

@@ -7,9 +7,9 @@ import OrderItemData from "./orderItemData";
 import { useOrders } from "../../utils/hooks/useOrders";
 
 const OrderItem = ({ currentPath, card }) => {
-  const { getOrderDate, getAddress } = useOrders();
-  const orderDate = getOrderDate(card);
-  const orderAddress = getAddress(card);
+  const { getOrder } = useOrders();
+  const order = getOrder(card);
+  const { orderDate, orderAddress } = order;
 
   return (
     currentPath === "/user" && (

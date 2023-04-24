@@ -12,8 +12,6 @@ import Card from "../home/card";
 const UserPage = () => {
   const { currentUser } = useAuth();
   const { ordersCards } = useOrders();
-  console.log(currentUser);
-  console.log(ordersCards);
 
   return (
     <>

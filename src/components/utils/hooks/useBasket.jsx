@@ -7,8 +7,8 @@ export const useBasket = () => {
 };
 
 export const BasketProvider = ({ children }) => {
-  const [basketCards, setBasketCards] = useState([]);
   const { currentUser, updateUserData } = useAuth();
+  const [basketCards, setBasketCards] = useState([]);
 
   useEffect(() => {
     if (!currentUser) {
@@ -43,43 +43,15 @@ export const BasketProvider = ({ children }) => {
     }
   };
 
-  const setTotalPrice = async (card, quantity) => {
-    const basket = currentUser.basket;
-    const updatedBasket = basket.map((item) => {
-      if (item.id === card.id) {
-        return {
-          ...item,
-          totalPrice: item.price * quantity,
-        };
-      }
-      return item;
-    });
-    await updateUserData({
-      ...currentUser,
-      basket: updatedBasket,
-    });
-    console.log(updatedBasket);
-  };
-
-  const getTotalPrice = (card) => {
-    const basket = currentUser.basket;
-    const index = basket.findIndex((item) => item.id === card.id);
-    return index >= 0 ? basket[index].totalPrice : 0;
-  };
-
-  const getQuantity = (card) => {
-    const basket = currentUser.basket;
-    const index = basket.findIndex((item) => item.id === card.id);
-    return index >= 0 ? basket[index].quantity : 0;
-  };
-
   const handleIncreaseQuantity = async (card, quantity) => {
     const basket = currentUser.basket;
     const updatedBasket = basket.map((item) => {
       if (item.id === card.id) {
+        const newQuantity = item.quantity + 1;
         return {
           ...item,
-          quantity: ++item.quantity,
+          quantity: newQuantity,
+          totalPrice: item.price * newQuantity,
         };
       }
       return item;
@@ -88,7 +60,6 @@ export const BasketProvider = ({ children }) => {
       ...currentUser,
       basket: updatedBasket,
     });
-    setTotalPrice(card, quantity + 1);
   };
 
   const handleDecreaseQuantity = async (card, quantity) => {
@@ -96,9 +67,11 @@ export const BasketProvider = ({ children }) => {
     const updatedBasket = basket.map((item) => {
       if (item.id === card.id) {
         if (item.quantity > 1) {
+          const newQuantity = item.quantity - 1;
           return {
             ...item,
-            quantity: --item.quantity,
+            quantity: newQuantity,
+            totalPrice: item.price * newQuantity,
           };
         }
       }
@@ -108,9 +81,15 @@ export const BasketProvider = ({ children }) => {
       ...currentUser,
       basket: updatedBasket,
     });
-    if (quantity > 1) {
-      setTotalPrice(card, quantity - 1);
+  };
+
+  const getBasketItem = (card) => {
+    const basketItems = currentUser?.basket;
+    if (basketItems) {
+      const index = basketItems.findIndex((item) => item.id === card.id);
+      return index >= 0 ? basketItems[index] : {};
     }
+    return {};
   };
 
   const handleDeleteBasket = async () => {
@@ -126,11 +105,10 @@ export const BasketProvider = ({ children }) => {
       value={{
         basketCards,
         handleBasketClick,
-        getQuantity,
         handleIncreaseQuantity,
         handleDecreaseQuantity,
-        getTotalPrice,
         handleDeleteBasket,
+        getBasketItem,
       }}
     >
       {children}
