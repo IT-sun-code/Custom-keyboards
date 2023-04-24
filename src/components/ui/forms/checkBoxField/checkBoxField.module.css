@@ -3,17 +3,17 @@
   text-align: left;
 }
 
-.errorMessage {
-  color: rgb(255, 114, 145);
+.square {
+  height: 20px;
+  width: 20px;
+  margin-left: 0;
+  margin-right: 20px;
 }
 
 .label {
   font-size: 24px;
 }
 
-.square {
-  height: 20px;
-  width: 20px;
-  margin-left: 0;
-  margin-right: 20px;
+.errorMessage {
+  color: rgb(255, 114, 145);
 }

@@ -4,6 +4,15 @@
   position: relative;
 }
 
+.slide {
+  border: 3px solid #20afff;
+  border-radius: 50px;
+  box-shadow: 0px 4px 20px rgba(32, 175, 255, 0.4);
+  position: absolute;
+  top: 0;
+  width: 960px;
+}
+
 .item {
   width: 960px;
   background-color: #fff;
@@ -36,15 +45,6 @@
   padding: 0 34px;
   align-items: center;
   margin-bottom: 34px;
-}
-
-.slide {
-  border: 3px solid #20afff;
-  border-radius: 50px;
-  box-shadow: 0px 4px 20px rgba(32, 175, 255, 0.4);
-  position: absolute;
-  top: 0;
-  width: 960px;
 }
 
 .price {

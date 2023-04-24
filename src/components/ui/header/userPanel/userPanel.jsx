@@ -25,7 +25,7 @@ function UserPanel() {
   };
 
   return (
-    <nav className={styles.panel}>
+    <nav>
       {!currentUser?.admin && (
         <>
           <button

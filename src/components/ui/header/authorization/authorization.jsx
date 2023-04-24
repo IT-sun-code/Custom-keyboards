@@ -11,7 +11,7 @@ const Authorization = () => {
 
   return (
     <>
-      <div className={styles.authorization}>
+      <div>
         {currentUser ? (
           <button
             onClick={() => handleModalOpen("logOut")}

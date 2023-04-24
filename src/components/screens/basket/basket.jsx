@@ -45,7 +45,7 @@ const Basket = () => {
           <SecondHeading>Здесь пока пусто</SecondHeading>
         )}
       </Heading>
-      <section className={styles.container}>
+      <section>
         {basketCards &&
           basketCards.map((basket) => <Card card={basket} key={basket.id} />)}
       </section>

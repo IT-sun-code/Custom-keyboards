@@ -22,14 +22,9 @@
   padding-right: 20px;
 }
 
-.percentagesHigher {
-  padding-top: 25.5%;
-  padding-bottom: 25.5%;
-}
-
-.percentagesLower {
-  padding-top: 22.7%;
-  padding-bottom: 22.7%;
+.arrow:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .left {
@@ -41,9 +36,14 @@
   transform: rotate(180deg);
 }
 
-.arrow:hover {
-  cursor: pointer;
-  opacity: 1;
+.percentagesHigher {
+  padding-top: 25.5%;
+  padding-bottom: 25.5%;
+}
+
+.percentagesLower {
+  padding-top: 22.7%;
+  padding-bottom: 22.7%;
 }
 
 .controls {

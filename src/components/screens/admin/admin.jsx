@@ -4,7 +4,6 @@ import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
 import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
-// import styles from "./basket.module.css";
 import styles from "./admin.module.css";
 import { useAuth } from "../../utils/hooks/useAuth";
 

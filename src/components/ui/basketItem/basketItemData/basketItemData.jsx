@@ -11,7 +11,7 @@ const BasketItemData = ({ card }) => {
   const { quantity, totalPrice } = basketItem;
 
   return (
-    <div className={styles.data}>
+    <div>
       <div>
         <h3 className={styles.text}>{`Доставка: ${deliveryDdate}`}</h3>
         <div className={styles.price}>

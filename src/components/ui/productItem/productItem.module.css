@@ -24,10 +24,10 @@
   cursor: pointer;
 }
 
-.description {
-  padding-bottom: 8px;
-}
-
 .tooltip:hover {
   cursor: pointer;
+}
+
+.description {
+  padding-bottom: 8px;
 }

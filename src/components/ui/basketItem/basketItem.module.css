@@ -7,6 +7,11 @@
   align-items: center;
 }
 
+.itemBasket {
+  position: relative;
+  width: 350px;
+}
+
 .image {
   width: 100%;
   height: 530px;
@@ -31,11 +36,6 @@
   margin-bottom: 0;
 }
 
-.itemBasket {
-  position: relative;
-  width: 350px;
-}
-
 .rightBlock {
   margin-left: 30px;
   height: 530px;
@@ -52,23 +52,3 @@
   align-items: flex-end;
   padding-left: 100px;
 }
-
-/* .text {
-  margin-top: 25px;
-  margin-right: 16px;
-}
-
-.price {
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.plus,
-.count {
-  margin-right: 16px;
-}
-
-.total {
-  margin: 40px 0;
-}  */
