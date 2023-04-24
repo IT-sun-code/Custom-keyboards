@@ -43,4 +43,5 @@ const localStorageService = {
   getUserId,
   removeAuthData,
 };
+
 export default localStorageService;

@@ -2,12 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import Loading from "../../ui/loading";
-
-import {
-  setTokens,
-  removeAuthData,
-  getAccessToken,
-} from "../../services/localStorageService/localStorageService";
+import localStorageService from "../../services/localStorageService";
 import UserService from "../../services/userService";
 import { useNavigate } from "react-router-dom";
 
@@ -38,7 +33,7 @@ const AuthProvider = ({ children }) => {
         returnSecureToken: true,
       });
       console.log(data);
-      setTokens(data);
+      localStorageService.setTokens(data);
       await createUser({
         id: data.localId,
         email,
@@ -66,7 +61,7 @@ const AuthProvider = ({ children }) => {
         password,
         returnSecureToken: true,
       });
-      setTokens(data);
+      localStorageService.setTokens(data);
       await getUserData();
     } catch (error) {
       errorCatcher(error);
@@ -84,7 +79,7 @@ const AuthProvider = ({ children }) => {
   }
 
   function logOut() {
-    removeAuthData();
+    localStorageService.removeAuthData();
     setUser(null);
     navigate("/");
   }
@@ -110,7 +105,7 @@ const AuthProvider = ({ children }) => {
     }
   }
   useEffect(() => {
-    if (getAccessToken()) {
+    if (localStorageService.getAccessToken()) {
       getUserData();
     } else {
       setLoading(false);

@@ -1,5 +1,5 @@
 import httpService from "../httpService";
-import localStorageService from "../localStorageService/localStorageService";
+import localStorageService from "../localStorageService";
 
 const userEndpoint = "user/";
 
