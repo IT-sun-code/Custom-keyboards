@@ -6,6 +6,7 @@ import Line from "../../ui/line";
 import TextBlock from "../../ui/textBlock";
 import styles from "./admin.module.css";
 import { useAuth } from "../../utils/hooks/useAuth";
+import AdminPanel from "../../ui/adminPanel";
 
 const Admin = () => {
   const { currentUser } = useAuth();
@@ -20,62 +21,7 @@ const Admin = () => {
         <TextBlock authData={currentUser} />
       </section>
       <Line />
-      <section>
-        <h2 className={styles.orderHeading}>Ассортимент магазина</h2>
-        <div className={styles.panel}>
-          <button>
-            <img src="/icons/actionIcons/add.svg" alt="add" />
-          </button>
-          <div className={styles.theadBlock}>
-            <div className={styles.thead}>
-              <h4>Артикул</h4>
-              <h4>Название</h4>
-              <h4>Категория</h4>
-              <h4>Цена</h4>
-              <h4>Фото</h4>
-            </div>
-            <div className={styles.thead}>
-              <form action="#">
-                <input
-                  type="number"
-                  name=""
-                  id="sku"
-                  placeholder="123..."
-                  min="0"
-                />
-
-                <input
-                  type="text"
-                  name=""
-                  id="title"
-                  placeholder="клавиатура"
-                />
-
-                <select name="" id="category">
-                  <option value="">клавиатура</option>
-                  <option value="">клавиша</option>
-                  <option value="">клавиши</option>
-                </select>
-
-                <input
-                  type="number"
-                  name=""
-                  id="price"
-                  placeholder="1200"
-                  min="0"
-                />
-
-                <input
-                  type="text"
-                  name=""
-                  id="image"
-                  placeholder="/images/1.jpg"
-                />
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AdminPanel />
     </>
   );
 };
