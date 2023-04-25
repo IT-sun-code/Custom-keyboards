@@ -14,6 +14,9 @@ const CardPage = () => {
   const [slides, setSlides] = useState([]);
   const [filteredSlides, setfilteredSlides] = useState([]);
   const navigate = useNavigate();
+  const cardIndex = cards.findIndex((item) => item.id === card.id);
+
+  console.log(id);
 
   useEffect(() => {
     const getCard = async () => {
@@ -56,19 +59,21 @@ const CardPage = () => {
     setfilteredSlides(filteredSlides);
   }, [slides, card.id]);
 
-  const handlePrevClick = () => {
-    if (card.id - 1 < 0) {
-      navigate(`/cards/${cards.length - 1}`);
+  const handleNextClick = () => {
+    if (cardIndex + 1 === cards.length) {
+      navigate(`/cards/${cards[0].id}`);
     } else {
-      navigate(`/cards/${card.id - 1}`);
+      const nextIndex = cardIndex + 1;
+      navigate(`/cards/${cards[nextIndex].id}`);
     }
   };
 
-  const handleNextClick = () => {
-    if (card.id + 1 === cards.length) {
-      navigate(`/cards/0`);
+  const handlePrevClick = () => {
+    if (cardIndex - 1 === -1) {
+      navigate(`/cards/${cards[cards.length - 1].id}`);
     } else {
-      navigate(`/cards/${card.id + 1}`);
+      const prevIndex = cardIndex - 1;
+      navigate(`/cards/${cards[prevIndex].id}`);
     }
   };
 

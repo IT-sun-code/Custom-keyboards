@@ -38,8 +38,18 @@ const CardsProvider = ({ children }) => {
     }
   }, [error]);
 
+  async function createCard(data) {
+    try {
+      const { content } = await CardsService.create(data);
+      setCards((prevCards) => [content, ...prevCards]);
+      console.log(content);
+    } catch (error) {
+      errorCatcher(error);
+    }
+  }
+
   return (
-    <CardsContext.Provider value={{ cards }}>
+    <CardsContext.Provider value={{ cards, createCard }}>
       {!isLoading ? children : <Loading />}
     </CardsContext.Provider>
   );

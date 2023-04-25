@@ -1,12 +1,13 @@
 import React from "react";
 import Line from "../line";
 import styles from "./footer.module.css";
+import Init from "../../utils/mockData/init";
 
 const Footer = () => {
   return (
     <footer className={styles.footer} id="footer">
       <Line />
-
+      <Init />
       <div className={styles.messengers}>
         <p>Остались вопросы?</p>
         <h2>Напишите нам в любом удобном для Вас мессенджере</h2>

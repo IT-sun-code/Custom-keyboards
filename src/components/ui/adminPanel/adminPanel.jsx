@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import styles from "./adminPanel.module.css";
 import { useCards } from "../../utils/hooks/useCards";
-// import { nanoid } from "nanoid";
+import { nanoid } from "nanoid";
 import { getNextId } from "../../utils/getNextId";
 
 const AdminPanel = () => {
-  const { cards } = useCards();
+  const { cards, createCard } = useCards();
 
   const clearData = {
-    id: getNextId(cards),
+    // id: getNextId(cards),
+    id: nanoid(),
     title: "",
     category: "keyboard",
     price: "",
@@ -23,8 +24,8 @@ const AdminPanel = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // onSubmit(data);
-    console.log(data);
+    createCard(data);
+    // console.log(data);
     clearForm();
   };
 

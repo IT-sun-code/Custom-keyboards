@@ -6,10 +6,18 @@ const CardsService = {
     const { data } = await httpService.get(cardsEndpoint);
     return data;
   },
+  // getById: async (id) => {
+  //   const { data } = await httpService.get(cardsEndpoint);
+  //   console.log(data.content[id]);
+  //   console.log(data);
+  //   const cardData = data.content[id];
+  //   return cardData;
+  // },
   getById: async (id) => {
     const { data } = await httpService.get(cardsEndpoint);
-    console.log(data.content[id]);
-    const cardData = data.content[id];
+    console.log(data.content.find((item) => item.id === id));
+    // const cardData = data.content[id];
+    const cardData = data.content.find((item) => item.id === id);
     return cardData;
   },
   create: async (payload) => {
