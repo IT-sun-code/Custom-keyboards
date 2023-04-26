@@ -16,5 +16,9 @@ const CardsService = {
     const { data } = await httpService.put(cardsEndpoint + payload.id, payload);
     return data;
   },
+  deleteCard: async (cardId) => {
+    const { data } = await httpService.delete(cardsEndpoint + cardId);
+    return data;
+  },
 };
 export default CardsService;

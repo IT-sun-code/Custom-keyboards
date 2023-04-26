@@ -13,5 +13,12 @@ const CardsSlidesService = {
     );
     return data;
   },
+  deleteCardSlides: async (slideIds) => {
+    const requests = slideIds.map((id) =>
+      httpService.delete(CardsSlidesEndpoint + id)
+    );
+    const responses = await Promise.all(requests);
+    return responses.map((response) => response.data);
+  },
 };
 export default CardsSlidesService;

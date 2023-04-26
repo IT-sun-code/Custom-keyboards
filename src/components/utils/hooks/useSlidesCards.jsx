@@ -48,8 +48,24 @@ const CardsSlidesProvider = ({ children }) => {
     }
   }
 
+  async function deleteCardSlides(id, slidesIds) {
+    try {
+      const { content } = await CardsSlidesService.deleteCardSlides(slidesIds);
+      if (content !== null) {
+        setSlides((prevState) =>
+          prevState.filter((slide) => slide.cardId !== id)
+        );
+        console.log(slides);
+      }
+    } catch (error) {
+      errorCatcher(error);
+    }
+  }
+
   return (
-    <CardsSlidesContext.Provider value={{ slides, createSlidesCard }}>
+    <CardsSlidesContext.Provider
+      value={{ slides, createSlidesCard, deleteCardSlides, setSlides }}
+    >
       {!isLoading ? children : <Loading />}
     </CardsSlidesContext.Provider>
   );

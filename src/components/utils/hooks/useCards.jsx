@@ -48,8 +48,19 @@ const CardsProvider = ({ children }) => {
     }
   }
 
+  async function deleteCard(id) {
+    try {
+      const { content } = await CardsService.deleteCard(id);
+      if (content === null) {
+        setCards((prevState) => prevState.filter((c) => c.id !== id));
+      }
+    } catch (error) {
+      errorCatcher(error);
+    }
+  }
+
   return (
-    <CardsContext.Provider value={{ cards, createCard }}>
+    <CardsContext.Provider value={{ cards, createCard, deleteCard }}>
       {!isLoading ? children : <Loading />}
     </CardsContext.Provider>
   );

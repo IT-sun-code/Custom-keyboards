@@ -20,7 +20,6 @@
 
 .items {
   display: flex;
-  padding-right: 100px;
   padding-bottom: 10px;
 }
 
@@ -46,4 +45,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
+}
+
+.edit {
+  margin-left: 30px;
+}
+
+.delete {
+  margin-left: 15px;
 }

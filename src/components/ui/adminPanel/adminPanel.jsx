@@ -7,8 +7,8 @@ import CreateSlidesPanel from "./createSlidesPanel";
 import { useSlidesCards } from "../../utils/hooks/useSlidesCards";
 
 const AdminPanel = () => {
-  const { cards, createCard } = useCards();
-  const { slides, createSlidesCard } = useSlidesCards();
+  const { cards, createCard, deleteCard } = useCards();
+  const { slides, createSlidesCard, deleteCardSlides } = useSlidesCards();
 
   return (
     <>
@@ -17,9 +17,20 @@ const AdminPanel = () => {
         <CreateCardPanel createCard={createCard} />
         <CreateSlidesPanel createSlidesCard={createSlidesCard} />
       </section>
-      {cards.map((card) => (
-        <TableItem card={card} key={card.id} slides={slides} />
-      ))}
+      {cards.map((card) => {
+        const matchingSlides = slides.filter(
+          (slide) => slide.cardId === card.id
+        );
+        return (
+          <TableItem
+            card={card}
+            key={card.id}
+            slides={matchingSlides}
+            onDeleteCard={deleteCard}
+            onDeleteCardSlides={deleteCardSlides}
+          />
+        );
+      })}
     </>
   );
 };
