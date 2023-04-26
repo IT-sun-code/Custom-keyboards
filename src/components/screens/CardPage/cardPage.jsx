@@ -13,10 +13,9 @@ const CardPage = () => {
   const [error, setError] = useState(null);
   const [slides, setSlides] = useState([]);
   const [filteredSlides, setfilteredSlides] = useState([]);
+
   const navigate = useNavigate();
   const cardIndex = cards.findIndex((item) => item.id === card.id);
-
-  console.log(id);
 
   useEffect(() => {
     const getCard = async () => {

@@ -3,10 +3,10 @@ import styles from "./createSlidesPanel.module.css";
 import { nanoid } from "nanoid";
 import { validator } from "../../../utils/validator";
 
-const CreateSlidesPanel = ({ createCard }) => {
+const CreateSlidesPanel = ({ createSlidesCard }) => {
   const clearData = {
     id: nanoid(),
-    slides: "",
+    image: "",
     cardId: "",
   };
   const [data, setData] = useState(clearData);
@@ -22,7 +22,7 @@ const CreateSlidesPanel = ({ createCard }) => {
   };
 
   const validatorConfig = {
-    slides: {
+    image: {
       isRequired: {
         message: "Oбязательно",
       },
@@ -56,7 +56,7 @@ const CreateSlidesPanel = ({ createCard }) => {
     const isValid = validate();
     if (!isValid) return;
     try {
-      await createCard(data);
+      await createSlidesCard(data);
       clearForm();
     } catch (error) {
       setErrors(error);
@@ -108,17 +108,17 @@ const CreateSlidesPanel = ({ createCard }) => {
                 <div className={styles.inline}>
                   <input
                     type="text"
-                    value={data.slides}
-                    name="slides"
-                    placeholder="Слайд1.jpg, Слайд2.jpg, Слайд3.jpg..."
+                    value={data.image}
+                    name="image"
+                    placeholder="Слайд1.jpg"
                     onChange={(e) => handleChange(e.target)}
-                    error={errors.slides}
+                    error={errors.image}
                     className={`${styles.cardSlides} ${getInputClasses(
-                      errors.slides
+                      errors.image
                     )}`}
                   />
-                  {errors.slides && (
-                    <div className={styles.errorMessage}>{errors.slides}</div>
+                  {errors.image && (
+                    <div className={styles.errorMessage}>{errors.image}</div>
                   )}
                 </div>
               </form>
