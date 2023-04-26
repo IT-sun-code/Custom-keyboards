@@ -35,7 +35,11 @@ const TableItem = ({ card, slides, onDeleteCard, onDeleteCardSlides }) => {
               className={styles.edit}
             />
           </button>
-          <button onClick={() => onDeleteCard(card.id)}>
+          <button
+            onClick={() => {
+              onDeleteCard(card.id), onDeleteCardSlides(card.id, slidesIds);
+            }}
+          >
             <img
               src="/icons/actionIcons/delete.svg"
               alt="delete"
