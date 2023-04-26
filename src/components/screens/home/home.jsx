@@ -89,8 +89,8 @@ const Home = () => {
           <SecondHeading>Ничего не найдено...</SecondHeading>
         ) : (
           <section className={styles.container}>
-            {filteredCards.map((card, index) => (
-              <Card card={card} key={`card-${index}-${card.id}`} />
+            {filteredCards.map((card) => (
+              <Card card={card} key={card.id} />
             ))}
           </section>
         )}

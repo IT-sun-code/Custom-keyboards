@@ -1,0 +1,49 @@
+.section {
+  margin-bottom: 40px;
+}
+
+.itemsTable {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemId {
+  height: 37px;
+  min-width: 60px;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.items {
+  display: flex;
+  padding-right: 100px;
+  padding-bottom: 10px;
+}
+
+.item {
+  height: 37px;
+  width: 170px;
+  margin-left: 30px;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardSlidesInTable {
+  height: 37px;
+  width: 1070px;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
