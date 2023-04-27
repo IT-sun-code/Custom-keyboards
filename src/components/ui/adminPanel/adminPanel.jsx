@@ -8,7 +8,8 @@ import { useSlidesCards } from "../../utils/hooks/useSlidesCards";
 
 const AdminPanel = () => {
   const { cards, createCard, deleteCard, updateCard } = useCards();
-  const { slides, createSlidesCard, deleteCardSlides } = useSlidesCards();
+  const { slides, createSlidesCard, deleteCardSlides, updateCardSlides } =
+    useSlidesCards();
 
   return (
     <>
@@ -29,6 +30,7 @@ const AdminPanel = () => {
             onDeleteCard={deleteCard}
             onDeleteCardSlides={deleteCardSlides}
             onUpdateCard={updateCard}
+            onUpdateCardSlides={updateCardSlides}
           />
         );
       })}

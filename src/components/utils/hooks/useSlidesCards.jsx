@@ -12,6 +12,7 @@ const CardsSlidesProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [slides, setSlides] = useState([]);
+  const [isUpdatedCardSlides, setIsUpdatedCardSlides] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +25,7 @@ const CardsSlidesProvider = ({ children }) => {
       }
     };
     fetchData();
-  }, []);
+  }, [isUpdatedCardSlides]);
 
   function errorCatcher(error) {
     const { message } = error.response.data;
@@ -62,9 +63,42 @@ const CardsSlidesProvider = ({ children }) => {
     }
   }
 
+  async function updateCardSlides(id, slidesIds, payload) {
+    try {
+      const updatedSlides = await Promise.all(
+        payload.map(async (slide) => {
+          const { id: slideId, ...slidePayload } = slide;
+          return CardsSlidesService.updateCardSlide(slideId, slidePayload);
+        })
+      );
+
+      setSlides((prevState) => {
+        const updatedState = prevState.map((slide) => {
+          const updatedSlide = updatedSlides.find(
+            (updated) => updated.id === slide.id
+          );
+          if (updatedSlide) {
+            return { ...slide, ...updatedSlide };
+          }
+          return slide;
+        });
+        return updatedState;
+      });
+      setIsUpdatedCardSlides(!isUpdatedCardSlides);
+    } catch (error) {
+      errorCatcher(error);
+    }
+  }
+
   return (
     <CardsSlidesContext.Provider
-      value={{ slides, createSlidesCard, deleteCardSlides, setSlides }}
+      value={{
+        slides,
+        createSlidesCard,
+        deleteCardSlides,
+        setSlides,
+        updateCardSlides,
+      }}
     >
       {!isLoading ? children : <Loading />}
     </CardsSlidesContext.Provider>

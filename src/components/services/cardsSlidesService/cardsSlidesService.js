@@ -20,5 +20,12 @@ const CardsSlidesService = {
     const responses = await Promise.all(requests);
     return responses.map((response) => response.data);
   },
+  updateCardSlide: async (slideId, payload) => {
+    const response = await httpService.patch(
+      CardsSlidesEndpoint + slideId,
+      payload
+    );
+    return response.data;
+  },
 };
 export default CardsSlidesService;

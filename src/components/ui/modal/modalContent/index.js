@@ -4,6 +4,7 @@ import {
   LogOutModalContent,
   AuthModalContent,
   EditCardContent,
+  EditCardSlidesContent,
 } from "./modalContent";
 
 export {
@@ -12,4 +13,5 @@ export {
   LogOutModalContent,
   AuthModalContent,
   EditCardContent,
+  EditCardSlidesContent,
 };

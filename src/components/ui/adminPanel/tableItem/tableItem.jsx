@@ -9,6 +9,7 @@ const TableItem = ({
   onDeleteCard,
   onDeleteCardSlides,
   onUpdateCard,
+  onUpdateCardSlides,
 }) => {
   console.log(card);
   console.log(slides);
@@ -33,6 +34,8 @@ const TableItem = ({
     cardId: card.id,
     updateCard: onUpdateCard,
     onClose: handleModalClose,
+    updateCardSlides: onUpdateCardSlides,
+    slides: slides,
   };
 
   return (
@@ -46,7 +49,7 @@ const TableItem = ({
             <div className={styles.item}>{card.price}</div>
             <div className={styles.item}>{card.image}</div>
             <div className={styles.item}>{card.description}</div>
-            <button onClick={() => handleModalOpen("edit")}>
+            <button onClick={() => handleModalOpen("editCard")}>
               <img
                 src="/icons/actionIcons/edit.svg"
                 alt="edit"
@@ -68,7 +71,7 @@ const TableItem = ({
         </div>
         <div className={styles.itemsTable}>
           <div className={styles.cardSlidesInTable}>{matchingSlides}</div>
-          <button>
+          <button onClick={() => handleModalOpen("editSlides")}>
             <img
               src="/icons/actionIcons/edit.svg"
               alt="edit"
