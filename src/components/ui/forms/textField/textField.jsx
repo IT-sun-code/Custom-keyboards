@@ -14,9 +14,15 @@ const TextField = ({
 }) => {
   const [showPassword] = useState(false);
 
+  // const handleChange = ({ target }) => {
+  //   onChange({ name: target.name, value: target.value });
+  // };
   const handleChange = ({ target }) => {
-    onChange({ name: target.name, value: target.value });
+    const value =
+      target.type === "number" ? Number(target.value) : target.value;
+    onChange({ name: target.name, value });
   };
+
   const getInputClasses = () => {
     return `${styles.input} ${error ? styles.invalid : styles.valid}`;
   };
@@ -46,11 +52,12 @@ const TextField = ({
 TextField.defaultProps = {
   type: "text",
 };
+
 TextField.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   error: PropTypes.string,
 };

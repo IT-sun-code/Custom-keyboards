@@ -6,6 +6,7 @@ import styles from "./modalContent.module.css";
 import { useAuth } from "../../../utils/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { useBasket } from "../../../utils/hooks/useBasket";
+import CardEditForm from "../../adminPanel/cardEditForm";
 
 export const SuccessModalContent = () => {
   const navigate = useNavigate();
@@ -131,6 +132,20 @@ export const AuthModalContent = ({ variety, onClose }) => {
       >
         Уже есть аккаунт? Войдите
       </button>
+    </>
+  );
+};
+
+export const EditCardContent = ({ editData }) => {
+  console.log(editData);
+  const { cardId, updateCard, onClose } = editData;
+  return (
+    <>
+      <h2 className={styles.heading}>Редактирование карточки</h2>
+      <CardEditForm cardId={cardId} updateCard={updateCard} onClose={onClose} />
+      <p className={styles.warning}>
+        <b>ВНИМАНИЕ!</b> Вводите данные правильно.
+      </p>
     </>
   );
 };

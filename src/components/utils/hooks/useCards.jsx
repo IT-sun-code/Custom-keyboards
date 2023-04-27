@@ -12,6 +12,7 @@ const CardsProvider = ({ children }) => {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isUpdatedCard, setIsUpdatedCard] = useState(false);
 
   useEffect(() => {
     const getCards = async () => {
@@ -24,7 +25,7 @@ const CardsProvider = ({ children }) => {
       }
     };
     getCards();
-  }, []);
+  }, [isUpdatedCard]);
 
   function errorCatcher(error) {
     const { message } = error.response.data;
@@ -59,8 +60,24 @@ const CardsProvider = ({ children }) => {
     }
   }
 
+  // _________________________________________________________________
+  async function updateCard(id, updatedData) {
+    try {
+      const updatedCard = await CardsService.updateCard(id, updatedData);
+      setCards((prevCards) =>
+        prevCards.map((card) => (card.id === id ? updatedCard : card))
+      );
+      setIsUpdatedCard(!isUpdatedCard);
+      console.log(updatedCard);
+    } catch (error) {
+      errorCatcher(error);
+    }
+  }
+
   return (
-    <CardsContext.Provider value={{ cards, createCard, deleteCard }}>
+    <CardsContext.Provider
+      value={{ cards, createCard, deleteCard, updateCard }}
+    >
       {!isLoading ? children : <Loading />}
     </CardsContext.Provider>
   );

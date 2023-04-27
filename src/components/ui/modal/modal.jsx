@@ -6,9 +6,10 @@ import {
   OrderModalContent,
   LogOutModalContent,
   AuthModalContent,
+  EditCardContent,
 } from "./modalContent";
 
-const Modal = ({ variety, isOpen, onClose, orderData }) => {
+const Modal = ({ variety, isOpen, onClose, orderData, editData }) => {
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
@@ -34,6 +35,8 @@ const Modal = ({ variety, isOpen, onClose, orderData }) => {
       <LogOutModalContent onClose={onClose} />
     ) : variety === "signIn" || variety === "signUp" ? (
       <AuthModalContent variety={variety} onClose={onClose} />
+    ) : variety === "edit" ? (
+      <EditCardContent editData={editData} />
     ) : null
   );
 

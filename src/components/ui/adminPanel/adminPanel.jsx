@@ -7,7 +7,7 @@ import CreateSlidesPanel from "./createSlidesPanel";
 import { useSlidesCards } from "../../utils/hooks/useSlidesCards";
 
 const AdminPanel = () => {
-  const { cards, createCard, deleteCard } = useCards();
+  const { cards, createCard, deleteCard, updateCard } = useCards();
   const { slides, createSlidesCard, deleteCardSlides } = useSlidesCards();
 
   return (
@@ -24,10 +24,11 @@ const AdminPanel = () => {
         return (
           <TableItem
             card={card}
-            key={card.id}
+            key={`${card.id}-${matchingSlides[0]?.id}`}
             slides={matchingSlides}
             onDeleteCard={deleteCard}
             onDeleteCardSlides={deleteCardSlides}
+            onUpdateCard={updateCard}
           />
         );
       })}
