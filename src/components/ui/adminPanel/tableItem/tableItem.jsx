@@ -26,7 +26,7 @@ const TableItem = ({
   }, [slides]);
 
   const [matchingSlides, setMatchingSlides] = useState("");
-  // ______________________________________________________________________________
+
   const { modalVariety, handleModalOpen, handleModalClose, modalOpen } =
     useModal();
 

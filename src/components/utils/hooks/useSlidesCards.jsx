@@ -63,7 +63,7 @@ const CardsSlidesProvider = ({ children }) => {
     }
   }
 
-  async function updateCardSlides(id, slidesIds, payload) {
+  async function updateCardSlides(payload) {
     try {
       const updatedSlides = await Promise.all(
         payload.map(async (slide) => {
@@ -71,7 +71,6 @@ const CardsSlidesProvider = ({ children }) => {
           return CardsSlidesService.updateCardSlide(slideId, slidePayload);
         })
       );
-
       setSlides((prevState) => {
         const updatedState = prevState.map((slide) => {
           const updatedSlide = updatedSlides.find(

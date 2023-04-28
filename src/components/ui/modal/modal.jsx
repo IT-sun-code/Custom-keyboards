@@ -8,6 +8,7 @@ import {
   AuthModalContent,
   EditCardContent,
   EditCardSlidesContent,
+  EditUserContent,
 } from "./modalContent";
 
 const Modal = ({ variety, isOpen, onClose, orderData, editData }) => {
@@ -40,6 +41,8 @@ const Modal = ({ variety, isOpen, onClose, orderData, editData }) => {
       <EditCardContent editData={editData} />
     ) : variety === "editSlides" ? (
       <EditCardSlidesContent editData={editData} />
+    ) : variety === "editUser" ? (
+      <EditUserContent onClose={onClose} />
     ) : null
   );
 

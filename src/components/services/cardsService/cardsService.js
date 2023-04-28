@@ -1,5 +1,4 @@
 import httpService from "../httpService";
-import localStorageService from "../localStorageService";
 const cardsEndpoint = "card/";
 
 const CardsService = {
@@ -21,10 +20,10 @@ const CardsService = {
     const { data } = await httpService.delete(cardsEndpoint + cardId);
     return data;
   },
-  // Добавила update для изменения данных о карточке
   updateCard: async (cardId, payload) => {
     const { data } = await httpService.patch(cardsEndpoint + cardId, payload);
     return data;
   },
 };
+
 export default CardsService;

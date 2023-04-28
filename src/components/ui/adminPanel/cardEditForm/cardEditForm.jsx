@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { validator } from "../../../utils/validator";
 import TextField from "../../forms/textField";
 import Button from "../../button";
-import SelectField from "../../forms/selectField/selectField";
+import SelectField from "../../forms/selectField";
 import { useCards } from "../../../utils/hooks/useCards";
 
 const CardEditForm = ({ cardId, updateCard, onClose }) => {
@@ -16,7 +16,7 @@ const CardEditForm = ({ cardId, updateCard, onClose }) => {
     image: "",
     description: "",
   };
-  // const [data, setData] = useState(clearData);
+
   const [data, setData] = useState(() => {
     const card = cards.find((card) => card.id === cardId);
     return card ? card : clearData;

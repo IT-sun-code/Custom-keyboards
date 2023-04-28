@@ -4,9 +4,6 @@ import TextField from "../../forms/textField";
 import Button from "../../button";
 
 const CardSlidesEditForm = ({ cardId, updateCardSlides, onClose, slides }) => {
-  const slidesIds = slides.map((slide) => slide.id);
-  console.log(slidesIds);
-
   const matchingSlides = slides.map((slide) => {
     const { cardId, id, ...rest } = slide;
     return JSON.stringify(rest);
@@ -91,7 +88,7 @@ const CardSlidesEditForm = ({ cardId, updateCardSlides, onClose, slides }) => {
     };
 
     const updatedSlides = getSlidesWithImages(slides, imageObj);
-    updateCardSlides(updatedCardId, slidesIds, updatedSlides);
+    updateCardSlides(updatedSlides);
     onClose();
   };
 
@@ -109,7 +106,7 @@ const CardSlidesEditForm = ({ cardId, updateCardSlides, onClose, slides }) => {
             autoComplete="current-cardId"
             autoFocus
           />
-          {matchingSlides.map((slide, index) => (
+          {matchingSlides.map((_, index) => (
             <TextField
               key={index}
               label={`Слайд ${index + 1}`}

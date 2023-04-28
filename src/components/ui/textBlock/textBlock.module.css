@@ -14,7 +14,9 @@
   margin-bottom: 36px;
 }
 
-.titleAuth {
+.edit {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 36px;
 }
 

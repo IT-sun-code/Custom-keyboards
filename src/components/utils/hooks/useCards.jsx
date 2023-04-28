@@ -60,7 +60,6 @@ const CardsProvider = ({ children }) => {
     }
   }
 
-  // _________________________________________________________________
   async function updateCard(id, updatedData) {
     try {
       const updatedCard = await CardsService.updateCard(id, updatedData);

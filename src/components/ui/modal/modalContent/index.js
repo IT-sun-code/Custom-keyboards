@@ -5,6 +5,7 @@ import {
   AuthModalContent,
   EditCardContent,
   EditCardSlidesContent,
+  EditUserContent,
 } from "./modalContent";
 
 export {
@@ -14,4 +15,5 @@ export {
   AuthModalContent,
   EditCardContent,
   EditCardSlidesContent,
+  EditUserContent,
 };

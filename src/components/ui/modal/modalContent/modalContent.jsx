@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useBasket } from "../../../utils/hooks/useBasket";
 import CardEditForm from "../../adminPanel/cardEditForm";
 import CardSlidesEditForm from "../../adminPanel/cardSlidesEditForm";
+import EditUserForm from "../../forms/editUserForm";
 
 export const SuccessModalContent = () => {
   const navigate = useNavigate();
@@ -163,6 +164,18 @@ export const EditCardSlidesContent = ({ editData }) => {
         onClose={onClose}
         slides={slides}
       />
+      <p className={styles.warning}>
+        <b>ВНИМАНИЕ!</b> Вводите данные правильно.
+      </p>
+    </>
+  );
+};
+
+export const EditUserContent = ({ onClose }) => {
+  return (
+    <>
+      <h2 className={styles.heading}>Редактирование пользователя</h2>
+      <EditUserForm onClose={onClose} />
       <p className={styles.warning}>
         <b>ВНИМАНИЕ!</b> Вводите данные правильно.
       </p>

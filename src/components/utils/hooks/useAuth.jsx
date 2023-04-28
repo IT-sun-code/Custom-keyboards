@@ -24,6 +24,7 @@ const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const [isUserUpdated, setIsUserUpdated] = useState(false);
 
   async function signUp({ email, password, ...rest }) {
     try {
@@ -110,21 +111,13 @@ const AuthProvider = ({ children }) => {
     } else {
       setLoading(false);
     }
-  }, []);
+  }, [isUserUpdated]);
 
-  // Добавила функцию изменения данных пользователя в настройках его профиля и передала в AuthContext.Provider
   async function updateUserData(data) {
     try {
       const { content } = await UserService.updateCurrentUser(data);
       setUser(content);
-    } catch (error) {
-      errorCatcher(error);
-    }
-  }
-  async function updateCurrentUserInfo(data) {
-    try {
-      const { content } = await UserService.updateCurrentUser(data);
-      setUser(content);
+      setIsUserUpdated(!isUserUpdated);
     } catch (error) {
       errorCatcher(error);
     }
@@ -148,7 +141,6 @@ const AuthProvider = ({ children }) => {
         logIn,
         logOut,
         currentUser,
-        updateCurrentUserInfo,
         updateUserData,
       }}
     >

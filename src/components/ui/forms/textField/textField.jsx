@@ -14,9 +14,6 @@ const TextField = ({
 }) => {
   const [showPassword] = useState(false);
 
-  // const handleChange = ({ target }) => {
-  //   onChange({ name: target.name, value: target.value });
-  // };
   const handleChange = ({ target }) => {
     const value =
       target.type === "number" ? Number(target.value) : target.value;

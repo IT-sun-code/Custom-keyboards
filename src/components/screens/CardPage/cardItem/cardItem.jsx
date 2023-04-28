@@ -71,7 +71,7 @@ const CardItem = ({ slides, card }) => {
                   isActive={isFavorite}
                   cardItem
                 />
-                <h2>Цена: {card.price}</h2>
+                <h2>Цена: {card.price} ₽</h2>
                 <BasketIcon
                   onClick={
                     currentUser
@@ -83,7 +83,7 @@ const CardItem = ({ slides, card }) => {
                 />
               </>
             ) : (
-              <h2 className={styles.price}>Цена: {card.price}</h2>
+              <h2 className={styles.price}>Цена: {card.price} ₽</h2>
             )}
           </div>
         </div>

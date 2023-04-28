@@ -16,7 +16,7 @@ const UserPage = () => {
   return (
     <>
       <Heading>
-        <FirstHeading>{currentUser.userName.toUpperCase()}</FirstHeading>
+        <FirstHeading>{currentUser?.userName?.toUpperCase()}</FirstHeading>
         <SecondHeading>Добро пожаловать!</SecondHeading>
       </Heading>
       <section className={styles.userData}>
@@ -30,7 +30,9 @@ const UserPage = () => {
           <SecondHeading>Здесь пока пусто</SecondHeading>
         )}
         {ordersCards &&
-          ordersCards.map((order) => <Card card={order} key={order.id} />)}
+          ordersCards.map((order) => (
+            <Card card={order} key={`${order.id}_${Date.now()}`} />
+          ))}
       </section>
     </>
   );
