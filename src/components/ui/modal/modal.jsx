@@ -9,9 +9,20 @@ import {
   EditCardContent,
   EditCardSlidesContent,
   EditUserContent,
+  InDelivery,
+  DeletionCardConfirm,
+  DeletionCardSlidesConfirm,
 } from "./modalContent";
 
-const Modal = ({ variety, isOpen, onClose, orderData, editData }) => {
+const Modal = ({
+  variety,
+  isOpen,
+  onClose,
+  orderData,
+  editData,
+  deleteData,
+  onHandleDelivered,
+}) => {
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
@@ -43,6 +54,12 @@ const Modal = ({ variety, isOpen, onClose, orderData, editData }) => {
       <EditCardSlidesContent editData={editData} />
     ) : variety === "editUser" ? (
       <EditUserContent onClose={onClose} />
+    ) : variety === "delivery" ? (
+      <InDelivery onClose={onClose} onHandleDelivered={onHandleDelivered} />
+    ) : variety === "deleteCard" ? (
+      <DeletionCardConfirm deleteData={deleteData} />
+    ) : variety === "deleteCardSlides" ? (
+      <DeletionCardSlidesConfirm deleteData={deleteData} />
     ) : null
   );
 

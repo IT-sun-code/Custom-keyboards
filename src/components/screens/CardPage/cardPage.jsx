@@ -18,6 +18,10 @@ const CardPage = () => {
   const cardIndex = cards.findIndex((item) => item.id === card.id);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const getCard = async () => {
       try {
         const cardData = await CardsService.getById(id);

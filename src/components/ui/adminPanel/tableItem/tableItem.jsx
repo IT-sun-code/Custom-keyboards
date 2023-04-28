@@ -38,6 +38,14 @@ const TableItem = ({
     slides: slides,
   };
 
+  const deleteData = {
+    cardId: card.id,
+    slidesIds: slidesIds,
+    onClose: handleModalClose,
+    onDeleteCard: onDeleteCard,
+    onDeleteCardSlides: onDeleteCardSlides,
+  };
+
   return (
     <>
       <section className={styles.section}>
@@ -57,9 +65,10 @@ const TableItem = ({
               />
             </button>
             <button
-              onClick={() => {
-                onDeleteCard(card.id), onDeleteCardSlides(card.id, slidesIds);
-              }}
+              // onClick={() => {
+              //   onDeleteCard(card.id), onDeleteCardSlides(card.id, slidesIds);
+              // }}
+              onClick={() => handleModalOpen("deleteCard")}
             >
               <img
                 src="/icons/actionIcons/delete.svg"
@@ -78,7 +87,8 @@ const TableItem = ({
               className={styles.edit}
             />
           </button>
-          <button onClick={() => onDeleteCardSlides(card.id, slidesIds)}>
+          {/* <button onClick={() => onDeleteCardSlides(card.id, slidesIds)}> */}
+          <button onClick={() => handleModalOpen("deleteCardSlides")}>
             <img
               src="/icons/actionIcons/delete.svg"
               alt="delete"
@@ -93,6 +103,7 @@ const TableItem = ({
           isOpen={modalOpen}
           onClose={handleModalClose}
           editData={editData}
+          deleteData={deleteData}
         />
       )}
     </>

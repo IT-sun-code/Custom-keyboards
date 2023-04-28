@@ -17,6 +17,8 @@ const ProductItem = ({
 }) => {
   const str = card.title;
   const maxLength = 35;
+  const sku = card.id;
+  const maxSkuLength = 15;
 
   const { modalVariety, handleModalOpen, handleModalClose, modalOpen } =
     useModal();
@@ -56,7 +58,13 @@ const ProductItem = ({
                   : str}
               </p>
             </div>
-            <p className={styles.description}>{`Артикул ${card.id}`}</p>
+            <p className={styles.description}>
+              {`Артикул ${
+                sku.length > maxSkuLength
+                  ? sku.substring(0, maxSkuLength - 3) + "..."
+                  : sku
+              }`}
+            </p>
             <h3>{`Цена: ${card.price} ₽`}</h3>
           </div>
         </div>

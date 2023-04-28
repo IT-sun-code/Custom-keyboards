@@ -182,3 +182,66 @@ export const EditUserContent = ({ onClose }) => {
     </>
   );
 };
+
+export const InDelivery = ({ onClose, onHandleDelivered }) => {
+  return (
+    <>
+      <h2 className={styles.heading}>Доставка</h2>
+      <h3 className={styles.heading}>
+        Ваши товары находятся в доставке.
+        <br /> Хотите подтвердить получение?
+      </h3>
+      <Button
+        appearance="ctvBlue"
+        onClick={() => {
+          onClose();
+          onHandleDelivered();
+        }}
+      >
+        Подтвердить
+      </Button>
+      <p className={styles.warning}>
+        <b>ВНИМАНИЕ!</b> Подтверждайте при курьере.
+      </p>
+    </>
+  );
+};
+
+export const DeletionCardConfirm = ({ deleteData }) => {
+  const { cardId, slidesIds, onDeleteCard, onDeleteCardSlides, onClose } =
+    deleteData;
+  return (
+    <>
+      <h2 className={styles.heading}>Удаление элемента</h2>
+      <p className={styles.message}>Вы точно хотите удалить это?</p>
+      <Button
+        appearance="ctvBlue"
+        onClick={() => {
+          onDeleteCard(cardId), onDeleteCardSlides(cardId, slidesIds);
+          onClose();
+        }}
+      >
+        Удалить
+      </Button>
+    </>
+  );
+};
+
+export const DeletionCardSlidesConfirm = ({ deleteData }) => {
+  const { cardId, slidesIds, onDeleteCardSlides, onClose } = deleteData;
+  return (
+    <>
+      <h2 className={styles.heading}>Удаление элементов</h2>
+      <p className={styles.message}>Вы точно хотите удалить это?</p>
+      <Button
+        appearance="ctvBlue"
+        onClick={() => {
+          onDeleteCardSlides(cardId, slidesIds);
+          onClose();
+        }}
+      >
+        Удалить
+      </Button>
+    </>
+  );
+};

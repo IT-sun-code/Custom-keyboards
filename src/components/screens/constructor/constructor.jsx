@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Heading from "../../ui/heading";
 import FirstHeading from "../../ui/heading/firstHeading";
 import SecondHeading from "../../ui/heading/secondHeading";
 
 const Constructor = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Heading>

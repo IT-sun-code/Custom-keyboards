@@ -2,9 +2,17 @@ import React from "react";
 import styles from "./button.module.css";
 import cn from "classnames";
 
-const Button = ({ children, appearance, disabled, onClick, onClose }) => {
+const Button = ({
+  children,
+  appearance,
+  disabled,
+  onClick,
+  onClose,
+  isDelivered,
+}) => {
   return (
     <button
+      disabled={isDelivered}
       onClick={onClick ? onClick : onClose}
       className={cn(
         styles.button,

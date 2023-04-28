@@ -1,18 +1,17 @@
 import React from "react";
 import Line from "../line";
 import styles from "./footer.module.css";
-import Init from "../../utils/mockData/init";
+// import Init from "../../utils/mockData/init";
 
 const Footer = () => {
   return (
     <footer className={styles.footer} id="footer">
       <Line />
-      <Init />
+      {/* <Init /> */}
       <div className={styles.messengers}>
         <p>Остались вопросы?</p>
         <h2>Напишите нам в любом удобном для Вас мессенджере</h2>
       </div>
-
       <div className={styles.icons}>
         <button>
           <a
@@ -39,9 +38,7 @@ const Footer = () => {
           </a>
         </button>
       </div>
-
       <Line />
-
       <div className={styles.messengers}>
         <h2>Или свяжитесь по телефону / почте</h2>
         <div className={styles.contact}>
@@ -49,9 +46,7 @@ const Footer = () => {
           <p>Email: keyboards2023@yandex.ru</p>
         </div>
       </div>
-
       <Line />
-
       <div className={styles.copyright}>© 2023 created by Anastasia K.</div>
     </footer>
   );

@@ -45,21 +45,26 @@ const Basket = () => {
           <SecondHeading>Здесь пока пусто</SecondHeading>
         )}
       </Heading>
-      <section>
-        {basketCards &&
-          basketCards.map((basket) => <Card card={basket} key={basket.id} />)}
-      </section>
-      <Line />
-      <section>
-        <h2>{`Товаров: ${totalQuantity} шт.`}</h2>
-        <h2 className={styles.total}>{`ИТОГО: ${totalPrice} руб.`}</h2>
-        <Button
-          appearance="ctvBlueOrder"
-          onClick={() => handleModalOpen("order")}
-        >
-          Оформить заказ
-        </Button>
-      </section>
+      {basketCards?.length !== 0 && (
+        <>
+          <section>
+            {basketCards.map((basket) => (
+              <Card card={basket} key={basket.id} />
+            ))}
+          </section>
+          <Line />
+          <section>
+            <h2>{`Товаров: ${totalQuantity} шт.`}</h2>
+            <h2 className={styles.total}>{`ИТОГО: ${totalPrice} руб.`}</h2>
+            <Button
+              appearance="ctvBlueOrder"
+              onClick={() => handleModalOpen("order")}
+            >
+              Оформить заказ
+            </Button>
+          </section>
+        </>
+      )}
       {modalOpen && (
         <Modal
           variety={modalVariety}

@@ -34,6 +34,8 @@ export const OrdersProvider = ({ children }) => {
       orderDate: currentDate,
       deliveryDate: deliveryDate,
       orderAddress: orderAddress,
+      //______________________________________________________
+      isDelivered: false,
     }));
 
     const updatedOrders = orders.reduce((acc, order) => {
