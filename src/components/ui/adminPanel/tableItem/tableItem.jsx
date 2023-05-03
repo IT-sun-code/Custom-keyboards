@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./tableItem.module.css";
 import useModal from "../../../utils/hooks/useModal";
 import Modal from "../../modal";
+import PropTypes from "prop-types";
 
 const TableItem = ({
   card,
@@ -110,4 +111,12 @@ const TableItem = ({
   );
 };
 
+TableItem.propTypes = {
+  slides: PropTypes.array,
+  card: PropTypes.object,
+  onDeleteCard: PropTypes.func,
+  onDeleteCardSlides: PropTypes.func,
+  onUpdateCard: PropTypes.func,
+  onUpdateCardSlides: PropTypes.func,
+};
 export default TableItem;

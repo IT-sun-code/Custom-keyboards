@@ -9,6 +9,7 @@ import { useBasket } from "../../../utils/hooks/useBasket";
 import { useAuth } from "../../../utils/hooks/useAuth";
 import Modal from "../../../ui/modal";
 import useModal from "../../../utils/hooks/useModal";
+import PropTypes from "prop-types";
 
 const CardItem = ({ slides, card }) => {
   const [filteredSlides, setfilteredSlides] = useState([]);
@@ -99,4 +100,8 @@ const CardItem = ({ slides, card }) => {
   );
 };
 
+CardItem.propTypes = {
+  slides: PropTypes.array,
+  card: PropTypes.object,
+};
 export default CardItem;

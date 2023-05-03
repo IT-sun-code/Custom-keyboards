@@ -5,6 +5,7 @@ import HeartIcon from "../heartIcon";
 import BasketIcon from "../basketIcon";
 import Modal from "../modal";
 import useModal from "../../utils/hooks/useModal";
+import PropTypes from "prop-types";
 
 const ProductItem = ({
   currentPath,
@@ -79,6 +80,16 @@ const ProductItem = ({
       )}
     </>
   );
+};
+
+ProductItem.propTypes = {
+  currentPath: PropTypes.string,
+  currentUser: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  card: PropTypes.object,
+  isFavorite: PropTypes.bool,
+  isBasket: PropTypes.bool,
+  handleHeartIconClick: PropTypes.func,
+  handleBasketIconClick: PropTypes.func,
 };
 
 export default ProductItem;

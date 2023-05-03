@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./modal.module.css";
 import Portal from "../../utils/portal";
+import PropTypes from "prop-types";
 import {
   SuccessModalContent,
   OrderModalContent,
@@ -87,4 +88,13 @@ const Modal = ({
   );
 };
 
+Modal.propTypes = {
+  variety: PropTypes.string,
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  orderData: PropTypes.object,
+  editData: PropTypes.object,
+  deleteData: PropTypes.object,
+  onHandleDelivered: PropTypes.func,
+};
 export default Modal;

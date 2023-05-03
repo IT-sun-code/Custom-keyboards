@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./button.module.css";
 import cn from "classnames";
+import PropTypes from "prop-types";
 
 const Button = ({
   children,
@@ -31,4 +32,12 @@ const Button = ({
   );
 };
 
+Button.propTypes = {
+  children: PropTypes.string,
+  appearance: PropTypes.string,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  onClose: PropTypes.func,
+  isDelivered: PropTypes.bool,
+};
 export default Button;

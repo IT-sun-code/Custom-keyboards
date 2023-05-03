@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import styles from "./slider.module.css";
 import cn from "classnames";
+import PropTypes from "prop-types";
 
 const Slider = ({ slides, appearance }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -93,4 +94,8 @@ const Slider = ({ slides, appearance }) => {
   );
 };
 
+Slider.propTypes = {
+  slides: PropTypes.array,
+  appearance: PropTypes.string,
+};
 export default Slider;

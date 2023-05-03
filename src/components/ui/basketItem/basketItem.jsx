@@ -5,6 +5,7 @@ import TextBlock from "../textBlock";
 import Button from "../button";
 import styles from "./basketItem.module.css";
 import BasketItemData from "./basketItemData";
+import PropTypes from "prop-types";
 
 const BasketItem = ({
   currentUser,
@@ -14,6 +15,7 @@ const BasketItem = ({
   handleBasketIconClick,
   isFavorite,
 }) => {
+  console.log(typeof currentUser);
   return (
     currentPath === "/basket" && (
       <section>
@@ -52,4 +54,12 @@ const BasketItem = ({
   );
 };
 
+BasketItem.propTypes = {
+  currentUser: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  currentPath: PropTypes.string,
+  card: PropTypes.object,
+  handleHeartIconClick: PropTypes.func,
+  handleBasketIconClick: PropTypes.func,
+  isFavorite: PropTypes.bool,
+};
 export default BasketItem;

@@ -4,6 +4,7 @@ import TextField from "../../forms/textField";
 import Button from "../../button";
 import SelectField from "../../forms/selectField";
 import { useCards } from "../../../utils/hooks/useCards";
+import PropTypes from "prop-types";
 
 const CardEditForm = ({ cardId, updateCard, onClose }) => {
   console.log(cardId, updateCard, onClose);
@@ -155,4 +156,9 @@ const CardEditForm = ({ cardId, updateCard, onClose }) => {
   );
 };
 
+CardEditForm.propTypes = {
+  cardId: PropTypes.string,
+  updateCard: PropTypes.func,
+  onClose: PropTypes.func,
+};
 export default CardEditForm;

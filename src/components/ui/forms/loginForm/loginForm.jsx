@@ -6,6 +6,7 @@ import Button from "../../button";
 import { useAuth } from "../../../utils/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import styles from "./loginForm.module.css";
+import PropTypes from "prop-types";
 
 const LoginForm = ({ onClose }) => {
   const [data, setData] = useState({
@@ -113,4 +114,7 @@ const LoginForm = ({ onClose }) => {
   );
 };
 
+LoginForm.propTypes = {
+  onClose: PropTypes.func,
+};
 export default LoginForm;

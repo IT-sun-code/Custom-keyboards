@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./filters.module.css";
 import Search from "../../../ui/header/search";
+import PropTypes from "prop-types";
 
 function Filters({
   setSortOrder,
@@ -72,4 +73,11 @@ function Filters({
   );
 }
 
+Filters.propTypes = {
+  setSortOrder: PropTypes.func,
+  setSelectedCategory: PropTypes.func,
+  selectedCategory: PropTypes.string,
+  onSearch: PropTypes.func,
+  search: PropTypes.string,
+};
 export default Filters;

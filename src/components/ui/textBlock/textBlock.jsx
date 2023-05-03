@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./textBlock.module.css";
 import useModal from "../../utils/hooks/useModal";
 import Modal from "../modal";
+import PropTypes from "prop-types";
 
 const TextBlock = ({ title, subtitle, description, authData }) => {
   const { modalVariety, handleModalOpen, handleModalClose, modalOpen } =
@@ -46,4 +47,10 @@ const TextBlock = ({ title, subtitle, description, authData }) => {
   );
 };
 
+TextBlock.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  description: PropTypes.string,
+  authData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+};
 export default TextBlock;

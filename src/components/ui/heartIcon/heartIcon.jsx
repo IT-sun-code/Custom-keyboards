@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./heartIcon.module.css";
+import PropTypes from "prop-types";
 
 const HeartIcon = ({ onClick, isActive, cardItem }) => {
+  console.log(cardItem);
   return (
     <button onClick={onClick} className={cardItem ? "" : styles.heartBtn}>
       <img
@@ -17,4 +19,9 @@ const HeartIcon = ({ onClick, isActive, cardItem }) => {
   );
 };
 
+HeartIcon.propTypes = {
+  onClick: PropTypes.func,
+  isActive: PropTypes.bool,
+  cardItem: PropTypes.bool,
+};
 export default HeartIcon;

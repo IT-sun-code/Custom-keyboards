@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export function validator(data, config) {
   const errors = {};
   function validate(validateMethod, data, config) {
@@ -67,3 +69,7 @@ export function validator(data, config) {
   }
   return errors;
 }
+validator.propTypes = {
+  data: PropTypes.object,
+  config: PropTypes.object,
+};

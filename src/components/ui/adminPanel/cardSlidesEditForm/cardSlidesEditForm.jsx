@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { validator } from "../../../utils/validator";
 import TextField from "../../forms/textField";
 import Button from "../../button";
+import PropTypes from "prop-types";
 
 const CardSlidesEditForm = ({ cardId, updateCardSlides, onClose, slides }) => {
   const matchingSlides = slides.map((slide) => {
@@ -129,4 +130,10 @@ const CardSlidesEditForm = ({ cardId, updateCardSlides, onClose, slides }) => {
   );
 };
 
+CardSlidesEditForm.propTypes = {
+  slides: PropTypes.array,
+  cardId: PropTypes.string,
+  updateCardSlides: PropTypes.func,
+  onClose: PropTypes.func,
+};
 export default CardSlidesEditForm;

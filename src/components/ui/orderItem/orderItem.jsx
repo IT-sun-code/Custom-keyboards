@@ -8,6 +8,7 @@ import { useOrders } from "../../utils/hooks/useOrders";
 import Modal from "../modal";
 import useModal from "../../utils/hooks/useModal";
 import { useAuth } from "../../utils/hooks/useAuth";
+import PropTypes from "prop-types";
 
 const OrderItem = ({ currentPath, card }) => {
   const { updateUserData, currentUser } = useAuth();
@@ -89,4 +90,8 @@ const OrderItem = ({ currentPath, card }) => {
   );
 };
 
+OrderItem.propTypes = {
+  currentPath: PropTypes.string,
+  card: PropTypes.object,
+};
 export default OrderItem;

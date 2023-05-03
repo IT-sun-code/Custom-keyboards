@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./orderItemData.module.css";
 import { useOrders } from "../../../utils/hooks/useOrders";
+import PropTypes from "prop-types";
 
 const OrderItemData = ({ card }) => {
   const { getOrder } = useOrders();
@@ -21,4 +22,7 @@ const OrderItemData = ({ card }) => {
   );
 };
 
+OrderItemData.propTypes = {
+  card: PropTypes.object,
+};
 export default OrderItemData;

@@ -4,6 +4,7 @@ import {
   calculateCurrentDate,
   calculateDeliveryDate,
 } from "../calculateDeliveryDate";
+import PropTypes from "prop-types";
 
 const OrdersContext = React.createContext();
 export const useOrders = () => {
@@ -98,4 +99,10 @@ export const OrdersProvider = ({ children }) => {
   );
 };
 
+OrdersProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+};
 export default OrdersProvider;

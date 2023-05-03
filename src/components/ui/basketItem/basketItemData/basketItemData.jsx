@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./basketItemData.module.css";
 import { calculateDeliveryDate } from "../../../utils/calculateDeliveryDate";
 import { useBasket } from "../../../utils/hooks/useBasket";
+import PropTypes from "prop-types";
 
 const BasketItemData = ({ card }) => {
   const { handleIncreaseQuantity, handleDecreaseQuantity, getBasketItem } =
@@ -34,4 +35,7 @@ const BasketItemData = ({ card }) => {
   );
 };
 
+BasketItemData.propTypes = {
+  card: PropTypes.object,
+};
 export default BasketItemData;

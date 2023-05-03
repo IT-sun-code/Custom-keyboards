@@ -6,6 +6,7 @@ import { useBasket } from "../../../utils/hooks/useBasket";
 import ProductItem from "../../../ui/productItem";
 import BasketItem from "../../../ui/basketItem";
 import OrderItem from "../../../ui/orderItem";
+import PropTypes from "prop-types";
 
 const Card = ({ card }) => {
   const { currentUser } = useAuth();
@@ -56,4 +57,7 @@ const Card = ({ card }) => {
   );
 };
 
+Card.propTypes = {
+  card: PropTypes.object,
+};
 export default Card;

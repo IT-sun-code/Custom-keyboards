@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./basketIcon.module.css";
+import PropTypes from "prop-types";
 
 const BasketIcon = ({ onClick, isActive, cardItem }) => {
   return (
@@ -17,4 +18,9 @@ const BasketIcon = ({ onClick, isActive, cardItem }) => {
   );
 };
 
+BasketIcon.propTypes = {
+  onClick: PropTypes.func,
+  isActive: PropTypes.bool,
+  cardItem: PropTypes.bool,
+};
 export default BasketIcon;

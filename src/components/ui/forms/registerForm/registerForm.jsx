@@ -5,6 +5,7 @@ import TextField from "../textField";
 import Button from "../../button";
 import { useAuth } from "../../../utils/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const RegisterForm = ({ onClose }) => {
   const [data, setData] = useState({
@@ -172,4 +173,7 @@ const RegisterForm = ({ onClose }) => {
   );
 };
 
+RegisterForm.propTypes = {
+  onClose: PropTypes.func,
+};
 export default RegisterForm;

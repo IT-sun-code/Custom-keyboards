@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useAuth } from "./useAuth";
+import PropTypes from "prop-types";
 
 const FavoritesContext = React.createContext();
 export const useFavorites = () => {
@@ -52,4 +53,10 @@ export const FavoritesProvider = ({ children }) => {
   );
 };
 
+FavoritesProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+};
 export default FavoritesProvider;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./createCardPanel.module.css";
 import { nanoid } from "nanoid";
 import { validator } from "../../../utils/validator";
+import PropTypes from "prop-types";
 
 const CreateCardPanel = ({ createCard }) => {
   const clearData = {
@@ -195,4 +196,7 @@ const CreateCardPanel = ({ createCard }) => {
   );
 };
 
+CreateCardPanel.propTypes = {
+  createCard: PropTypes.func,
+};
 export default CreateCardPanel;

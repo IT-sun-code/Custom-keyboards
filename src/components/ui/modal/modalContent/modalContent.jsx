@@ -9,6 +9,7 @@ import { useBasket } from "../../../utils/hooks/useBasket";
 import CardEditForm from "../../adminPanel/cardEditForm";
 import CardSlidesEditForm from "../../adminPanel/cardSlidesEditForm";
 import EditUserForm from "../../forms/editUserForm";
+import PropTypes from "prop-types";
 
 export const SuccessModalContent = () => {
   const navigate = useNavigate();
@@ -79,6 +80,10 @@ export const OrderModalContent = ({ orderData, onConfirm }) => {
     </>
   );
 };
+OrderModalContent.propTypes = {
+  orderData: PropTypes.object,
+  onConfirm: PropTypes.func,
+};
 
 export const LogOutModalContent = ({ onClose }) => {
   const { logOut } = useAuth();
@@ -97,6 +102,9 @@ export const LogOutModalContent = ({ onClose }) => {
       </Button>
     </>
   );
+};
+LogOutModalContent.propTypes = {
+  onClose: PropTypes.func,
 };
 
 export const AuthModalContent = ({ variety, onClose }) => {
@@ -137,6 +145,10 @@ export const AuthModalContent = ({ variety, onClose }) => {
     </>
   );
 };
+AuthModalContent.propTypes = {
+  onClose: PropTypes.func,
+  variety: PropTypes.string,
+};
 
 export const EditCardContent = ({ editData }) => {
   console.log(editData);
@@ -150,6 +162,9 @@ export const EditCardContent = ({ editData }) => {
       </p>
     </>
   );
+};
+EditCardContent.propTypes = {
+  editData: PropTypes.object,
 };
 
 export const EditCardSlidesContent = ({ editData }) => {
@@ -170,6 +185,9 @@ export const EditCardSlidesContent = ({ editData }) => {
     </>
   );
 };
+EditCardSlidesContent.propTypes = {
+  editData: PropTypes.object,
+};
 
 export const EditUserContent = ({ onClose }) => {
   return (
@@ -181,6 +199,9 @@ export const EditUserContent = ({ onClose }) => {
       </p>
     </>
   );
+};
+EditUserContent.propTypes = {
+  onClose: PropTypes.func,
 };
 
 export const InDelivery = ({ onClose, onHandleDelivered }) => {
@@ -206,6 +227,10 @@ export const InDelivery = ({ onClose, onHandleDelivered }) => {
     </>
   );
 };
+InDelivery.propTypes = {
+  onClose: PropTypes.func,
+  onHandleDelivered: PropTypes.func,
+};
 
 export const DeletionCardConfirm = ({ deleteData }) => {
   const { cardId, slidesIds, onDeleteCard, onDeleteCardSlides, onClose } =
@@ -226,6 +251,9 @@ export const DeletionCardConfirm = ({ deleteData }) => {
     </>
   );
 };
+DeletionCardConfirm.propTypes = {
+  deleteData: PropTypes.object,
+};
 
 export const DeletionCardSlidesConfirm = ({ deleteData }) => {
   const { cardId, slidesIds, onDeleteCardSlides, onClose } = deleteData;
@@ -244,4 +272,7 @@ export const DeletionCardSlidesConfirm = ({ deleteData }) => {
       </Button>
     </>
   );
+};
+DeletionCardSlidesConfirm.propTypes = {
+  deleteData: PropTypes.object,
 };

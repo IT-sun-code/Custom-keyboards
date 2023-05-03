@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./createSlidesPanel.module.css";
 import { nanoid } from "nanoid";
 import { validator } from "../../../utils/validator";
+import PropTypes from "prop-types";
 
 const CreateSlidesPanel = ({ createSlidesCard }) => {
   const clearData = {
@@ -130,4 +131,7 @@ const CreateSlidesPanel = ({ createSlidesCard }) => {
   );
 };
 
+CreateSlidesPanel.propTypes = {
+  createSlidesCard: PropTypes.func,
+};
 export default CreateSlidesPanel;

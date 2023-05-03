@@ -3,6 +3,7 @@ import { validator } from "../../../utils/validator";
 import TextField from "../textField";
 import Button from "../../button";
 import { useAuth } from "../../../utils/hooks/useAuth";
+import PropTypes from "prop-types";
 
 const EditUserForm = ({ onClose }) => {
   const { updateUserData, currentUser } = useAuth();
@@ -126,4 +127,7 @@ const EditUserForm = ({ onClose }) => {
   );
 };
 
+EditUserForm.propTypes = {
+  onClose: PropTypes.func,
+};
 export default EditUserForm;

@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useAuth } from "./useAuth";
+import PropTypes from "prop-types";
 
 const BasketContext = React.createContext();
 export const useBasket = () => {
@@ -116,4 +117,10 @@ export const BasketProvider = ({ children }) => {
   );
 };
 
+BasketProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+};
 export default BasketProvider;
