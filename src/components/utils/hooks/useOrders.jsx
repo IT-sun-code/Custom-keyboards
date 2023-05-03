@@ -34,7 +34,6 @@ export const OrdersProvider = ({ children }) => {
       orderDate: currentDate,
       deliveryDate: deliveryDate,
       orderAddress: orderAddress,
-      //______________________________________________________
       isDelivered: false,
     }));
 
@@ -78,7 +77,9 @@ export const OrdersProvider = ({ children }) => {
   const getOrder = (card) => {
     const orders = currentUser?.orders;
     if (orders) {
-      const index = orders.findIndex((item) => item.id === card.id);
+      const index = orders.findIndex(
+        (item) => item.id === card.id && item.orderDate === card.orderDate
+      );
       return index >= 0 ? orders[index] : {};
     }
     return {};

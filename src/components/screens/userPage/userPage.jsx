@@ -8,6 +8,7 @@ import TextBlock from "../../ui/textBlock";
 import { useAuth } from "../../utils/hooks/useAuth";
 import { useOrders } from "../../utils/hooks/useOrders";
 import Card from "../home/card";
+import { nanoid } from "nanoid";
 
 const UserPage = () => {
   const { currentUser } = useAuth();
@@ -35,7 +36,7 @@ const UserPage = () => {
         )}
         {ordersCards &&
           ordersCards.map((order) => (
-            <Card card={order} key={`${order.id}_${Date.now()}`} />
+            <Card card={order} key={`${order.id}_${nanoid()}`} />
           ))}
       </section>
     </>
