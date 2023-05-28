@@ -27,21 +27,72 @@ export const OrdersProvider = ({ children }) => {
     }
   }, [currentUser]);
 
+  // const handleOrdersClick = async (basketCards) => {
+  //   console.log(basketCards);
+  //   let orders = currentUser?.orders || [];
+  //   const newOrders = basketCards.map((card) => ({
+  //     ...card,
+  //     orderDate: currentDate,
+  //     deliveryDate: deliveryDate,
+  //     orderAddress: orderAddress,
+  //     isDelivered: false,
+  //   }));
+
+  //   const updatedOrders = orders.reduce((acc, order) => {
+  //     const existingOrder = newOrders.find(
+  //       (newOrder) =>
+  //         newOrder.id === order.id && newOrder.orderDate === order.orderDate
+  //     );
+
+  //     if (existingOrder) {
+  //       return [
+  //         ...acc,
+  //         {
+  //           ...existingOrder,
+  //           quantity: existingOrder.quantity + order.quantity,
+  //           totalPrice: existingOrder.totalPrice + order.totalPrice,
+  //         },
+  //       ];
+  //     } else {
+  //       return [...acc, order];
+  //     }
+  //   }, []);
+
+  //   orders = [
+  //     ...newOrders.filter(
+  //       (newOrder) =>
+  //         !orders.some(
+  //           (order) =>
+  //             order.id === newOrder.id && order.orderDate === newOrder.orderDate
+  //         )
+  //     ),
+  //     ...updatedOrders,
+  //   ];
+
+  //   await updateUserData({
+  //     ...currentUser,
+  //     orders: orders,
+  //   });
+  // };
+
   const handleOrdersClick = async (basketCards) => {
-    console.log(basketCards);
     let orders = currentUser?.orders || [];
     const newOrders = basketCards.map((card) => ({
       ...card,
       orderDate: currentDate,
       deliveryDate: deliveryDate,
       orderAddress: orderAddress,
+      quantity: card.quantity,
+      totalPrice: card.totalPrice,
       isDelivered: false,
     }));
 
     const updatedOrders = orders.reduce((acc, order) => {
       const existingOrder = newOrders.find(
         (newOrder) =>
-          newOrder.id === order.id && newOrder.orderDate === order.orderDate
+          newOrder.id === order.id &&
+          newOrder.orderDate === order.orderDate &&
+          newOrder.isDelivered === order.isDelivered
       );
 
       if (existingOrder) {
